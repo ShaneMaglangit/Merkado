@@ -1,6 +1,7 @@
 package com.shanemaglangit.ui.login;
 
 import com.shanemaglangit.components.HintTextField;
+import com.shanemaglangit.components.RoundedButton;
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.FontWeight;
 import com.shanemaglangit.res.Resources;
@@ -18,7 +19,7 @@ public class LoginView extends JFrame {
     private JLabel lblSub;
     private HintTextField txtEmail;
     private HintTextField txtPassword;
-    private JButton btnSubmit;
+    private RoundedButton btnSubmit;
 
     public LoginView() throws HeadlessException {
         CompoundBorder btnBorder;
@@ -27,6 +28,9 @@ public class LoginView extends JFrame {
         this.setTitle(Config.TITLE);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setMinimumSize(new Dimension(Config.WINDOW_WIDTH / 3, 0));
+
+        // Set the frame logo
+        this.setIconImage(Util.createImageIcon(this, Resources.LOGO_PATH).getImage());
 
         // Create the main panel
         mainPanel = new JPanel();
@@ -37,7 +41,7 @@ public class LoginView extends JFrame {
 
         // Add the heading
         lblHeading = new JLabel("Start shopping now");
-        lblHeading.setFont(Resources.createPoppinsFont(FontWeight.BOLD, 28));
+        lblHeading.setFont(Resources.createPoppinsFont(FontWeight.BOLD, 25));
         lblHeading.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(lblHeading);
 
@@ -45,7 +49,7 @@ public class LoginView extends JFrame {
 
         // Add the sub heading
         lblSub = new JLabel("<html><div style='text-align: center;'>Buy products from your local wet market<br />with the comforts of you own home.</div></html>");
-        lblSub.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 16));
+        lblSub.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 14));
         lblSub.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblSub.setHorizontalAlignment(JLabel.CENTER);
         mainPanel.add(lblSub);
@@ -55,8 +59,8 @@ public class LoginView extends JFrame {
         // Add the text field for email
         txtEmail = new HintTextField("Enter email", 16);
         txtEmail.setAlignmentX(Component.CENTER_ALIGNMENT);
-        txtEmail.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 16));
-        txtEmail.setMargin(new Insets(8, 8, 8, 8));
+        txtEmail.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 12));
+        txtEmail.setMargin(new Insets(6, 6, 6, 6));
         txtEmail.setMaximumSize(txtEmail.getPreferredSize());
         mainPanel.add(txtEmail);
 
@@ -65,8 +69,8 @@ public class LoginView extends JFrame {
         // Add the text field for password
         txtPassword = new HintTextField("Enter password", 16);
         txtPassword.setAlignmentX(Component.CENTER_ALIGNMENT);
-        txtPassword.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 16));
-        txtPassword.setMargin(new Insets(8, 8, 8, 8));
+        txtPassword.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 12));
+        txtPassword.setMargin(new Insets(6, 6, 6, 6));
         txtPassword.setMaximumSize(txtEmail.getPreferredSize());
         mainPanel.add(txtPassword);
 
@@ -74,13 +78,13 @@ public class LoginView extends JFrame {
 
         // Add the submit button
         btnBorder = BorderFactory.createCompoundBorder(
-            new EmptyBorder(8, 8, 8, 8),
+            new EmptyBorder(6, 6, 6, 6),
             new LineBorder(Resources.LIGHT, 0, true));
-        btnSubmit = new JButton("LOGIN");
+        btnSubmit = new RoundedButton("LOGIN");
         btnSubmit.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnSubmit.setFocusPainted(false);
         btnSubmit.setBorder(btnBorder);
-        btnSubmit.setFont(Resources.createPoppinsFont(FontWeight.MEDIUM, 16));
+        btnSubmit.setFont(Resources.createPoppinsFont(FontWeight.MEDIUM, 12));
         btnSubmit.setForeground(Resources.LIGHT);
         btnSubmit.setBackground(Resources.PRIMARY);
         btnSubmit.setMaximumSize(txtEmail.getPreferredSize());
@@ -95,7 +99,7 @@ public class LoginView extends JFrame {
         return txtPassword;
     }
 
-    public JButton getBtnSubmit() {
+    public RoundedButton getBtnSubmit() {
         return btnSubmit;
     }
 }

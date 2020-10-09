@@ -1,10 +1,13 @@
 package com.shanemaglangit.util;
 
 import com.shanemaglangit.data.FontWeight;
+import com.shanemaglangit.res.Resources;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,5 +16,10 @@ public abstract class Util {
 
     public static void log(Level level, String message) {
         LOGGER.log(level, message);
+    }
+
+    public static ImageIcon createImageIcon(Object object, String url) {
+        URL gifUrl = object.getClass().getResource(url);
+        return new ImageIcon(gifUrl);
     }
 }
