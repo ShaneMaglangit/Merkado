@@ -13,6 +13,10 @@ public class SplashScreenView extends JFrame {
     private JLabel lblImage;
     private JLabel lblMessage;
 
+    /**
+     * Constructor where all of the components of the frame are created
+     * @throws HeadlessException
+     */
     public SplashScreenView() {
         // Set the frame preferences
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);

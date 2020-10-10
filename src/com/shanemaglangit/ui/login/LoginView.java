@@ -21,6 +21,10 @@ public class LoginView extends JFrame {
     private HintTextField txtPassword;
     private RoundedButton btnSubmit;
 
+    /**
+     * Constructor where all of the components of the frame are created
+     * @throws HeadlessException
+     */
     public LoginView() throws HeadlessException {
         CompoundBorder btnBorder;
 
@@ -91,14 +95,26 @@ public class LoginView extends JFrame {
         mainPanel.add(btnSubmit);
     }
 
+    /**
+     * Accessor for the email input field
+     * @return reference to the input field
+     */
     public JTextField getTxtEmail() {
         return txtEmail;
     }
 
+    /**
+     * Accessor for the password input field
+     * @return reference to the input field
+     */
     public JTextField getTxtPassword() {
         return txtPassword;
     }
 
+    /**
+     * Accessor for the submit button
+     * @return reference to the button
+     */
     public RoundedButton getBtnSubmit() {
         return btnSubmit;
     }
