@@ -3,7 +3,6 @@ package com.shanemaglangit.ui.login;
 import com.shanemaglangit.components.HintTextField;
 import com.shanemaglangit.components.RoundedButton;
 import com.shanemaglangit.config.Config;
-import com.shanemaglangit.data.FontWeight;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
@@ -45,7 +44,7 @@ public class LoginView extends JFrame {
 
         // Add the heading
         lblHeading = new JLabel("Start shopping now");
-        lblHeading.setFont(Resources.createPoppinsFont(FontWeight.BOLD, 25));
+        lblHeading.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 25));
         lblHeading.setAlignmentX(Component.CENTER_ALIGNMENT);
         mainPanel.add(lblHeading);
 
@@ -53,7 +52,7 @@ public class LoginView extends JFrame {
 
         // Add the sub heading
         lblSub = new JLabel("<html><div style='text-align: center;'>Buy products from your local wet market<br />with the comforts of you own home.</div></html>");
-        lblSub.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 14));
+        lblSub.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 14));
         lblSub.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblSub.setHorizontalAlignment(JLabel.CENTER);
         mainPanel.add(lblSub);
@@ -63,7 +62,7 @@ public class LoginView extends JFrame {
         // Add the text field for email
         txtEmail = new HintTextField("Enter email", 16);
         txtEmail.setAlignmentX(Component.CENTER_ALIGNMENT);
-        txtEmail.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 12));
+        txtEmail.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         txtEmail.setMargin(new Insets(6, 6, 6, 6));
         txtEmail.setMaximumSize(txtEmail.getPreferredSize());
         mainPanel.add(txtEmail);
@@ -73,7 +72,7 @@ public class LoginView extends JFrame {
         // Add the text field for password
         txtPassword = new HintTextField("Enter password", 16);
         txtPassword.setAlignmentX(Component.CENTER_ALIGNMENT);
-        txtPassword.setFont(Resources.createPoppinsFont(FontWeight.PLAIN, 12));
+        txtPassword.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         txtPassword.setMargin(new Insets(6, 6, 6, 6));
         txtPassword.setMaximumSize(txtEmail.getPreferredSize());
         mainPanel.add(txtPassword);
@@ -88,7 +87,7 @@ public class LoginView extends JFrame {
         btnSubmit.setAlignmentX(Component.CENTER_ALIGNMENT);
         btnSubmit.setFocusPainted(false);
         btnSubmit.setBorder(btnBorder);
-        btnSubmit.setFont(Resources.createPoppinsFont(FontWeight.MEDIUM, 12));
+        btnSubmit.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
         btnSubmit.setForeground(Resources.LIGHT);
         btnSubmit.setBackground(Resources.PRIMARY);
         btnSubmit.setMaximumSize(txtEmail.getPreferredSize());

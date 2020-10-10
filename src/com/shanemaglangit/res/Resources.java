@@ -1,14 +1,16 @@
 package com.shanemaglangit.res;
 
-import com.shanemaglangit.data.FontWeight;
 import com.shanemaglangit.util.Util;
 
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 
 public abstract class Resources {
+    public enum FontWeight {
+        PLAIN, MEDIUM, BOLD
+    }
+
     public static final Color PRIMARY = Color.decode("#2ECC71");
     public static final Color LIGHT = Color.decode("#FFFFFF");
     public static final Color LIGHT_GRAY = Color.decode("#66000000");
@@ -16,6 +18,8 @@ public abstract class Resources {
     public static final String SPLASH_PATH = "../../res/images/splash.gif";
     public static final String LOGO_PATH = "../../res/images/logo.png";
     public static final String LOGO_EXPANDED_PATH = "../../res/images/logo-expanded.png";
+    public static final String LOGO_LIGHT_EXPANDED_PATH = "../../res/images/logo-light-expanded.png";
+    public static final String IC_CART = "../../res/images/ic_cart.png";
 
     public static Font createPoppinsFont(FontWeight weight, int size) {
         String fontPath = "";
