@@ -13,7 +13,7 @@ public abstract class Resources {
 
     public static final Color PRIMARY = Color.decode("#2ECC71");
     public static final Color LIGHT = Color.decode("#FFFFFF");
-    public static final Color LIGHT_GRAY = Color.decode("#66000000");
+    public static final Color LIGHT_GRAY = new Color(0, 0, 0, (float) 0.40);
 
     public static final String SPLASH_PATH = "../../res/images/splash.gif";
     public static final String LOGO_PATH = "../../res/images/logo.png";
