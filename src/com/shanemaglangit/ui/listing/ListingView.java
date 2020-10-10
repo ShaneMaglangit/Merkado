@@ -81,5 +81,31 @@ public class ListingView extends JFrame {
         // Create the cart button
         lblCart = new JLabel(Util.createImageIcon(this, Resources.IC_CART));
         pnlHeader.add(lblCart);
+
+        // Create the content panel
+        pnlContents = new JPanel();
+        pnlContents.setAlignmentX(Component.CENTER_ALIGNMENT);
+        pnlContents.setLayout(new BoxLayout(pnlContents, BoxLayout.X_AXIS));
+        this.getContentPane().add(pnlContents);
+
+        // Create the filter panel
+        pnlFilter = new JPanel();
+        pnlFilter.setLayout(new BoxLayout(pnlFilter, BoxLayout.Y_AXIS));
+        pnlFilter.setBorder(new EmptyBorder(12, 12, 12, 12));
+        pnlContents.add(pnlFilter);
+
+        // Crate the market filter
+        lblMarket = new JLabel("Market");
+        lblMarket.setAlignmentX(Component.LEFT_ALIGNMENT);
+        lblMarket.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
+        pnlFilter.add(lblMarket);
+
+        cbxMarket = new JComboBox<ArrayList<String>>();
+        cbxMarket.setAlignmentX(Component.LEFT_ALIGNMENT);
+        pnlFilter.add(cbxMarket);
+
+        // Create the listing panel
+        pnlListing = new JPanel();
+        pnlContents.add(pnlListing);
     }
 }
