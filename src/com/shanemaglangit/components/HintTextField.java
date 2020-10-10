@@ -7,10 +7,21 @@ import java.awt.*;
 
 public class HintTextField extends JTextField {
     private final String hint;
+    private boolean hasBorder;
+
+    public HintTextField(String hint) {
+        this.hint = hint;
+    }
 
     public HintTextField(String hint, int columns) {
         super("", columns);
         this.hint = hint;
+        this.hasBorder = true;
+    }
+
+    public void setHasBorder(boolean hasBorder) {
+        this.hasBorder = hasBorder;
+        this.repaint();
     }
 
     @Override
@@ -40,8 +51,10 @@ public class HintTextField extends JTextField {
         g2.drawRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
         g2.drawRect(0, 0, getWidth(), getHeight());
 
-        g2.setColor(new Color(112, 112, 112, 127));
-        g2.setStroke(new BasicStroke(1));
-        g2.drawRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+        if(hasBorder) {
+            g2.setColor(new Color(112, 112, 112, 127));
+            g2.setStroke(new BasicStroke(1));
+            g2.drawRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+        }
     }
 }

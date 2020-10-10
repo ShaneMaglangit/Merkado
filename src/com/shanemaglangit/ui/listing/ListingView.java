@@ -6,6 +6,8 @@ import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
+import javax.swing.border.CompoundBorder;
+import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.util.ArrayList;
@@ -15,11 +17,11 @@ public class ListingView extends JFrame {
     // Header components
     private JPanel pnlHeader;
     private JLabel lblLogo;
-    private JTextField txtSearch;
+    private HintTextField txtSearch;
     private JLabel lblCart;
 
     // Content components
-    private JPanel pnlComponents;
+    private JPanel pnlContents;
 
     // Filter components
     private JPanel pnlFilter;
@@ -28,8 +30,8 @@ public class ListingView extends JFrame {
     private JLabel lblCategory;
     private JComboBox<ArrayList<String>> cbxCategory;
     private JLabel lblPriceRange;
-    private JTextField txtPriceMin;
-    private JTextField txtPriceMax;
+    private HintTextField txtPriceMin;
+    private HintTextField txtPriceMax;
     private JLabel lblSort;
     private ButtonGroup bgSort;
     private JRadioButton rbtnLowToHigh;
@@ -52,26 +54,32 @@ public class ListingView extends JFrame {
         // Set the frame logo
         this.setIconImage(Util.createImageIcon(this, Resources.LOGO_PATH).getImage());
 
-        // Create the header components
+        // Create the header panel
         pnlHeader = new JPanel();
+        pnlHeader.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlHeader.setBackground(Resources.PRIMARY);
         pnlHeader.setLayout(new BoxLayout(pnlHeader, BoxLayout.X_AXIS));
-        pnlHeader.setBorder(new LineBorder(Resources.PRIMARY, 8));
+        pnlHeader.setBorder(new LineBorder(Resources.PRIMARY, 12));
         this.getContentPane().add(pnlHeader);
 
+        // Create the logo component
         lblLogo = new JLabel(Util.createImageIcon(this, Resources.LOGO_LIGHT_EXPANDED_PATH));
         pnlHeader.add(lblLogo);
 
         pnlHeader.add(Box.createRigidArea(new Dimension(12, 0)));
 
-        txtSearch = new HintTextField("What item are you looking for?", 32);
+        // Create the search bar
+        txtSearch = new HintTextField("What item are you looking for?");
+        txtSearch.setAlignmentY(Component.CENTER_ALIGNMENT);
         txtSearch.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         txtSearch.setMargin(new Insets(6, 6, 6, 6));
+        txtSearch.setHasBorder(false);
         pnlHeader.add(txtSearch);
 
         pnlHeader.add(Box.createRigidArea(new Dimension(12, 0)));
 
-        lblLogo = new JLabel(Util.createImageIcon(this, Resources.IC_CART));
-        pnlHeader.add(lblLogo);
+        // Create the cart button
+        lblCart = new JLabel(Util.createImageIcon(this, Resources.IC_CART));
+        pnlHeader.add(lblCart);
     }
 }
