@@ -34,6 +34,12 @@ public class HintTextField extends JTextField {
 
     @Override
     protected void paintBorder(Graphics g) {
+        g.setColor(getParent().getBackground());
+        g.fillRect(0, 0, getWidth(), getHeight());
+
+        g.setColor(getBackground());
+        g.fillRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
+
         g.setColor(new Color(112, 112, 112, 127));
         g.drawRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
     }
