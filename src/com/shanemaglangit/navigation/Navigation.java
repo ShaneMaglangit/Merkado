@@ -2,6 +2,8 @@ package com.shanemaglangit.navigation;
 
 import com.shanemaglangit.ui.addtocart.AddToCartController;
 import com.shanemaglangit.ui.addtocart.AddToCartView;
+import com.shanemaglangit.ui.checkout.CheckoutController;
+import com.shanemaglangit.ui.checkout.CheckoutView;
 import com.shanemaglangit.ui.listing.ListingController;
 import com.shanemaglangit.ui.listing.ListingView;
 import com.shanemaglangit.ui.login.LoginController;
@@ -29,5 +31,10 @@ public abstract class Navigation {
     public static void addToCart() {
         AddToCartView addToCartView = new AddToCartView();
         AddToCartController addToCartController = new AddToCartController(addToCartView);
+    }
+
+    public static void checkout() {
+        CheckoutView checkoutView = new CheckoutView();
+        CheckoutController checkoutController = new CheckoutController(checkoutView);
     }
 }

@@ -131,7 +131,6 @@ public class ListingView extends JFrame {
         layoutPrice = new GridLayout(1, 2);
         layoutPrice.setHgap(6);
 
-
         pnlPriceRange = new JPanel();
         pnlPriceRange.setAlignmentX(Component.LEFT_ALIGNMENT);
         pnlPriceRange.setLayout(layoutPrice);
@@ -160,12 +159,17 @@ public class ListingView extends JFrame {
         rbtnLowToHigh.setAlignmentX(Component.LEFT_ALIGNMENT);
         rbtnLowToHigh.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         rbtnLowToHigh.setFocusPainted(false);
+        rbtnLowToHigh.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
+        rbtnLowToHigh.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
+        rbtnLowToHigh.setSelected(true);
         pnlFilter.add(rbtnLowToHigh);
 
         rbtnHighToLow = new JRadioButton("High to low");
         rbtnHighToLow.setAlignmentX(Component.LEFT_ALIGNMENT);
         rbtnHighToLow.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         rbtnHighToLow.setFocusPainted(false);
+        rbtnHighToLow.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
+        rbtnHighToLow.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
         pnlFilter.add(rbtnHighToLow);
 
         bgSort = new ButtonGroup();

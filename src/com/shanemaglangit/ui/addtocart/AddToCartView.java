@@ -95,7 +95,7 @@ public class AddToCartView extends JFrame {
 
         txtQuantity = new JFormattedTextField(numberFormatter);
         txtQuantity.setValue(1);
-        txtQuantity.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
+        txtQuantity.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
         txtQuantity.setMargin(new Insets(6, 6, 6, 6));
         txtQuantity.setHorizontalAlignment(SwingConstants.CENTER);
         pnlInput.add(txtQuantity);

@@ -21,6 +21,8 @@ public abstract class Resources {
     public static final String LOGO_LIGHT_EXPANDED_PATH = "../../res/images/logo-light-expanded.png";
     public static final String IC_CART = "../../res/images/ic_cart.png";
     public static final String PRODUCT_PLACEHOLDER = "../../res/images/product-placeholder.png";
+    public static final String RADIO_DEFAULT = "../../res/images/radio-default.png";
+    public static final String RADIO_SELECTED = "../../res/images/radio-selected.png";
 
     public static Font createPoppinsFont(FontWeight weight, int size) {
         String fontPath = "";
