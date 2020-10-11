@@ -44,6 +44,8 @@ public class ListingView extends JFrame {
      * @throws HeadlessException
      */
     public ListingView() throws HeadlessException {
+        GridLayout layoutPrice;
+
         // Set the frame preferences
         this.setTitle(Config.TITLE);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -126,9 +128,13 @@ public class ListingView extends JFrame {
         lblPriceRange.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
         pnlFilter.add(lblPriceRange);
 
+        layoutPrice = new GridLayout(1, 2);
+        layoutPrice.setHgap(6);
+
+
         pnlPriceRange = new JPanel();
         pnlPriceRange.setAlignmentX(Component.LEFT_ALIGNMENT);
-        pnlPriceRange.setLayout(new GridLayout(1, 2));
+        pnlPriceRange.setLayout(layoutPrice);
         pnlPriceRange.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
         pnlFilter.add(pnlPriceRange);
 

@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 public class SplashScreenController {
+    // Duration of the artificial delay for the splash screen
     private final int DELAY_DURATION = 5;
 
     private SplashScreenView view;

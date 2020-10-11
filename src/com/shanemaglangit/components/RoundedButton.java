@@ -3,6 +3,8 @@ package com.shanemaglangit.components;
 import com.shanemaglangit.res.Resources;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class RoundedButton extends JButton {
@@ -10,6 +12,13 @@ public class RoundedButton extends JButton {
     public RoundedButton(String text) {
         super(text);
         setContentAreaFilled(false);
+
+        setBorder(
+            BorderFactory.createCompoundBorder(
+                new EmptyBorder(6, 6, 6, 6),
+                new LineBorder(Resources.LIGHT, 0, true)
+            )
+        );
     }
 
     @Override

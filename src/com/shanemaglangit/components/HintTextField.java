@@ -5,23 +5,17 @@ import com.shanemaglangit.res.Resources;
 import javax.swing.*;
 import java.awt.*;
 
-public class HintTextField extends JTextField {
+public class HintTextField extends RoundedTextField {
     private final String hint;
-    private boolean hasBorder;
 
     public HintTextField(String hint) {
+        super();
         this.hint = hint;
     }
 
     public HintTextField(String hint, int columns) {
-        super("", columns);
+        super(columns);
         this.hint = hint;
-        this.hasBorder = true;
-    }
-
-    public void setHasBorder(boolean hasBorder) {
-        this.hasBorder = hasBorder;
-        this.repaint();
     }
 
     @Override
@@ -40,21 +34,6 @@ public class HintTextField extends JTextField {
 
             g.setColor(new Color(c2, true));
             g.drawString(hint, ins.left, h / 2 + fm.getAscent() / 2 - 2);
-        }
-    }
-
-    @Override
-    protected void paintBorder(Graphics g) {
-        Graphics2D g2 = (Graphics2D) g;
-        g2.setColor(getParent().getBackground());
-        g2.setStroke(new BasicStroke(2));
-        g2.drawRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
-        g2.drawRect(0, 0, getWidth(), getHeight());
-
-        if(hasBorder) {
-            g2.setColor(new Color(112, 112, 112, 127));
-            g2.setStroke(new BasicStroke(1));
-            g2.drawRoundRect(0, 0, getWidth(), getHeight(), 10, 10);
         }
     }
 }
