@@ -32,8 +32,8 @@ public class ListingController {
 
     private void setProducts() {
         try {
-            Product[] products = new Product[6];
-            for(int i = 0; i < 6; i++) products[i] = new Product();
+            Product[] products = new Product[20];
+            for(int i = 0; i < 20; i++) products[i] = new Product();
             view.getProductList().setProducts(products);
         } catch (ItemOverflowException e) {
             Util.log(Level.SEVERE, e.getMessage());

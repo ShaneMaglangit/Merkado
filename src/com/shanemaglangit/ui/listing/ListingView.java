@@ -41,6 +41,7 @@ public class ListingView extends JFrame {
 
     // Listing components
     private JPanel pnlListing;
+    private JScrollPane productScrollPane;
     private ProductList productList;
 
     /**
@@ -69,11 +70,13 @@ public class ListingView extends JFrame {
         pnlHeader.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
         this.getContentPane().add(pnlHeader);
 
+        pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
+
         // Create the logo component
         lblLogo = new JLabel(Util.createImageIcon(this, "../.." +  Resources.LOGO_LIGHT_EXPANDED_PATH));
         pnlHeader.add(lblLogo);
 
-        pnlHeader.add(Box.createRigidArea(new Dimension(12, 0)));
+        pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
 
         // Create the search bar
         txtSearch = new HintTextField("What item are you looking for?");
@@ -83,11 +86,13 @@ public class ListingView extends JFrame {
         txtSearch.setHasBorder(false);
         pnlHeader.add(txtSearch);
 
-        pnlHeader.add(Box.createRigidArea(new Dimension(12, 0)));
+        pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
 
         // Create the cart button
         lblCart = new JLabel(Util.createImageIcon(this, "../.." +  Resources.IC_CART));
         pnlHeader.add(lblCart);
+
+        pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
 
         // Create the content panel
         pnlContents = new JPanel();
@@ -192,11 +197,15 @@ public class ListingView extends JFrame {
         pnlContents.add(pnlListing);
 
         // Add the product lists
-        productList = new ProductList(2, 4);
-        productList.setAlignmentX(Component.CENTER_ALIGNMENT);
-        productList.setBorder(new EmptyBorder(6, 6, 6, 6));
+        productList = new ProductList(5, 4);
         productList.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
-        pnlListing.add(productList);
+
+        // Create the scroll pane
+        productScrollPane = new JScrollPane(productList);
+        productScrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
+        productScrollPane.setBorder(new EmptyBorder(6, 6, 6, 6));
+        productScrollPane.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        pnlListing.add(productScrollPane);
     }
 
     public ProductList getProductList() {
