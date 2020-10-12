@@ -58,11 +58,11 @@ public class ProductListItem extends JPanel {
             this.setBackground(Color.WHITE);
             lblPrice.setText("PHP 0.00");
             lblName.setText("Product Name");
-//            ImageIcon imgProduct = Util.createImageIcon(this, ".." + Resources.PRODUCT_PLACEHOLDER);
-//            lblImage.setIcon(imgProduct);
+            ImageIcon imgProduct = Util.createImageIcon(this, ".." + Resources.LOGO_PATH);
+            lblImage.setIcon(imgProduct);
         } else {
             this.setBackground(null);
-//            lblImage.setIcon(null);
+            lblImage.setIcon(null);
             lblPrice.setText("");
             lblName.setText("");
         }

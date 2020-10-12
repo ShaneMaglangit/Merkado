@@ -3,17 +3,21 @@ package com.shanemaglangit.ui.listing;
 import com.shanemaglangit.components.HintTextField;
 import com.shanemaglangit.components.ProductList;
 import com.shanemaglangit.config.Config;
-import com.shanemaglangit.data.Product;
 import com.shanemaglangit.res.Resources;
-import com.shanemaglangit.util.ItemOverflowException;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
 import javax.swing.border.*;
 import java.awt.*;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+import java.awt.event.MouseAdapter;
 import java.util.ArrayList;
 
 public class ListingView extends JFrame {
+    private JLayeredPane paneMain;
+    private JPanel pnlDefault;
+    private JPanel pnlOverlay;
 
     // Header components
     private JPanel pnlHeader;
@@ -44,6 +48,10 @@ public class ListingView extends JFrame {
     private JScrollPane productScrollPane;
     private ProductList productList;
 
+    // Cart Components
+    private JPanel pnlFiller;
+    private JPanel pnlCart;
+
     /**
      * Constructor where all of the components of the frame are created
      * @throws HeadlessException
@@ -53,13 +61,36 @@ public class ListingView extends JFrame {
 
         // Set the frame preferences
         this.setTitle(Config.TITLE);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setMinimumSize(new Dimension(1200, (int) (Config.WINDOW_HEIGHT * 0.90)));
         this.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
-        this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
+        this.getContentPane().setLayout(new GridLayout(1, 1));
+        this.getContentPane().setBackground(Color.WHITE);
 
         // Set the frame logo
         this.setIconImage(Util.createImageIcon(this, "../.." +  Resources.LOGO_PATH).getImage());
+
+        // Create the layered pane
+        paneMain = new JLayeredPane();
+        paneMain.addComponentListener(new ComponentListener() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                for(Component component : paneMain.getComponents()) {
+                    component.setSize(paneMain.getSize());
+                }
+            }
+
+            @Override public void componentMoved(ComponentEvent e) { }
+            @Override public void componentShown(ComponentEvent e) {}
+            @Override public void componentHidden(ComponentEvent e) {}
+        });
+        this.getContentPane().add(paneMain);
+
+        // Add default panel
+        pnlDefault = new JPanel();
+        pnlDefault.setLayout(new BoxLayout(pnlDefault, BoxLayout.Y_AXIS));
+        paneMain.add(pnlDefault, JLayeredPane.DEFAULT_LAYER);
 
         // Create the header panel
         pnlHeader = new JPanel();
@@ -68,7 +99,7 @@ public class ListingView extends JFrame {
         pnlHeader.setLayout(new BoxLayout(pnlHeader, BoxLayout.X_AXIS));
         pnlHeader.setBorder(new LineBorder(Resources.PRIMARY, 6));
         pnlHeader.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
-        this.getContentPane().add(pnlHeader);
+        pnlDefault.add(pnlHeader, JLayeredPane.DEFAULT_LAYER);
 
         pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
 
@@ -98,7 +129,7 @@ public class ListingView extends JFrame {
         pnlContents = new JPanel();
         pnlContents.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlContents.setLayout(new BoxLayout(pnlContents, BoxLayout.LINE_AXIS));
-        this.getContentPane().add(pnlContents);
+        pnlDefault.add(pnlContents, JLayeredPane.DEFAULT_LAYER);
 
         // Create the filter panel
         pnlFilter = new JPanel();
@@ -206,9 +237,43 @@ public class ListingView extends JFrame {
         productScrollPane.setBorder(new EmptyBorder(6, 6, 6, 6));
         productScrollPane.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
         pnlListing.add(productScrollPane);
+
+        // Add the overlay panel
+        pnlOverlay = new JPanel();
+        pnlOverlay.addMouseListener(new MouseAdapter() {});
+        pnlOverlay.setBackground(null);
+        pnlOverlay.setOpaque(false);
+        pnlOverlay.setVisible(false);
+        pnlOverlay.setLayout(new BoxLayout(pnlOverlay, BoxLayout.X_AXIS));
+        paneMain.add(pnlOverlay, JLayeredPane.MODAL_LAYER);
+
+        // Create the cart overlay components
+        pnlFiller = new JPanel();
+        pnlFiller.setOpaque(false);
+        pnlFiller.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        pnlFiller.setAlignmentX(Component.CENTER_ALIGNMENT);
+        pnlOverlay.add(pnlFiller);
+
+        pnlCart = new JPanel();
+        pnlCart.setBackground(Resources.PRIMARY);
+        pnlCart.setMaximumSize(new Dimension(400, Config.WINDOW_HEIGHT));
+        pnlCart.setAlignmentX(Component.CENTER_ALIGNMENT);
+        pnlOverlay.add(pnlCart);
     }
 
     public ProductList getProductList() {
         return productList;
+    }
+
+    public JLabel getLblCart() {
+        return lblCart;
+    }
+
+    public JPanel getPnlOverlay() {
+        return pnlOverlay;
+    }
+
+    public JPanel getPnlFiller() {
+        return pnlFiller;
     }
 }
