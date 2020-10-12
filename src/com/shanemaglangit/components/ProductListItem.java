@@ -18,13 +18,14 @@ public class ProductListItem extends JPanel {
 
     public ProductListItem() {
         // Set the panel preferences
-        this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-        this.setBorder(new EmptyBorder(8, 8, 8, 8));
-        this.setAlignmentX(Component.CENTER_ALIGNMENT);
+        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setBorder(new EmptyBorder(6, 6, 6, 6));
 
         // Add the product image
         lblImage = new JLabel();
         lblImage.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lblImage.setHorizontalAlignment(JLabel.CENTER);
+        lblImage.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
         this.add(lblImage);
 
         this.add(Box.createRigidArea(new Dimension(0, 4)));
@@ -42,6 +43,8 @@ public class ProductListItem extends JPanel {
         lblPrice.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblPrice.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
         this.add(lblPrice);
+
+        this.add(Box.createRigidArea(new Dimension(0, 4)));
     }
 
     public ProductListItem(Product product) {
@@ -51,15 +54,15 @@ public class ProductListItem extends JPanel {
 
     public void setProduct(Product product) {
         this.product = product;
-
         if(product != null) {
             this.setBackground(Color.WHITE);
-            lblImage.setIcon(Util.createImageIcon(this, ".." + Resources.PRODUCT_PLACEHOLDER));
             lblPrice.setText("PHP 0.00");
             lblName.setText("Product Name");
+//            ImageIcon imgProduct = Util.createImageIcon(this, ".." + Resources.PRODUCT_PLACEHOLDER);
+//            lblImage.setIcon(imgProduct);
         } else {
-            this.setBackground(Color.LIGHT_GRAY);
-            lblImage.setIcon(null);
+            this.setBackground(null);
+//            lblImage.setIcon(null);
             lblPrice.setText("");
             lblName.setText("");
         }

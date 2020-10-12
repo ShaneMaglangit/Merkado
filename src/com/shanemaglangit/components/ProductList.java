@@ -44,8 +44,9 @@ public class ProductList extends JPanel {
     }
 
     private void attachItemsToContainer(Product[] products) {
-        for(int i = 0; i < products.length; i++) {
-            productListItems[i].setProduct(products[i]);
+        for(int i = 0; i < productListItems.length; i++) {
+            if(i >= products.length) productListItems[i].setProduct(null);
+            else productListItems[i].setProduct(products[i]);
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.shanemaglangit.util;
 
 import javax.swing.*;
+import java.awt.*;
 import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -17,8 +18,9 @@ public abstract class Util {
         return new ImageIcon(gifUrl);
     }
 
-    public static ImageIcon createImageIcon(Object object, String url, int height, int width) {
+    public static ImageIcon createImageIcon(Object object, String url, int width, int height) {
         ImageIcon imgIcon = createImageIcon(object, url);
-        return imgIcon;
+        Image scaledImg = imgIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(scaledImg);
     }
 }

@@ -53,7 +53,7 @@ public class ListingView extends JFrame {
         // Set the frame preferences
         this.setTitle(Config.TITLE);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        this.setMinimumSize(new Dimension(Config.WINDOW_WIDTH / 3, 0));
+        this.setMinimumSize(new Dimension(1200, (int) (Config.WINDOW_HEIGHT * 0.90)));
         this.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 
@@ -192,18 +192,14 @@ public class ListingView extends JFrame {
         pnlContents.add(pnlListing);
 
         // Add the product lists
-        Product[] products = new Product[6];
-        for(int i = 0; i < 6; i++) products[i] = new Product();
-
         productList = new ProductList(2, 4);
         productList.setAlignmentX(Component.CENTER_ALIGNMENT);
         productList.setBorder(new EmptyBorder(6, 6, 6, 6));
         productList.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
-        try {
-            productList.setProducts(products);
-        } catch (ItemOverflowException e) {
-            e.printStackTrace();
-        }
         pnlListing.add(productList);
+    }
+
+    public ProductList getProductList() {
+        return productList;
     }
 }

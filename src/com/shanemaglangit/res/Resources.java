@@ -32,14 +32,14 @@ public abstract class Resources {
 
         switch(weight) {
             case PLAIN:
-                fontPath = "../fonts/Poppins-Regular.ttf";
+                fontPath = "../res/fonts/Poppins-Regular.ttf";
                 break;
             case MEDIUM:
-                fontPath = "../fonts/Poppins-Medium.ttf";
+                fontPath = "../res/fonts/Poppins-Medium.ttf";
                 weightCallback = Font.BOLD;
                 break;
             case BOLD:
-                fontPath = "../fonts/Poppins-Bold.ttf";
+                fontPath = "../res/fonts/Poppins-Bold.ttf";
                 weightCallback = Font.BOLD;
                 break;
         }
