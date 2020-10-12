@@ -38,7 +38,7 @@ public class AddToCartView extends JFrame {
         this.setResizable(false);
 
         // Set the frame logo
-        this.setIconImage(Util.createImageIcon(this, Resources.LOGO_PATH).getImage());
+        this.setIconImage(Util.createImageIcon(this, "../.." +  Resources.LOGO_PATH).getImage());
 
         // Create the main panel
         pnlMain = new JPanel();
@@ -48,14 +48,14 @@ public class AddToCartView extends JFrame {
         this.getContentPane().add(pnlMain);
 
         // Create the logo
-        lblLogo = new JLabel(Util.createImageIcon(this, Resources.LOGO_EXPANDED_PATH));
+        lblLogo = new JLabel(Util.createImageIcon(this, "../.." +  Resources.LOGO_EXPANDED_PATH));
         lblLogo.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlMain.add(lblLogo);
 
         pnlMain.add(Box.createRigidArea(new Dimension(0, 16)));
 
         // Create the product image
-        lblProductImg = new JLabel(Util.createImageIcon(this, Resources.PRODUCT_PLACEHOLDER));
+        lblProductImg = new JLabel(Util.createImageIcon(this, "../.." +  Resources.PRODUCT_PLACEHOLDER));
         lblProductImg.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlMain.add(lblProductImg);
 

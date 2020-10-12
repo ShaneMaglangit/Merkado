@@ -1,8 +1,11 @@
 package com.shanemaglangit.ui.listing;
 
 import com.shanemaglangit.components.HintTextField;
+import com.shanemaglangit.components.ProductList;
 import com.shanemaglangit.config.Config;
+import com.shanemaglangit.data.Product;
 import com.shanemaglangit.res.Resources;
+import com.shanemaglangit.util.ItemOverflowException;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
@@ -38,6 +41,7 @@ public class ListingView extends JFrame {
 
     // Listing components
     private JPanel pnlListing;
+    private ProductList productList;
 
     /**
      * Constructor where all of the components of the frame are created
@@ -50,10 +54,11 @@ public class ListingView extends JFrame {
         this.setTitle(Config.TITLE);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setMinimumSize(new Dimension(Config.WINDOW_WIDTH / 3, 0));
+        this.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
         this.getContentPane().setLayout(new BoxLayout(this.getContentPane(), BoxLayout.Y_AXIS));
 
         // Set the frame logo
-        this.setIconImage(Util.createImageIcon(this, Resources.LOGO_PATH).getImage());
+        this.setIconImage(Util.createImageIcon(this, "../.." +  Resources.LOGO_PATH).getImage());
 
         // Create the header panel
         pnlHeader = new JPanel();
@@ -61,11 +66,11 @@ public class ListingView extends JFrame {
         pnlHeader.setBackground(Resources.PRIMARY);
         pnlHeader.setLayout(new BoxLayout(pnlHeader, BoxLayout.X_AXIS));
         pnlHeader.setBorder(new LineBorder(Resources.PRIMARY, 6));
-        pnlHeader.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 70));
+        pnlHeader.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
         this.getContentPane().add(pnlHeader);
 
         // Create the logo component
-        lblLogo = new JLabel(Util.createImageIcon(this, Resources.LOGO_LIGHT_EXPANDED_PATH));
+        lblLogo = new JLabel(Util.createImageIcon(this, "../.." +  Resources.LOGO_LIGHT_EXPANDED_PATH));
         pnlHeader.add(lblLogo);
 
         pnlHeader.add(Box.createRigidArea(new Dimension(12, 0)));
@@ -81,17 +86,20 @@ public class ListingView extends JFrame {
         pnlHeader.add(Box.createRigidArea(new Dimension(12, 0)));
 
         // Create the cart button
-        lblCart = new JLabel(Util.createImageIcon(this, Resources.IC_CART));
+        lblCart = new JLabel(Util.createImageIcon(this, "../.." +  Resources.IC_CART));
         pnlHeader.add(lblCart);
 
         // Create the content panel
         pnlContents = new JPanel();
         pnlContents.setAlignmentX(Component.CENTER_ALIGNMENT);
-        pnlContents.setLayout(new BoxLayout(pnlContents, BoxLayout.X_AXIS));
+        pnlContents.setLayout(new BoxLayout(pnlContents, BoxLayout.LINE_AXIS));
         this.getContentPane().add(pnlContents);
 
         // Create the filter panel
         pnlFilter = new JPanel();
+        pnlFilter.setAlignmentY(Component.TOP_ALIGNMENT);
+        pnlFilter.setAlignmentX(Component.LEFT_ALIGNMENT);
+        pnlFilter.setMaximumSize(new Dimension(200, Config.WINDOW_HEIGHT));
         pnlFilter.setLayout(new BoxLayout(pnlFilter, BoxLayout.Y_AXIS));
         pnlFilter.setBorder(new EmptyBorder(12, 12, 12, 12));
         pnlContents.add(pnlFilter);
@@ -104,7 +112,7 @@ public class ListingView extends JFrame {
 
         cbxMarket = new JComboBox<ArrayList<String>>();
         cbxMarket.setAlignmentX(Component.LEFT_ALIGNMENT);
-        cbxMarket.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
+        cbxMarket.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
         pnlFilter.add(cbxMarket);
 
         pnlFilter.add(Box.createRigidArea(new Dimension(0, 16)));
@@ -117,7 +125,7 @@ public class ListingView extends JFrame {
 
         cbxCategory = new JComboBox<ArrayList<String>>();
         cbxCategory.setAlignmentX(Component.LEFT_ALIGNMENT);
-        cbxCategory.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
+        cbxCategory.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
         pnlFilter.add(cbxCategory);
 
         pnlFilter.add(Box.createRigidArea(new Dimension(0, 16)));
@@ -134,7 +142,7 @@ public class ListingView extends JFrame {
         pnlPriceRange = new JPanel();
         pnlPriceRange.setAlignmentX(Component.LEFT_ALIGNMENT);
         pnlPriceRange.setLayout(layoutPrice);
-        pnlPriceRange.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
+        pnlPriceRange.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
         pnlFilter.add(pnlPriceRange);
 
         txtPriceMin = new HintTextField("Min");
@@ -159,8 +167,8 @@ public class ListingView extends JFrame {
         rbtnLowToHigh.setAlignmentX(Component.LEFT_ALIGNMENT);
         rbtnLowToHigh.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         rbtnLowToHigh.setFocusPainted(false);
-        rbtnLowToHigh.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
-        rbtnLowToHigh.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
+        rbtnLowToHigh.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
+        rbtnLowToHigh.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
         rbtnLowToHigh.setSelected(true);
         pnlFilter.add(rbtnLowToHigh);
 
@@ -168,8 +176,8 @@ public class ListingView extends JFrame {
         rbtnHighToLow.setAlignmentX(Component.LEFT_ALIGNMENT);
         rbtnHighToLow.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         rbtnHighToLow.setFocusPainted(false);
-        rbtnHighToLow.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
-        rbtnHighToLow.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
+        rbtnHighToLow.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
+        rbtnHighToLow.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
         pnlFilter.add(rbtnHighToLow);
 
         bgSort = new ButtonGroup();
@@ -178,6 +186,24 @@ public class ListingView extends JFrame {
 
         // Create the listing panel
         pnlListing = new JPanel();
+        pnlListing.setLayout(new BoxLayout(pnlListing, BoxLayout.Y_AXIS));
+        pnlListing.setAlignmentY(Component.TOP_ALIGNMENT);
+        pnlListing.setAlignmentX(Component.RIGHT_ALIGNMENT);
         pnlContents.add(pnlListing);
+
+        // Add the product lists
+        Product[] products = new Product[6];
+        for(int i = 0; i < 6; i++) products[i] = new Product();
+
+        productList = new ProductList(2, 4);
+        productList.setAlignmentX(Component.CENTER_ALIGNMENT);
+        productList.setBorder(new EmptyBorder(6, 6, 6, 6));
+        productList.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        try {
+            productList.setProducts(products);
+        } catch (ItemOverflowException e) {
+            e.printStackTrace();
+        }
+        pnlListing.add(productList);
     }
 }

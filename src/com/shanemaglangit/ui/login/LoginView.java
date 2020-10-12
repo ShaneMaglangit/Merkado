@@ -31,7 +31,7 @@ public class LoginView extends JFrame {
         this.setMinimumSize(new Dimension(Config.WINDOW_WIDTH / 3, 0));
 
         // Set the frame logo
-        this.setIconImage(Util.createImageIcon(this, Resources.LOGO_PATH).getImage());
+        this.setIconImage(Util.createImageIcon(this, "../.." +  Resources.LOGO_PATH).getImage());
 
         // Create the main panel
         pnlMain = new JPanel();

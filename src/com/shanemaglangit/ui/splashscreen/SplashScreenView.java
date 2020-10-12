@@ -23,10 +23,10 @@ public class SplashScreenView extends JFrame {
         this.getContentPane().setBackground(Color.WHITE);
 
         // Set the frame logo
-        this.setIconImage(Util.createImageIcon(this, Resources.LOGO_PATH).getImage());
+        this.setIconImage(Util.createImageIcon(this, "../.." + Resources.LOGO_PATH).getImage());
 
         // Add a JLabel containing the gif to the content pane.
-        lblImage = new JLabel(Util.createImageIcon(this, Resources.SPLASH_PATH));
+        lblImage = new JLabel(Util.createImageIcon(this, "../.." + Resources.SPLASH_PATH));
         lblImage.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.getContentPane().add(lblImage);
 

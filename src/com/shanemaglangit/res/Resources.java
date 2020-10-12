@@ -2,9 +2,11 @@ package com.shanemaglangit.res;
 
 import com.shanemaglangit.util.Util;
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 
 public abstract class Resources {
     public enum FontWeight {
@@ -15,14 +17,14 @@ public abstract class Resources {
     public static final Color LIGHT = Color.decode("#FFFFFF");
     public static final Color LIGHT_GRAY = new Color(0, 0, 0, (float) 0.40);
 
-    public static final String SPLASH_PATH = "../../res/images/splash.gif";
-    public static final String LOGO_PATH = "../../res/images/logo.png";
-    public static final String LOGO_EXPANDED_PATH = "../../res/images/logo-expanded.png";
-    public static final String LOGO_LIGHT_EXPANDED_PATH = "../../res/images/logo-light-expanded.png";
-    public static final String IC_CART = "../../res/images/ic_cart.png";
-    public static final String PRODUCT_PLACEHOLDER = "../../res/images/product-placeholder.png";
-    public static final String RADIO_DEFAULT = "../../res/images/radio-default.png";
-    public static final String RADIO_SELECTED = "../../res/images/radio-selected.png";
+    public static final String SPLASH_PATH = "/res/images/splash.gif";
+    public static final String LOGO_PATH = "/res/images/logo.png";
+    public static final String LOGO_EXPANDED_PATH = "/res/images/logo-expanded.png";
+    public static final String LOGO_LIGHT_EXPANDED_PATH = "/res/images/logo-light-expanded.png";
+    public static final String IC_CART = "/res/images/ic_cart.png";
+    public static final String PRODUCT_PLACEHOLDER = "/res/images/product-placeholder.png";
+    public static final String RADIO_DEFAULT = "/res/images/radio-default.png";
+    public static final String RADIO_SELECTED = "/res/images/radio-selected.png";
 
     public static Font createPoppinsFont(FontWeight weight, int size) {
         String fontPath = "";
@@ -30,14 +32,14 @@ public abstract class Resources {
 
         switch(weight) {
             case PLAIN:
-                fontPath = "../res/fonts/Poppins-Regular.ttf";
+                fontPath = "../fonts/Poppins-Regular.ttf";
                 break;
             case MEDIUM:
-                fontPath = "../res/fonts/Poppins-Medium.ttf";
+                fontPath = "../fonts/Poppins-Medium.ttf";
                 weightCallback = Font.BOLD;
                 break;
             case BOLD:
-                fontPath = "../res/fonts/Poppins-Bold.ttf";
+                fontPath = "../fonts/Poppins-Bold.ttf";
                 weightCallback = Font.BOLD;
                 break;
         }

@@ -1,5 +1,7 @@
 package com.shanemaglangit.ui.listing;
 
+import javax.swing.*;
+
 public class ListingController {
     private ListingView view;
 
@@ -17,6 +19,7 @@ public class ListingController {
      */
     private void showView() {
         view.pack();
+        view.setExtendedState(JFrame.MAXIMIZED_BOTH);
         view.setLocationRelativeTo(null);
         view.setVisible(true);
     }

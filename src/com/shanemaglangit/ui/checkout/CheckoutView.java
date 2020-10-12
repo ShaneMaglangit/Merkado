@@ -46,7 +46,7 @@ public class CheckoutView extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         // Set the frame logo
-        this.setIconImage(Util.createImageIcon(this, Resources.LOGO_PATH).getImage());
+        this.setIconImage(Util.createImageIcon(this, "../.." +  Resources.LOGO_PATH).getImage());
 
         // Create the main panel
         pnlMain = new JPanel();
@@ -96,8 +96,8 @@ public class CheckoutView extends JFrame {
         rbtnCard.setFocusPainted(false);
         rbtnCard.setBackground(Color.WHITE);
         rbtnCard.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
-        rbtnCard.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
-        rbtnCard.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
+        rbtnCard.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
+        rbtnCard.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
         rbtnCard.setSelected(true);
         pnlPaymentOption.add(rbtnCard);
 
@@ -106,8 +106,8 @@ public class CheckoutView extends JFrame {
         rbtnCOD.setFocusPainted(false);
         rbtnCOD.setBackground(Color.WHITE);
         rbtnCOD.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
-        rbtnCOD.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
-        rbtnCOD.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
+        rbtnCOD.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
+        rbtnCOD.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
         rbtnCOD.setSelected(true);
         pnlPaymentOption.add(rbtnCOD);
 
@@ -154,7 +154,7 @@ public class CheckoutView extends JFrame {
         pnlMain.add(Box.createRigidArea(new Dimension(0, 12)));
 
         // Create the total summary
-        lblTotal = new JLabel("Total: PHP 0.0");
+        lblTotal = new JLabel("Total: PHP 0.00");
         lblTotal.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblTotal.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
         pnlMain.add(lblTotal);
