@@ -1,6 +1,7 @@
 package com.shanemaglangit.ui.listing;
 
 import com.shanemaglangit.components.HintTextField;
+import com.shanemaglangit.components.OrderList;
 import com.shanemaglangit.components.ProductList;
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.res.Resources;
@@ -51,21 +52,30 @@ public class ListingView extends JFrame {
     // Cart Components
     private JPanel pnlFiller;
     private JPanel pnlCart;
+
     private JPanel pnlCartInner;
+
     private JPanel pnlCartHeader;
     private JButton btnClose;
     private JLabel lblHeader;
-    private JPanel orderList;
+
+    private JScrollPane orderScrollPane;
+    private OrderList orderList;
+
     private JSeparator separatorCartInner;
+
     private JPanel pnlSubTotal;
     private JLabel lblSubTotalText;
     private JLabel lblSubTotal;
+
     private JPanel pnlServiceFee;
     private JLabel lblServiceFeeText;
     private JLabel lblServiceFee;
+
     private JPanel pnlTotal;
     private JLabel lblTotalText;
     private JLabel lblTotal;
+
     private JButton btnCheckout;
 
     /**
@@ -284,7 +294,7 @@ public class ListingView extends JFrame {
         pnlCart = new JPanel();
         pnlCart.setLayout(new BoxLayout(pnlCart, BoxLayout.Y_AXIS));
         pnlCart.setBackground(Color.WHITE);
-        pnlCart.setMaximumSize(new Dimension(400, Config.WINDOW_HEIGHT));
+        pnlCart.setMaximumSize(new Dimension(350, Config.WINDOW_HEIGHT));
         pnlCart.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlOverlay.add(pnlCart);
 
@@ -319,11 +329,14 @@ public class ListingView extends JFrame {
         pnlCartHeader.add(lblHeader);
 
         // Create the order list
-        orderList = new JPanel();
+        orderList = new OrderList();
         orderList.setBackground(Color.WHITE);
-        orderList.setAlignmentX(Component.CENTER_ALIGNMENT);
-        orderList.setAlignmentY(Component.CENTER_ALIGNMENT);
-        pnlCartInner.add(orderList);
+
+        orderScrollPane = new JScrollPane(orderList);
+        orderScrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
+        orderScrollPane.setAlignmentY(Component.CENTER_ALIGNMENT);
+        orderScrollPane.setBorder(null);
+        pnlCartInner.add(orderScrollPane);
 
         // Add separator
         pnlCartInner.add(Box.createRigidArea(new Dimension(0, 8)));
@@ -416,5 +429,9 @@ public class ListingView extends JFrame {
 
     public JButton getBtnClose() {
         return btnClose;
+    }
+
+    public OrderList getOrderList() {
+        return orderList;
     }
 }

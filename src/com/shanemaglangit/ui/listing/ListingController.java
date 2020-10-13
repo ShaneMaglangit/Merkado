@@ -1,5 +1,6 @@
 package com.shanemaglangit.ui.listing;
 
+import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.Product;
 import com.shanemaglangit.util.ItemOverflowException;
 import com.shanemaglangit.util.Util;
@@ -20,6 +21,7 @@ public class ListingController {
         this.view = view;
         showView();
         setProducts();
+        setOrders();
         attachListeners();
     }
 
@@ -50,6 +52,7 @@ public class ListingController {
      * Set the product to the product list component
      */
     private void setProducts() {
+        // Create mock products
         try {
             Product[] products = new Product[15];
             for(int i = 0; i < 15; i++) products[i] = new Product();
@@ -57,6 +60,16 @@ public class ListingController {
         } catch (ItemOverflowException e) {
             Util.log(Level.SEVERE, e.getMessage());
         }
+    }
+
+    /**
+     * Set the order to the order list component
+     */
+    private void setOrders() {
+        // Creates mock orders
+        Order[] orders = new Order[20];
+        for(int i = 0; i < orders.length; i++) orders[i] = new Order();
+        view.getOrderList().setOrders(orders);
     }
 
     /**
