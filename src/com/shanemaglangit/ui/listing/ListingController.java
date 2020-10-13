@@ -35,14 +35,8 @@ public class ListingController {
      * Attach listeners to the view components
      */
     private void attachListeners() {
-        view.getLblCart().addMouseListener(new MouseListener() {
-            @Override public void mouseClicked(MouseEvent e) { toggleCartVisibility(); }
-            @Override public void mousePressed(MouseEvent e) { }
-            @Override public void mouseReleased(MouseEvent e) { }
-            @Override public void mouseEntered(MouseEvent e) { }
-            @Override public void mouseExited(MouseEvent e) { }
-        });
-
+        view.getBtnCart().addActionListener(e -> toggleCartVisibility());
+        view.getBtnClose().addActionListener(e -> toggleCartVisibility());
         view.getPnlFiller().addMouseListener(new MouseListener() {
             @Override public void mouseClicked(MouseEvent e) { toggleCartVisibility(); }
             @Override public void mousePressed(MouseEvent e) { }
@@ -57,8 +51,8 @@ public class ListingController {
      */
     private void setProducts() {
         try {
-            Product[] products = new Product[20];
-            for(int i = 0; i < 20; i++) products[i] = new Product();
+            Product[] products = new Product[15];
+            for(int i = 0; i < 15; i++) products[i] = new Product();
             view.getProductList().setProducts(products);
         } catch (ItemOverflowException e) {
             Util.log(Level.SEVERE, e.getMessage());

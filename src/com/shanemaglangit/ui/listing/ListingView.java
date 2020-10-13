@@ -23,7 +23,7 @@ public class ListingView extends JFrame {
     private JPanel pnlHeader;
     private JLabel lblLogo;
     private HintTextField txtSearch;
-    private JLabel lblCart;
+    private JButton btnCart;
 
     // Content components
     private JPanel pnlContents;
@@ -51,6 +51,22 @@ public class ListingView extends JFrame {
     // Cart Components
     private JPanel pnlFiller;
     private JPanel pnlCart;
+    private JPanel pnlCartInner;
+    private JPanel pnlCartHeader;
+    private JButton btnClose;
+    private JLabel lblHeader;
+    private JPanel orderList;
+    private JSeparator separatorCartInner;
+    private JPanel pnlSubTotal;
+    private JLabel lblSubTotalText;
+    private JLabel lblSubTotal;
+    private JPanel pnlServiceFee;
+    private JLabel lblServiceFeeText;
+    private JLabel lblServiceFee;
+    private JPanel pnlTotal;
+    private JLabel lblTotalText;
+    private JLabel lblTotal;
+    private JButton btnCheckout;
 
     /**
      * Constructor where all of the components of the frame are created
@@ -62,6 +78,7 @@ public class ListingView extends JFrame {
         // Set the frame preferences
         this.setTitle(Config.TITLE);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setResizable(false);
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.setMinimumSize(new Dimension(1200, (int) (Config.WINDOW_HEIGHT * 0.90)));
         this.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
@@ -120,8 +137,11 @@ public class ListingView extends JFrame {
         pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
 
         // Create the cart button
-        lblCart = new JLabel(Util.createImageIcon(this, "../.." +  Resources.IC_CART));
-        pnlHeader.add(lblCart);
+        btnCart = new JButton(Util.createImageIcon(this, "../.." +  Resources.IC_CART));
+        btnCart.setFocusPainted(false);
+        btnCart.setBorder(null);
+        btnCart.setBackground(Resources.PRIMARY);
+        pnlHeader.add(btnCart);
 
         pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
 
@@ -135,6 +155,7 @@ public class ListingView extends JFrame {
         pnlFilter = new JPanel();
         pnlFilter.setAlignmentY(Component.TOP_ALIGNMENT);
         pnlFilter.setAlignmentX(Component.LEFT_ALIGNMENT);
+        pnlFilter.setBackground(Color.WHITE);
         pnlFilter.setMaximumSize(new Dimension(200, Config.WINDOW_HEIGHT));
         pnlFilter.setLayout(new BoxLayout(pnlFilter, BoxLayout.Y_AXIS));
         pnlFilter.setBorder(new EmptyBorder(12, 12, 12, 12));
@@ -148,6 +169,7 @@ public class ListingView extends JFrame {
 
         cbxMarket = new JComboBox<ArrayList<String>>();
         cbxMarket.setAlignmentX(Component.LEFT_ALIGNMENT);
+        cbxMarket.setBackground(Color.WHITE);
         cbxMarket.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
         pnlFilter.add(cbxMarket);
 
@@ -161,6 +183,7 @@ public class ListingView extends JFrame {
 
         cbxCategory = new JComboBox<ArrayList<String>>();
         cbxCategory.setAlignmentX(Component.LEFT_ALIGNMENT);
+        cbxCategory.setBackground(Color.WHITE);
         cbxCategory.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
         pnlFilter.add(cbxCategory);
 
@@ -178,6 +201,7 @@ public class ListingView extends JFrame {
         pnlPriceRange = new JPanel();
         pnlPriceRange.setAlignmentX(Component.LEFT_ALIGNMENT);
         pnlPriceRange.setLayout(layoutPrice);
+        pnlPriceRange.setBackground(Color.WHITE);
         pnlPriceRange.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
         pnlFilter.add(pnlPriceRange);
 
@@ -203,6 +227,7 @@ public class ListingView extends JFrame {
         rbtnLowToHigh.setAlignmentX(Component.LEFT_ALIGNMENT);
         rbtnLowToHigh.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         rbtnLowToHigh.setFocusPainted(false);
+        rbtnLowToHigh.setBackground(Color.WHITE);
         rbtnLowToHigh.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
         rbtnLowToHigh.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
         rbtnLowToHigh.setSelected(true);
@@ -212,6 +237,7 @@ public class ListingView extends JFrame {
         rbtnHighToLow.setAlignmentX(Component.LEFT_ALIGNMENT);
         rbtnHighToLow.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         rbtnHighToLow.setFocusPainted(false);
+        rbtnHighToLow.setBackground(Color.WHITE);
         rbtnHighToLow.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
         rbtnHighToLow.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
         pnlFilter.add(rbtnHighToLow);
@@ -254,19 +280,126 @@ public class ListingView extends JFrame {
         pnlFiller.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlOverlay.add(pnlFiller);
 
+        // Create the cart panel
         pnlCart = new JPanel();
-        pnlCart.setBackground(Resources.PRIMARY);
+        pnlCart.setLayout(new BoxLayout(pnlCart, BoxLayout.Y_AXIS));
+        pnlCart.setBackground(Color.WHITE);
         pnlCart.setMaximumSize(new Dimension(400, Config.WINDOW_HEIGHT));
         pnlCart.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlOverlay.add(pnlCart);
+
+        // Create the inner cart components
+        pnlCartInner = new JPanel();
+        pnlCartInner.setBorder(new EmptyBorder(8, 8, 8, 8));
+        pnlCartInner.setAlignmentX(Component.CENTER_ALIGNMENT);
+        pnlCartInner.setBackground(Color.WHITE);
+        pnlCartInner.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        pnlCartInner.setLayout(new BoxLayout(pnlCartInner, BoxLayout.Y_AXIS));
+        pnlCart.add(pnlCartInner);
+
+        // Create the cart header
+        pnlCartHeader = new JPanel();
+        pnlCartHeader.setBackground(Color.WHITE);
+        pnlCartHeader.setLayout(new FlowLayout(FlowLayout.LEFT));
+        pnlCartHeader.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 35));
+        pnlCartInner.add(pnlCartHeader);
+
+        // Create the close button
+        btnClose = new JButton();
+        btnClose.setIcon(Util.createImageIcon(this, "../.." + Resources.IC_RIGHT_ARROW));
+        btnClose.setBackground(Color.WHITE);
+        btnClose.setBorder(null);
+        btnClose.setFocusPainted(false);
+        pnlCartHeader.add(btnClose);
+
+        // Create the header text
+        lblHeader = new JLabel("Your Cart");
+        lblHeader.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 21));
+        lblHeader.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        pnlCartHeader.add(lblHeader);
+
+        // Create the order list
+        orderList = new JPanel();
+        orderList.setBackground(Color.WHITE);
+        orderList.setAlignmentX(Component.CENTER_ALIGNMENT);
+        orderList.setAlignmentY(Component.CENTER_ALIGNMENT);
+        pnlCartInner.add(orderList);
+
+        // Add separator
+        pnlCartInner.add(Box.createRigidArea(new Dimension(0, 8)));
+
+        separatorCartInner = new JSeparator();
+        separatorCartInner.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 2));
+        pnlCartInner.add(separatorCartInner);
+
+        pnlCartInner.add(Box.createRigidArea(new Dimension(0, 8)));
+
+        // Create the sub total components
+        pnlSubTotal = new JPanel();
+        pnlSubTotal.setBackground(Color.WHITE);
+        pnlSubTotal.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 30));
+        pnlSubTotal.setLayout(new GridLayout(1, 2));
+        pnlCartInner.add(pnlSubTotal);
+
+        lblSubTotalText = new JLabel("Sub Total");
+        lblSubTotalText.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
+        pnlSubTotal.add(lblSubTotalText);
+
+        lblSubTotal = new JLabel("PHP 0.00");
+        lblSubTotal.setHorizontalAlignment(JLabel.RIGHT);
+        lblSubTotal.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
+        pnlSubTotal.add(lblSubTotal);
+
+        // Create the service fee components
+        pnlServiceFee = new JPanel();
+        pnlServiceFee.setBackground(Color.WHITE);
+        pnlServiceFee.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 30));
+        pnlServiceFee.setLayout(new GridLayout(1, 2));
+        pnlCartInner.add(pnlServiceFee);
+
+        lblServiceFeeText = new JLabel("Service Fee");
+        lblServiceFeeText.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
+        pnlServiceFee.add(lblServiceFeeText);
+
+        lblServiceFee = new JLabel("PHP 0.00");
+        lblServiceFee.setHorizontalAlignment(JLabel.RIGHT);
+        lblServiceFee.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
+        pnlServiceFee.add(lblServiceFee);
+
+        // Create the total components
+        pnlTotal = new JPanel();
+        pnlTotal.setBackground(Color.WHITE);
+        pnlTotal.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 30));
+        pnlTotal.setLayout(new GridLayout(1, 2));
+        pnlCartInner.add(pnlTotal);
+
+        lblTotalText = new JLabel("Total");
+        lblTotalText.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
+        pnlTotal.add(lblTotalText);
+
+        lblTotal = new JLabel("PHP 0.00");
+        lblTotal.setHorizontalAlignment(JLabel.RIGHT);
+        lblTotal.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
+        pnlTotal.add(lblTotal);
+
+        // Create the checkout button
+        btnCheckout = new JButton("CHECKOUT");
+        btnCheckout.setBackground(Resources.PRIMARY);
+        btnCheckout.setForeground(Resources.LIGHT);
+        btnCheckout.setAlignmentX(Component.CENTER_ALIGNMENT);
+        btnCheckout.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
+        btnCheckout.setFocusPainted(false);
+        btnCheckout.setBorder(null);
+        btnCheckout.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 35));
+        pnlCart.add(btnCheckout);
     }
 
     public ProductList getProductList() {
         return productList;
     }
 
-    public JLabel getLblCart() {
-        return lblCart;
+    public JButton getBtnCart() {
+        return btnCart;
     }
 
     public JPanel getPnlOverlay() {
@@ -275,5 +408,13 @@ public class ListingView extends JFrame {
 
     public JPanel getPnlFiller() {
         return pnlFiller;
+    }
+
+    public JButton getBtnCheckout() {
+        return btnCheckout;
+    }
+
+    public JButton getBtnClose() {
+        return btnClose;
     }
 }

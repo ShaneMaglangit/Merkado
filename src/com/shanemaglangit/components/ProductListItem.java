@@ -33,15 +33,20 @@ public class ProductListItem extends JPanel {
         // Add the product name
         lblName = new JLabel();
         lblName.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lblName.setHorizontalAlignment(JLabel.LEFT);
+        lblName.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 10));
+        lblName.setBorder(new EmptyBorder(0, 10, 0, 10));
         lblName.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
         this.add(lblName);
-
-        this.add(Box.createRigidArea(new Dimension(0, 4)));
 
         // Add the product name
         lblPrice = new JLabel();
         lblPrice.setAlignmentX(Component.CENTER_ALIGNMENT);
+        lblPrice.setHorizontalAlignment(JLabel.LEFT);
+        lblPrice.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 10));
+        lblPrice.setBorder(new EmptyBorder(0, 10, 0, 10));
         lblPrice.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
+        lblPrice.setForeground(Resources.PRIMARY);
         this.add(lblPrice);
 
         this.add(Box.createRigidArea(new Dimension(0, 4)));
