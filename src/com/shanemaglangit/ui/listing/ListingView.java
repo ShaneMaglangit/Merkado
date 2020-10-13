@@ -403,7 +403,8 @@ public class ListingView extends JFrame {
         btnCheckout.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
         btnCheckout.setFocusPainted(false);
         btnCheckout.setBorder(null);
-        btnCheckout.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 35));
+        btnCheckout.setMinimumSize(new Dimension(350, 50));
+        btnCheckout.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 50));
         pnlCart.add(btnCheckout);
     }
 

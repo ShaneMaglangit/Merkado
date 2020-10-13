@@ -2,6 +2,7 @@ package com.shanemaglangit.ui.listing;
 
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.Product;
+import com.shanemaglangit.navigation.Navigation;
 import com.shanemaglangit.util.ItemOverflowException;
 import com.shanemaglangit.util.Util;
 
@@ -46,6 +47,7 @@ public class ListingController {
             @Override public void mouseEntered(MouseEvent e) { }
             @Override public void mouseExited(MouseEvent e) { }
         });
+        view.getBtnCheckout().addActionListener(e -> Navigation.checkout());
     }
 
     /**
