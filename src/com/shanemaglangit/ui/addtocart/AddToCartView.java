@@ -4,6 +4,7 @@ import com.shanemaglangit.components.HintTextField;
 import com.shanemaglangit.components.RoundedButton;
 import com.shanemaglangit.components.RoundedTextField;
 import com.shanemaglangit.config.Config;
+import com.shanemaglangit.data.Product;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
@@ -15,9 +16,8 @@ import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.text.NumberFormat;
 
-public class AddToCartView extends JFrame {
+public class AddToCartView extends JDialog {
     private JPanel pnlMain;
-    private JLabel lblLogo;
     private JLabel lblProductImg;
     private JLabel lblProductName;
     private JLabel lblPrice;
@@ -29,7 +29,8 @@ public class AddToCartView extends JFrame {
      * Constructor where all of the components of the frame are created
      * @throws HeadlessException
      */
-    public AddToCartView() throws HeadlessException {
+    public AddToCartView(Frame owner, Product product) throws HeadlessException {
+        super(owner, true);
         GridLayout pnlInputBorder;
         NumberFormatter numberFormatter;
 
@@ -46,13 +47,6 @@ public class AddToCartView extends JFrame {
         pnlMain.setLayout(new BoxLayout(pnlMain, BoxLayout.Y_AXIS));
         pnlMain.setBorder(new EmptyBorder(18, 18, 18, 18));
         this.getContentPane().add(pnlMain);
-
-        // Create the logo
-        lblLogo = new JLabel(Util.createImageIcon(this, "../.." +  Resources.LOGO_EXPANDED_PATH));
-        lblLogo.setAlignmentX(Component.CENTER_ALIGNMENT);
-        pnlMain.add(lblLogo);
-
-        pnlMain.add(Box.createRigidArea(new Dimension(0, 16)));
 
         // Create the product image
         lblProductImg = new JLabel(Util.createImageIcon(this, "../.." +  Resources.PRODUCT_PLACEHOLDER));

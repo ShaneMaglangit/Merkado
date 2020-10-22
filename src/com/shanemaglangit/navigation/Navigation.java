@@ -1,5 +1,6 @@
 package com.shanemaglangit.navigation;
 
+import com.shanemaglangit.data.Product;
 import com.shanemaglangit.ui.addtocart.AddToCartController;
 import com.shanemaglangit.ui.addtocart.AddToCartView;
 import com.shanemaglangit.ui.checkout.CheckoutController;
@@ -10,6 +11,8 @@ import com.shanemaglangit.ui.login.LoginController;
 import com.shanemaglangit.ui.login.LoginView;
 import com.shanemaglangit.ui.splashscreen.SplashScreenController;
 import com.shanemaglangit.ui.splashscreen.SplashScreenView;
+
+import java.awt.*;
 
 public abstract class Navigation {
 
@@ -28,13 +31,13 @@ public abstract class Navigation {
         ListingController listingController = new ListingController(listingView);
     }
 
-    public static void addToCart() {
-        AddToCartView addToCartView = new AddToCartView();
+    public static void addToCart(Frame owner, Product product) {
+        AddToCartView addToCartView = new AddToCartView(owner, product);
         AddToCartController addToCartController = new AddToCartController(addToCartView);
     }
 
-    public static void checkout() {
-        CheckoutView checkoutView = new CheckoutView();
+    public static void checkout(Frame owner) {
+        CheckoutView checkoutView = new CheckoutView(owner);
         CheckoutController checkoutController = new CheckoutController(checkoutView);
     }
 }
