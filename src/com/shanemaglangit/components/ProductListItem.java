@@ -72,4 +72,8 @@ public class ProductListItem extends JPanel {
             lblName.setText("");
         }
     }
+
+    public Product getProduct() {
+        return product;
+    }
 }

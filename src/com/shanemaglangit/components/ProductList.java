@@ -9,10 +9,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 public class ProductList extends JPanel {
     private ProductListItem[] productListItems;
+
+    private ProductListClickListener clickListener;
 
     private int row;
     private int col;
@@ -30,8 +34,22 @@ public class ProductList extends JPanel {
 
         // Create the containers
         for(int i = 0; i < productListItems.length; i++) {
-            productListItems[i] = new ProductListItem();
-            add(productListItems[i]);
+            ProductListItem productListItem = new ProductListItem();
+            productListItem.addMouseListener(new MouseListener() {
+                @Override public void mouseClicked(MouseEvent e) {
+                    Product product = productListItem.getProduct();
+                    if(clickListener != null && product != null) {
+                        clickListener.onClick(product);
+                    }
+                }
+
+                @Override public void mousePressed(MouseEvent e) { }
+                @Override public void mouseReleased(MouseEvent e) { }
+                @Override public void mouseEntered(MouseEvent e) { }
+                @Override public void mouseExited(MouseEvent e) { }
+            });
+            productListItems[i] = productListItem;
+            this.add(productListItem);
         }
     }
 
@@ -48,5 +66,9 @@ public class ProductList extends JPanel {
             if(i >= products.length) productListItems[i].setProduct(null);
             else productListItems[i].setProduct(products[i]);
         }
+    }
+
+    public void setClickListener(ProductListClickListener clickListener) {
+        this.clickListener = clickListener;
     }
 }

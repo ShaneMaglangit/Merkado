@@ -1,5 +1,6 @@
 package com.shanemaglangit.ui.listing;
 
+import com.shanemaglangit.components.ProductListClickListener;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.Product;
 import com.shanemaglangit.navigation.Navigation;
@@ -47,7 +48,8 @@ public class ListingController {
             @Override public void mouseEntered(MouseEvent e) { }
             @Override public void mouseExited(MouseEvent e) { }
         });
-        view.getBtnCheckout().addActionListener(e -> Navigation.checkout());
+        view.getBtnCheckout().addActionListener(e -> Navigation.checkout(view));
+        view.getProductList().setClickListener(product -> Navigation.addToCart(view, product));
     }
 
     /**

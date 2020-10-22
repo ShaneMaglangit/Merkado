@@ -394,7 +394,7 @@ public class ListingView extends JFrame {
         lblTotal.setHorizontalAlignment(JLabel.RIGHT);
         lblTotal.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
         pnlTotal.add(lblTotal);
-
+        
         // Create the checkout button
         btnCheckout = new JButton("CHECKOUT");
         btnCheckout.setBackground(Resources.PRIMARY);
