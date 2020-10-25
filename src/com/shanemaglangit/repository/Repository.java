@@ -1,5 +1,6 @@
 package com.shanemaglangit.repository;
 
+import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.PagedLinkedList;
 import com.shanemaglangit.data.Product;
@@ -8,18 +9,13 @@ import com.shanemaglangit.data.SinglyLinkedList;
 import java.util.UUID;
 
 public class Repository {
-    private static final String PRODUCT_FILE = "";
-    private static final String ORDER_FILE = "";
-
-    public static final int PRODUCT_PER_PAGE = 50;
-
     private static Repository instance;
 
     private PagedLinkedList<Product> productList;
     private SinglyLinkedList<Order> orderList;
 
     private Repository() {
-        this.productList = new PagedLinkedList<>(PRODUCT_PER_PAGE);
+        this.productList = new PagedLinkedList<>(Config.PRODUCT_PER_PAGE);
         this.orderList = new SinglyLinkedList<>();
 
         // Create mock products
@@ -42,6 +38,13 @@ public class Repository {
     }
 
     public void addOrder(Order order) {
+        for(int i = 0; i < orderList.getSize(); i++) {
+            Order currentOrder = orderList.get(i);
+            if(currentOrder.getProduct().getProductId() == order.getProduct().getProductId()) {
+                currentOrder.setQuantity(currentOrder.getQuantity() + order.getQuantity());
+                return;
+            }
+        }
         orderList.add(order);
     }
 
