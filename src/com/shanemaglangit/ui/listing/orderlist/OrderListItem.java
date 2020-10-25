@@ -22,10 +22,7 @@ public class OrderListItem extends JPanel {
     public OrderListItem(Order order) {
         this.order = order;
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
-        this.setAlignmentX(Component.CENTER_ALIGNMENT);
         this.setBackground(Color.WHITE);
-        this.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
-        this.setBorder(new EmptyBorder(8, 8, 8, 8));
 
         // Create the image
         lblImage = new JLabel(Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH));

@@ -6,6 +6,7 @@ import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.ui.listing.orderlist.OrderList;
 import com.shanemaglangit.ui.listing.productlist.ProductList;
 import com.shanemaglangit.util.Util;
+import org.w3c.dom.css.RGBColor;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -285,9 +286,9 @@ public class ListingView extends JFrame {
 
         // Create the cart overlay components
         pnlFiller = new JPanel();
-        pnlFiller.setOpaque(false);
         pnlFiller.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
         pnlFiller.setAlignmentX(Component.CENTER_ALIGNMENT);
+        pnlFiller.setBackground(new Color(0, 0, 0, (float) 0.2));
         pnlOverlay.add(pnlFiller);
 
         // Create the cart panel

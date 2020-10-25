@@ -1,18 +1,31 @@
 package com.shanemaglangit.ui.listing.orderlist;
 
 import com.shanemaglangit.data.Order;
+import com.shanemaglangit.data.SinglyLinkedList;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+import java.awt.*;
 
 public class OrderList extends JPanel {
     public OrderList() {
         super();
-        this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        this.setLayout(new SpringLayout());
     }
 
-    public void setOrders(Order[] orders) {
+    public void setOrders(SinglyLinkedList<Order> orders) {
+        SpringLayout layout = (SpringLayout) getLayout();
+
         this.removeAll();
 
-        for(Order order : orders) this.add(new OrderListItem(order));
+        for(int i = 0; i < orders.getSize(); i++) {
+            OrderListItem current = new OrderListItem(orders.get(i));
+
+            add(current);
+            if(i == 0) layout.putConstraint(SpringLayout.NORTH, current, 4, SpringLayout.NORTH, this);
+            else layout.putConstraint(SpringLayout.NORTH, current, 4, SpringLayout.SOUTH, getComponent(i - 1));
+            layout.putConstraint(SpringLayout.WEST, current, 0, SpringLayout.WEST, this);
+            layout.putConstraint(SpringLayout.EAST, current, 0, SpringLayout.EAST, this);
+        }
     }
 }

@@ -32,8 +32,8 @@ public abstract class Navigation {
     }
 
     public static void addToCart(Frame owner, Product product) {
-        AddToCartView addToCartView = new AddToCartView(owner, product);
-        AddToCartController addToCartController = new AddToCartController(addToCartView);
+        AddToCartView addToCartView = new AddToCartView(owner);
+        AddToCartController addToCartController = new AddToCartController(addToCartView, product);
     }
 
     public static void checkout(Frame owner) {

@@ -25,7 +25,6 @@ public class ListingController {
         this.repository = Repository.getInstance();
         showView();
         setProducts();
-        setOrders();
         attachListeners();
     }
 
@@ -69,10 +68,7 @@ public class ListingController {
      * Set the order to the order list component
      */
     private void setOrders() {
-        // Creates mock orders
-        Order[] orders = new Order[20];
-        for(int i = 0; i < orders.length; i++) orders[i] = new Order();
-        view.getOrderList().setOrders(orders);
+        view.getOrderList().setOrders(repository.getOrderList());
     }
 
     /**
@@ -81,5 +77,6 @@ public class ListingController {
     private void toggleCartVisibility() {
         JPanel pnlOverlay = view.getPnlOverlay();
         pnlOverlay.setVisible(!pnlOverlay.isVisible());
+        if(pnlOverlay.isVisible()) setOrders();
     }
 }

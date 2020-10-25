@@ -4,6 +4,7 @@ import com.shanemaglangit.components.HintTextField;
 import com.shanemaglangit.components.RoundedButton;
 import com.shanemaglangit.components.RoundedTextField;
 import com.shanemaglangit.config.Config;
+import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.Product;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
@@ -29,7 +30,7 @@ public class AddToCartView extends JDialog {
      * Constructor where all of the components of the frame are created
      * @throws HeadlessException
      */
-    public AddToCartView(Frame owner, Product product) throws HeadlessException {
+    public AddToCartView(Frame owner) throws HeadlessException {
         super(owner, true);
         GridLayout pnlInputBorder;
         NumberFormatter numberFormatter;
@@ -102,14 +103,6 @@ public class AddToCartView extends JDialog {
         btnConfirm.setBackground(Resources.PRIMARY);
         btnConfirm.setBorder(null);
         pnlInput.add(btnConfirm);
-    }
-
-    public JLabel getLblProductName() {
-        return lblProductName;
-    }
-
-    public JLabel getLblPrice() {
-        return lblPrice;
     }
 
     public JFormattedTextField getTxtQuantity() {
