@@ -1,9 +1,9 @@
 package com.shanemaglangit.ui.listing;
 
-import com.shanemaglangit.components.ProductListClickListener;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.Product;
 import com.shanemaglangit.navigation.Navigation;
+import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.util.ItemOverflowException;
 import com.shanemaglangit.util.Util;
 
@@ -13,6 +13,7 @@ import java.awt.event.MouseListener;
 import java.util.logging.Level;
 
 public class ListingController {
+    private Repository repository;
     private ListingView view;
 
     /**
@@ -21,6 +22,7 @@ public class ListingController {
      */
     public ListingController(ListingView view) {
         this.view = view;
+        this.repository = Repository.getInstance();
         showView();
         setProducts();
         setOrders();
@@ -56,11 +58,8 @@ public class ListingController {
      * Set the product to the product list component
      */
     private void setProducts() {
-        // Create mock products
         try {
-            Product[] products = new Product[15];
-            for(int i = 0; i < 15; i++) products[i] = new Product();
-            view.getProductList().setProducts(products);
+            view.getProductList().setProducts(repository.getProductList(0));
         } catch (ItemOverflowException e) {
             Util.log(Level.SEVERE, e.getMessage());
         }

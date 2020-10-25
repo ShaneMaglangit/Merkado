@@ -14,8 +14,8 @@ public abstract class Util {
     }
 
     public static ImageIcon createImageIcon(Object object, String url) {
-        URL gifUrl = object.getClass().getResource(url);
-        return new ImageIcon(gifUrl);
+        URL imgUrl = object.getClass().getResource(url);
+        return new ImageIcon(imgUrl);
     }
 
     public static ImageIcon createImageIcon(Object object, String url, int width, int height) {

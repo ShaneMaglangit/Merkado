@@ -1,11 +1,8 @@
-package com.shanemaglangit.components;
+package com.shanemaglangit.ui.listing.orderlist;
 
 import com.shanemaglangit.data.Order;
-import com.shanemaglangit.data.Product;
-import com.shanemaglangit.util.ItemOverflowException;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class OrderList extends JPanel {
     public OrderList() {

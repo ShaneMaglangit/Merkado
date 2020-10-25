@@ -1,4 +1,4 @@
-package com.shanemaglangit.components;
+package com.shanemaglangit.ui.listing.productlist;
 
 import com.shanemaglangit.data.Product;
 

@@ -1,10 +1,10 @@
 package com.shanemaglangit.ui.listing;
 
 import com.shanemaglangit.components.HintTextField;
-import com.shanemaglangit.components.OrderList;
-import com.shanemaglangit.components.ProductList;
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.res.Resources;
+import com.shanemaglangit.ui.listing.orderlist.OrderList;
+import com.shanemaglangit.ui.listing.productlist.ProductList;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;

@@ -1,4 +1,4 @@
-package com.shanemaglangit.components;
+package com.shanemaglangit.ui.listing.orderlist;
 
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
@@ -28,7 +28,7 @@ public class OrderListItem extends JPanel {
         this.setBorder(new EmptyBorder(8, 8, 8, 8));
 
         // Create the image
-        lblImage = new JLabel(Util.createImageIcon(this, ".." + Resources.LOGO_PATH));
+        lblImage = new JLabel(Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH));
         lblImage.setBackground(Color.WHITE);
         lblImage.setBorder(new EmptyBorder(8, 8, 8, 16));
         this.add(lblImage);

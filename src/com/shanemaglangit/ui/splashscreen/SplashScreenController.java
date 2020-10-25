@@ -46,8 +46,8 @@ public class SplashScreenController {
         }
         // Stop the splash screen and navigate to login
         finally {
-            Navigation.login();
             view.dispose();
+            Navigation.login();
         }
     }
 }

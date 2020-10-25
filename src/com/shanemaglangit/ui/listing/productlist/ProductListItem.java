@@ -1,4 +1,4 @@
-package com.shanemaglangit.components;
+package com.shanemaglangit.ui.listing.productlist;
 
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Product;
@@ -63,7 +63,7 @@ public class ProductListItem extends JPanel {
             this.setBackground(Color.WHITE);
             lblPrice.setText("PHP 0.00");
             lblName.setText("Product Name");
-            ImageIcon imgProduct = Util.createImageIcon(this, ".." + Resources.LOGO_PATH);
+            ImageIcon imgProduct = Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH);
             lblImage.setIcon(imgProduct);
         } else {
             this.setBackground(null);

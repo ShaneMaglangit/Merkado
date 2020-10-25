@@ -31,7 +31,7 @@ public class LoginController {
      * Authenticates the user
      */
     private void login() {
-        Navigation.listing();
         view.dispose();
+        Navigation.listing();
     }
 }

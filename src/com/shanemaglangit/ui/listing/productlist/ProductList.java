@@ -1,17 +1,14 @@
-package com.shanemaglangit.components;
+package com.shanemaglangit.ui.listing.productlist;
 
-import com.shanemaglangit.config.Config;
+import com.shanemaglangit.data.PagedLinkedList;
 import com.shanemaglangit.data.Product;
-import com.shanemaglangit.res.Resources;
+import com.shanemaglangit.data.SinglyLinkedList;
 import com.shanemaglangit.util.ItemOverflowException;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ComponentEvent;
-import java.awt.event.ComponentListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.ArrayList;
 
 public class ProductList extends JPanel {
     private ProductListItem[] productListItems;
@@ -53,18 +50,18 @@ public class ProductList extends JPanel {
         }
     }
 
-    public void setProducts(Product[] products) throws ItemOverflowException {
+    public void setProducts(SinglyLinkedList<Product> products) throws ItemOverflowException {
         int maxSize = row * col;
-        if(products.length > maxSize) {
+        if(products.getSize() > maxSize) {
             throw new ItemOverflowException("Product size cannot be greater than " + maxSize);
         }
         attachItemsToContainer(products);
     }
 
-    private void attachItemsToContainer(Product[] products) {
+    private void attachItemsToContainer(SinglyLinkedList<Product> products) {
         for(int i = 0; i < productListItems.length; i++) {
-            if(i >= products.length) productListItems[i].setProduct(null);
-            else productListItems[i].setProduct(products[i]);
+            if(i >= products.getSize()) productListItems[i].setProduct(null);
+            else productListItems[i].setProduct(products.get(i));
         }
     }
 
