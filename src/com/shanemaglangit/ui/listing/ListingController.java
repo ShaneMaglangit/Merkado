@@ -1,7 +1,9 @@
 package com.shanemaglangit.ui.listing;
 
+import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.Product;
+import com.shanemaglangit.data.SinglyLinkedList;
 import com.shanemaglangit.navigation.Navigation;
 import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.util.ItemOverflowException;
@@ -68,7 +70,20 @@ public class ListingController {
      * Set the order to the order list component
      */
     private void setOrders() {
-        view.getOrderList().setOrders(repository.getOrderList());
+        SinglyLinkedList<Order> orderList = repository.getOrderList();
+        double subTotal = computeOrderSubTotal(orderList);
+        double total = subTotal + Config.SERVICE_FEE;
+
+        view.getOrderList().setOrders(orderList);
+        view.getLblSubTotal().setText("PHP " + String.valueOf(subTotal));
+        view.getLblTotal().setText("PHP " + String.valueOf(total));
+    }
+
+    private double computeOrderSubTotal(SinglyLinkedList<Order> orderList) {
+        double subTotal = 0;
+        for(int i = 0; i < orderList.getSize(); i++)
+            subTotal += orderList.get(i).getTotal();
+        return  subTotal;
     }
 
     /**

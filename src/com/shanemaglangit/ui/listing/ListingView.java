@@ -266,7 +266,7 @@ public class ListingView extends JFrame {
         pnlContents.add(pnlListing);
 
         // Add the product lists
-        productList = new ProductList(Repository.PRODUCT_PER_PAGE / 5, 5);
+        productList = new ProductList(Config.PRODUCT_PER_PAGE / 5, 5);
         productList.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
 
         // Create the scroll pane
@@ -378,7 +378,7 @@ public class ListingView extends JFrame {
         lblServiceFeeText.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlServiceFee.add(lblServiceFeeText);
 
-        lblServiceFee = new JLabel("PHP 0.00");
+        lblServiceFee = new JLabel("PHP " + Config.SERVICE_FEE);
         lblServiceFee.setHorizontalAlignment(JLabel.RIGHT);
         lblServiceFee.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlServiceFee.add(lblServiceFee);
@@ -438,5 +438,13 @@ public class ListingView extends JFrame {
 
     public OrderList getOrderList() {
         return orderList;
+    }
+
+    public JLabel getLblSubTotal() {
+        return lblSubTotal;
+    }
+
+    public JLabel getLblTotal() {
+        return lblTotal;
     }
 }
