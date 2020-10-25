@@ -37,11 +37,11 @@ public class OrderListItem extends JPanel {
         pnlContent.setLayout(new BoxLayout(pnlContent, BoxLayout.Y_AXIS));
         this.add(pnlContent);
 
-        lblOrderTitle = new JLabel("Order Title (1)");
+        lblOrderTitle = new JLabel(String.format("%s (%d)", order.getProduct().getName(), order.getQuantity()));
         lblOrderTitle.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
         pnlContent.add(lblOrderTitle);
 
-        lblOrderPrice = new JLabel("PHP 0.00");
+        lblOrderPrice = new JLabel("PHP " + order.getTotal());
         lblOrderPrice.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
         pnlContent.add(lblOrderPrice);
     }

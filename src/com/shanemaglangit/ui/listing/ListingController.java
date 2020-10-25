@@ -76,7 +76,7 @@ public class ListingController {
      */
     private void toggleCartVisibility() {
         JPanel pnlOverlay = view.getPnlOverlay();
+        if(!pnlOverlay.isVisible()) setOrders();
         pnlOverlay.setVisible(!pnlOverlay.isVisible());
-        if(pnlOverlay.isVisible()) setOrders();
     }
 }

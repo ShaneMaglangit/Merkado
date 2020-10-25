@@ -105,6 +105,18 @@ public class AddToCartView extends JDialog {
         pnlInput.add(btnConfirm);
     }
 
+    public JLabel getLblProductImg() {
+        return lblProductImg;
+    }
+
+    public JLabel getLblProductName() {
+        return lblProductName;
+    }
+
+    public JLabel getLblPrice() {
+        return lblPrice;
+    }
+
     public JFormattedTextField getTxtQuantity() {
         return txtQuantity;
     }

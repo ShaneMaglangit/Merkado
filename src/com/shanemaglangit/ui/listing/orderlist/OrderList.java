@@ -14,12 +14,11 @@ public class OrderList extends JPanel {
     }
 
     public void setOrders(SinglyLinkedList<Order> orders) {
-        SpringLayout layout = (SpringLayout) getLayout();
-
-        this.removeAll();
-
         SwingUtilities.invokeLater(() -> {
+            SpringLayout layout = (SpringLayout) getLayout();
+            this.removeAll();
             for(int i = 0; i < orders.getSize(); i++) {
+                System.out.println(i);
                 OrderListItem current = new OrderListItem(orders.get(i));
 
                 add(current);
