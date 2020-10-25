@@ -16,22 +16,24 @@ public class ProductListItem extends JPanel {
     private JLabel lblName;
     private JLabel lblPrice;
 
-    public ProductListItem() {
+    public ProductListItem(Product product) {
         // Set the panel preferences
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(6, 6, 6, 6));
+        this.setBackground(Color.WHITE);
 
         // Add the product image
-        lblImage = new JLabel();
+        lblImage = new JLabel(Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH));
         lblImage.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblImage.setHorizontalAlignment(JLabel.CENTER);
         lblImage.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        lblImage.setBorder(new EmptyBorder(8, 8, 8, 8));
         this.add(lblImage);
 
         this.add(Box.createRigidArea(new Dimension(0, 4)));
 
         // Add the product name
-        lblName = new JLabel();
+        lblName = new JLabel(product.getName());
         lblName.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblName.setHorizontalAlignment(JLabel.LEFT);
         lblName.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 10));
@@ -40,7 +42,7 @@ public class ProductListItem extends JPanel {
         this.add(lblName);
 
         // Add the product name
-        lblPrice = new JLabel();
+        lblPrice = new JLabel("PHP " + product.getPrice());
         lblPrice.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblPrice.setHorizontalAlignment(JLabel.LEFT);
         lblPrice.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 10));
@@ -50,27 +52,6 @@ public class ProductListItem extends JPanel {
         this.add(lblPrice);
 
         this.add(Box.createRigidArea(new Dimension(0, 4)));
-    }
-
-    public ProductListItem(Product product) {
-        this();
-        this.product = product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-        if(product != null) {
-            this.setBackground(Color.WHITE);
-            lblPrice.setText("PHP 0.00");
-            lblName.setText("Product Name");
-            ImageIcon imgProduct = Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH);
-            lblImage.setIcon(imgProduct);
-        } else {
-            this.setBackground(null);
-            lblImage.setIcon(null);
-            lblPrice.setText("");
-            lblName.setText("");
-        }
     }
 
     public Product getProduct() {

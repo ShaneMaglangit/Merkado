@@ -2,6 +2,7 @@ package com.shanemaglangit.ui.listing;
 
 import com.shanemaglangit.components.HintTextField;
 import com.shanemaglangit.config.Config;
+import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.ui.listing.orderlist.OrderList;
 import com.shanemaglangit.ui.listing.productlist.ProductList;
@@ -265,7 +266,7 @@ public class ListingView extends JFrame {
         pnlContents.add(pnlListing);
 
         // Add the product lists
-        productList = new ProductList(5, 4);
+        productList = new ProductList(Repository.PRODUCT_PER_PAGE / 5, 5);
         productList.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
 
         // Create the scroll pane
@@ -273,6 +274,7 @@ public class ListingView extends JFrame {
         productScrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
         productScrollPane.setBorder(new EmptyBorder(6, 6, 6, 6));
         productScrollPane.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
+        productScrollPane.getVerticalScrollBar().setUnitIncrement(8);
         pnlListing.add(productScrollPane);
 
         // Add the overlay panel
@@ -336,6 +338,7 @@ public class ListingView extends JFrame {
         orderScrollPane = new JScrollPane(orderList);
         orderScrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
         orderScrollPane.setAlignmentY(Component.CENTER_ALIGNMENT);
+        orderScrollPane.getVerticalScrollBar().setUnitIncrement(8);
         orderScrollPane.setBorder(null);
         pnlCartInner.add(orderScrollPane);
 

@@ -11,7 +11,7 @@ public class Repository {
     private static final String PRODUCT_FILE = "";
     private static final String ORDER_FILE = "";
 
-    public static final int PRODUCT_PER_PAGE = 15;
+    public static final int PRODUCT_PER_PAGE = 50;
 
     private static Repository instance;
 
@@ -23,7 +23,7 @@ public class Repository {
         this.orderList = new SinglyLinkedList<>();
 
         // Create mock products
-        for(int i = 1; i < 50; i++) {
+        for(int i = 1; i < 250; i++) {
             productList.add(new Product("Fresh Pork " + i + "kg", 50, "Sampaloc Market", null, "Meat"));
         }
     }

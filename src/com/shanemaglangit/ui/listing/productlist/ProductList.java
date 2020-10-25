@@ -11,15 +11,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class ProductList extends JPanel {
-    private ProductListItem[] productListItems;
-
     private ProductListClickListener clickListener;
 
     private int row;
     private int col;
 
     public ProductList(int row, int col) {
-        this.productListItems = new ProductListItem[row * col];
         this.row = row;
         this.col = col;
 
@@ -28,26 +25,6 @@ public class ProductList extends JPanel {
         layout.setHgap(6);
         layout.setVgap(6);
         setLayout(layout);
-
-        // Create the containers
-        for(int i = 0; i < productListItems.length; i++) {
-            ProductListItem productListItem = new ProductListItem();
-            productListItem.addMouseListener(new MouseListener() {
-                @Override public void mouseClicked(MouseEvent e) {
-                    Product product = productListItem.getProduct();
-                    if(clickListener != null && product != null) {
-                        clickListener.onClick(product);
-                    }
-                }
-
-                @Override public void mousePressed(MouseEvent e) { }
-                @Override public void mouseReleased(MouseEvent e) { }
-                @Override public void mouseEntered(MouseEvent e) { }
-                @Override public void mouseExited(MouseEvent e) { }
-            });
-            productListItems[i] = productListItem;
-            this.add(productListItem);
-        }
     }
 
     public void setProducts(SinglyLinkedList<Product> products) throws ItemOverflowException {
@@ -59,10 +36,26 @@ public class ProductList extends JPanel {
     }
 
     private void attachItemsToContainer(SinglyLinkedList<Product> products) {
-        for(int i = 0; i < productListItems.length; i++) {
-            if(i >= products.getSize()) productListItems[i].setProduct(null);
-            else productListItems[i].setProduct(products.get(i));
-        }
+        // Create the containers
+        SwingUtilities.invokeLater(() -> {
+            this.removeAll();
+
+            for(int i = 0; i < products.getSize(); i++) {
+                Product product = products.get(i);
+                ProductListItem productListItem = new ProductListItem(product);
+                productListItem.addMouseListener(new MouseListener() {
+                    @Override public void mouseClicked(MouseEvent e) {
+                        if(clickListener != null) clickListener.onClick(product);
+                    }
+
+                    @Override public void mousePressed(MouseEvent e) { }
+                    @Override public void mouseReleased(MouseEvent e) { }
+                    @Override public void mouseEntered(MouseEvent e) { }
+                    @Override public void mouseExited(MouseEvent e) { }
+                });
+                this.add(productListItem);
+            }
+        });
     }
 
     public void setClickListener(ProductListClickListener clickListener) {
