@@ -27,8 +27,8 @@ public abstract class Resources {
     public static final String RADIO_SELECTED = "/res/images/radio-selected.png";
     public static final String IC_RIGHT_ARROW = "/res/images/ic_right_arrow.png";
 
-    private static final String PRODUCT_FILE = "products.csv";
-    private static final String ORDER_FILE = "order.csv";
+    public static final String PRODUCT_FILE = "src/com/shanemaglangit/res/csv/products.csv";
+    public static final String ORDER_FILE = "src/com/shanemaglangit/res/csv/orders.csv";
 
     public static Font createPoppinsFont(FontWeight weight, int size) {
         String fontPath = "";

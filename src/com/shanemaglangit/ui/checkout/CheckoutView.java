@@ -98,8 +98,8 @@ public class CheckoutView extends JDialog {
         rbtnCard.setFocusPainted(false);
         rbtnCard.setBackground(Color.WHITE);
         rbtnCard.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
-        rbtnCard.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
-        rbtnCard.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
+        rbtnCard.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
+        rbtnCard.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
         rbtnCard.setSelected(true);
         pnlPaymentOption.add(rbtnCard);
 
@@ -108,8 +108,8 @@ public class CheckoutView extends JDialog {
         rbtnCOD.setFocusPainted(false);
         rbtnCOD.setBackground(Color.WHITE);
         rbtnCOD.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
-        rbtnCOD.setIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_DEFAULT));
-        rbtnCOD.setSelectedIcon(Util.createImageIcon(this, "../.." +  Resources.RADIO_SELECTED));
+        rbtnCOD.setIcon(Util.createImageIcon(this, Resources.RADIO_DEFAULT));
+        rbtnCOD.setSelectedIcon(Util.createImageIcon(this, Resources.RADIO_SELECTED));
         rbtnCOD.setSelected(true);
         pnlPaymentOption.add(rbtnCOD);
 

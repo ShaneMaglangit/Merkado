@@ -2,6 +2,7 @@ package com.shanemaglangit.ui.listing;
 
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
+import com.shanemaglangit.data.Product;
 import com.shanemaglangit.data.SinglyLinkedList;
 import com.shanemaglangit.navigation.Navigation;
 import com.shanemaglangit.repository.Repository;

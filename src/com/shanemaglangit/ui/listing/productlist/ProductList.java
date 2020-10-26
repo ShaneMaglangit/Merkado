@@ -53,7 +53,7 @@ public class ProductList extends JPanel {
                     @Override public void mouseEntered(MouseEvent e) { }
                     @Override public void mouseExited(MouseEvent e) { }
                 });
-                this.add(productListItem);
+                add(productListItem);
             }
         });
     }
