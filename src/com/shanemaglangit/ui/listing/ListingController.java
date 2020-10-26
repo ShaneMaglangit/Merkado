@@ -6,10 +6,12 @@ import com.shanemaglangit.data.Product;
 import com.shanemaglangit.data.SinglyLinkedList;
 import com.shanemaglangit.navigation.Navigation;
 import com.shanemaglangit.repository.Repository;
+import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.ItemOverflowException;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Level;
@@ -79,10 +81,14 @@ public class ListingController {
             view.getLblSubTotal().setText("PHP " + String.valueOf(subTotal));
             view.getLblTotal().setText("PHP " + String.valueOf(total));
             view.getLblServiceFee().setText("PHP " + Config.SERVICE_FEE);
+            view.getBtnCheckout().setEnabled(true);
+            view.getBtnCheckout().setBackground(Resources.PRIMARY);
         } else {
             view.getLblSubTotal().setText("PHP 0.00");
             view.getLblServiceFee().setText("PHP 0.00");
             view.getLblTotal().setText("PHP 0.00");
+            view.getBtnCheckout().setEnabled(false);
+            view.getBtnCheckout().setBackground(Color.DARK_GRAY);
         }
     }
 

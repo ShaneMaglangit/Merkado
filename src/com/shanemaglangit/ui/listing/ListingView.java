@@ -444,7 +444,7 @@ public class ListingView extends JFrame {
     }
 
     public JLabel getLblServiceFee() {
-        return lblServiceFeeText;
+        return lblServiceFee;
     }
 
     public JLabel getLblTotal() {
