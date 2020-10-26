@@ -21,8 +21,9 @@ public class Repository {
         this.productList = new PagedLinkedList<>(Config.PRODUCT_PER_PAGE);
         this.orderList = new SinglyLinkedList<>();
 
-        loadFromCSV(productList, Product.class, Resources.PRODUCT_FILE);
         loadFromCSV(orderList, Order.class, Resources.ORDER_FILE);
+        loadFromCSV(productList, Product.class, Resources.PRODUCT_FILE);
+        writeToCSV(productList, Resources.PRODUCT_FILE);
     }
 
     public static Repository getInstance() {
@@ -62,6 +63,7 @@ public class Repository {
 
     public void clearOrders() {
         orderList.removeAll();
+        writeToCSV(orderList, Resources.ORDER_FILE);
     }
 
     private <T extends CSVEntity & Comparable<T>> void loadFromCSV(SinglyLinkedList<T> list, Class<T> clazz, String filepath) {
@@ -73,7 +75,7 @@ public class Repository {
         } catch (IOException e) {
             Util.log(Level.WARNING, "An error occurred while trying to read " + filepath);
         } catch (InstantiationException | InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
-            Util.log(Level.SEVERE, "An error occurred while trying to parse csv row to " + clazz.getName());
+            Util.log(Level.WARNING, "An error occurred while trying to parse csv row to " + clazz.getName());
         }
     }
 
@@ -83,7 +85,7 @@ public class Repository {
             for(int i = 0; i < list.getSize(); i++) {
                 stringBuilder.append(list.get(i).toCSV()).append("\n");
             }
-            fileOutput.write(stringBuilder.toString().getBytes());
+            fileOutput.write(stringBuilder.toString().trim().getBytes());
         } catch (IOException e) {
             Util.log(Level.SEVERE, "An error occurred while trying to write to " + filepath);
         }
