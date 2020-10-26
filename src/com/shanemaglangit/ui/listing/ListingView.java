@@ -168,7 +168,7 @@ public class ListingView extends JFrame {
         pnlFilter.setAlignmentY(Component.TOP_ALIGNMENT);
         pnlFilter.setAlignmentX(Component.LEFT_ALIGNMENT);
         pnlFilter.setBackground(Color.WHITE);
-        pnlFilter.setMaximumSize(new Dimension(200, Config.WINDOW_HEIGHT));
+        pnlFilter.setMaximumSize(new Dimension(1500, Config.WINDOW_HEIGHT));
         pnlFilter.setLayout(new BoxLayout(pnlFilter, BoxLayout.Y_AXIS));
         pnlFilter.setBorder(new EmptyBorder(12, 12, 12, 12));
         pnlContents.add(pnlFilter);
