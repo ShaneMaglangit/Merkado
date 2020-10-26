@@ -14,7 +14,7 @@ public class Order extends CSVEntity implements Comparable<Order> {
 
     public Order(String[] values) {
         this.orderId = UUID.fromString(values[0]);
-        this.product = new Product(Arrays.copyOfRange(values, 1, values.length - 2));
+        this.product = new Product(Arrays.copyOfRange(values, 1, values.length - 1));
         this.quantity = Integer.parseInt(values[values.length - 1]);
     }
 

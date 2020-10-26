@@ -71,11 +71,19 @@ public class ListingController {
     private void setOrders() {
         SinglyLinkedList<Order> orderList = repository.getOrderList();
         double subTotal = Util.computeOrderSubTotal(orderList);
-        double total = subTotal + Config.SERVICE_FEE;
 
         view.getOrderList().setOrders(orderList);
-        view.getLblSubTotal().setText("PHP " + String.valueOf(subTotal));
-        view.getLblTotal().setText("PHP " + String.valueOf(total));
+
+        if(subTotal > 0) {
+            double total = subTotal + Config.SERVICE_FEE;
+            view.getLblSubTotal().setText("PHP " + String.valueOf(subTotal));
+            view.getLblTotal().setText("PHP " + String.valueOf(total));
+            view.getLblServiceFee().setText("PHP " + Config.SERVICE_FEE);
+        } else {
+            view.getLblSubTotal().setText("PHP 0.00");
+            view.getLblServiceFee().setText("PHP 0.00");
+            view.getLblTotal().setText("PHP 0.00");
+        }
     }
 
     /**

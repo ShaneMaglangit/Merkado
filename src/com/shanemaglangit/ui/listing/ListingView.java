@@ -377,7 +377,7 @@ public class ListingView extends JFrame {
         lblServiceFeeText.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlServiceFee.add(lblServiceFeeText);
 
-        lblServiceFee = new JLabel("PHP " + Config.SERVICE_FEE);
+        lblServiceFee = new JLabel("PHP 0.00");
         lblServiceFee.setHorizontalAlignment(JLabel.RIGHT);
         lblServiceFee.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlServiceFee.add(lblServiceFee);
@@ -441,6 +441,10 @@ public class ListingView extends JFrame {
 
     public JLabel getLblSubTotal() {
         return lblSubTotal;
+    }
+
+    public JLabel getLblServiceFee() {
+        return lblServiceFeeText;
     }
 
     public JLabel getLblTotal() {
