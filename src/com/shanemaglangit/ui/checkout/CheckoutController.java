@@ -1,8 +1,12 @@
 package com.shanemaglangit.ui.checkout;
 
+import com.shanemaglangit.config.Config;
+import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.ui.addtocart.AddToCartView;
+import com.shanemaglangit.util.Util;
 
 public class CheckoutController {
+    private Repository repository;
     private CheckoutView view;
 
     /**
@@ -11,7 +15,22 @@ public class CheckoutController {
      */
     public CheckoutController(CheckoutView view) {
         this.view = view;
+        this.repository = Repository.getInstance();
+        updateContents();
+        attachListeners();
         showView();
+    }
+
+    private void updateContents() {
+        double subTotal = Util.computeOrderSubTotal(repository.getOrderList());
+        view.getLblTotal().setText(String.valueOf(subTotal + Config.SERVICE_FEE));
+    }
+
+    private void attachListeners() {
+        view.getBtnConfirm().addActionListener(e -> {
+            repository.clearOrders();
+            view.dispose();
+        });
     }
 
     /**

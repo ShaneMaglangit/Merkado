@@ -1,5 +1,8 @@
 package com.shanemaglangit.util;
 
+import com.shanemaglangit.data.Order;
+import com.shanemaglangit.data.SinglyLinkedList;
+
 import javax.swing.*;
 import java.awt.*;
 import java.net.URL;
@@ -22,5 +25,12 @@ public abstract class Util {
         ImageIcon imgIcon = createImageIcon(object, url);
         Image scaledImg = imgIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(scaledImg);
+    }
+
+    public static double computeOrderSubTotal(SinglyLinkedList<Order> orderList) {
+        double subTotal = 0;
+        for(int i = 0; i < orderList.getSize(); i++)
+            subTotal += orderList.get(i).getTotal();
+        return  subTotal;
     }
 }

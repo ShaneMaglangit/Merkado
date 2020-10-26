@@ -447,4 +447,5 @@ public class ListingView extends JFrame {
     public JLabel getLblTotal() {
         return lblTotal;
     }
+
 }
