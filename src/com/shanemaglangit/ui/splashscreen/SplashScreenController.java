@@ -1,6 +1,7 @@
 package com.shanemaglangit.ui.splashscreen;
 
 import com.shanemaglangit.navigation.Navigation;
+import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.util.Util;
 
 import java.util.concurrent.TimeUnit;
@@ -18,6 +19,9 @@ public class SplashScreenController {
      */
     public SplashScreenController(SplashScreenView view) {
         this.view = view;
+        // Forces repository to start lazy initialization, forcing it to preload the data
+        //  even during the splash screen duration.
+        Repository.getInstance();
         startSplashScreen();
     }
 

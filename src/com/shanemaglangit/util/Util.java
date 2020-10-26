@@ -33,4 +33,12 @@ public abstract class Util {
             subTotal += orderList.get(i).getTotal();
         return  subTotal;
     }
+
+    public static void showErrorDialog(Component parent, String message) {
+        JOptionPane.showMessageDialog(parent, message, "An error has occured", JOptionPane.ERROR_MESSAGE);
+    }
+
+    public static void showMessageDialog(Component parent, String message) {
+        JOptionPane.showMessageDialog(parent, message, "", JOptionPane.PLAIN_MESSAGE);
+    }
 }

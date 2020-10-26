@@ -186,6 +186,14 @@ public class CheckoutView extends JDialog {
         return bgPaymentOption;
     }
 
+    public JRadioButton getRbtnCard() {
+        return rbtnCard;
+    }
+
+    public JRadioButton getRbtnCOD() {
+        return rbtnCOD;
+    }
+
     public HintTextField getTxtCardNumber() {
         return txtCardNumber;
     }
