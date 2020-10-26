@@ -266,14 +266,13 @@ public class ListingView extends JFrame {
         pnlContents.add(pnlListing);
 
         // Add the product lists
-        productList = new ProductList(Config.PRODUCT_PER_PAGE / 5, 5);
+        productList = new ProductList();
         productList.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
 
         // Create the scroll pane
         productScrollPane = new JScrollPane(productList);
         productScrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
         productScrollPane.setBorder(new EmptyBorder(6, 6, 6, 6));
-        productScrollPane.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));
         productScrollPane.getVerticalScrollBar().setUnitIncrement(8);
         pnlListing.add(productScrollPane);
 

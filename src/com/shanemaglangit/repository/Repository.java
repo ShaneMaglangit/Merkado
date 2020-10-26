@@ -72,8 +72,7 @@ public class Repository {
             }
         } catch (IOException e) {
             Util.log(Level.WARNING, "An error occurred while trying to read " + filepath);
-      } catch (InstantiationException | InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
-            e.printStackTrace();
+        } catch (InstantiationException | InvocationTargetException | NoSuchMethodException | IllegalAccessException e) {
             Util.log(Level.SEVERE, "An error occurred while trying to parse csv row to " + clazz.getName());
         }
     }

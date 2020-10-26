@@ -9,4 +9,5 @@ public abstract class Config {
 
     public final static double SERVICE_FEE = 100;
     public static final int PRODUCT_PER_PAGE = 50;
+    public static final int PRODUCT_PER_SCREEN = 20;
 }

@@ -25,9 +25,9 @@ public class ListingController {
     public ListingController(ListingView view) {
         this.view = view;
         this.repository = Repository.getInstance();
-        showView();
         setProducts();
         attachListeners();
+        showView();
     }
 
     /**
@@ -62,11 +62,7 @@ public class ListingController {
      * Set the product to the product list component
      */
     private void setProducts() {
-        try {
-            view.getProductList().setProducts(repository.getProductList(0));
-        } catch (ItemOverflowException e) {
-            Util.log(Level.SEVERE, e.getMessage());
-        }
+        view.getProductList().setProducts(repository.getProductList(0));
     }
 
     /**
