@@ -1,5 +1,7 @@
 package com.shanemaglangit.data;
 
+import com.shanemaglangit.util.QuickSort;
+
 import java.util.List;
 
 public class SinglyLinkedList<T extends Comparable<T>> {
@@ -17,6 +19,10 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     public void add(T value, int pos) {
         if(pos == 0) insertAtHead(value);
         else insertAtPos(head, value, pos);
+    }
+
+    public void set(int pos, T value) {
+        getNode(head, pos).setValue(value);
     }
 
     public T get(int pos) {
@@ -81,5 +87,8 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     //  Tip -> `Order` and `Product` should implement `Comparable`. This would allow us to
     //          perform comparisons between these objects. E.g "order1 >= order2" will be
     //          possible. This would help with the sorting of these nodes.
+    public void sort(boolean isAscending) {
+        QuickSort.sort(this, 0, getSize() - 1, isAscending);
+    }
 }
 

@@ -138,6 +138,7 @@ public class ListingView extends JFrame {
 
         // Create the logo component
         lblLogo = new JLabel(Util.createImageIcon(this, "../.." +  Resources.LOGO_LIGHT_EXPANDED_PATH));
+        lblLogo.setPreferredSize(new Dimension(135, 30));
         pnlHeader.add(lblLogo);
 
         pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
@@ -224,15 +225,18 @@ public class ListingView extends JFrame {
         // Create the text field for price range
         numberFormatter = new NumberFormatter(NumberFormat.getIntegerInstance());
         numberFormatter.setAllowsInvalid(false);
-        numberFormatter.setMinimum(1);
+        numberFormatter.setMinimum(Config.MIN_PRICE);
+        numberFormatter.setMaximum(Config.MAX_PRICE);
         numberFormatter.setValueClass(Integer.class);
 
         txtPriceMin = new FormattedHintTextField(numberFormatter,"Min");
+        txtPriceMin.setText(String.valueOf(Config.MIN_PRICE));
         txtPriceMin.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         txtPriceMin.setMargin(new Insets(2,2,2,2));
         pnlPriceRange.add(txtPriceMin);
 
         txtPriceMax = new FormattedHintTextField(numberFormatter, "Max");
+        txtPriceMax.setText(String.valueOf(Config.MAX_PRICE));
         txtPriceMax.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         txtPriceMax.setMargin(new Insets(2,2,2,2));
         pnlPriceRange.add(txtPriceMax);
@@ -471,5 +475,25 @@ public class ListingView extends JFrame {
 
     public HintTextField getTxtSearch() {
         return txtSearch;
+    }
+
+    public FormattedHintTextField getTxtPriceMin() {
+        return txtPriceMin;
+    }
+
+    public FormattedHintTextField getTxtPriceMax() {
+        return txtPriceMax;
+    }
+
+    public JRadioButton getRbtnLowToHigh() {
+        return rbtnLowToHigh;
+    }
+
+    public JRadioButton getRbtnHighToLow() {
+        return rbtnHighToLow;
+    }
+
+    public ButtonGroup getBgSort() {
+        return bgSort;
     }
 }

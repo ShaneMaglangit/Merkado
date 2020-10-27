@@ -46,6 +46,7 @@ public class ProductList extends JPanel {
             }
 
             for(int i = 0; i < Config.PRODUCT_PER_SCREEN - products.getSize(); i++) add(new JPanel());
+            this.revalidate();
         });
     }
 

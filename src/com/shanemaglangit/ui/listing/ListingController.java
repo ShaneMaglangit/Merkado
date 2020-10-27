@@ -14,6 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.logging.Level;
 
 public class ListingController {
     private Repository repository;
@@ -61,6 +62,13 @@ public class ListingController {
             toggleCartVisibility();
         });
         view.getProductList().setClickListener(product -> Navigation.addToCart(view, product));
+        view.getTxtSearch().addActionListener(e -> loadProducts());
+        view.getCbxMarket().addItemListener(e -> loadProducts());
+        view.getCbxCategory().addItemListener(e -> loadProducts());
+        view.getTxtPriceMin().addActionListener(e -> loadProducts());
+        view.getTxtPriceMax().addActionListener(e -> loadProducts());
+        view.getRbtnLowToHigh().addActionListener(e -> loadProducts());
+        view.getRbtnHighToLow().addActionListener(e -> loadProducts());
     }
 
     /**
@@ -71,7 +79,24 @@ public class ListingController {
     }
 
     private void loadProducts() {
-        this.productList = repository.getProductList();
+        String search = view.getTxtSearch().getText();
+        String market = (String) view.getCbxMarket().getSelectedItem();
+        String category = (String) view.getCbxCategory().getSelectedItem();
+        int minPrice = Integer.parseInt(view.getTxtPriceMin().getText().replaceAll(",", ""));
+        int maxPrice = Integer.parseInt(view.getTxtPriceMax().getText().replaceAll(",", ""));
+        boolean isAscending = view.getRbtnLowToHigh().isSelected();
+
+        Util.log(Level.INFO, String.format("Filters:%s,%s,%s,%d,%d,%b", search, market, category, minPrice, maxPrice, isAscending));
+
+        this.productList = new ProductFilter(repository.getProductList())
+                .title(search)
+                .market(market)
+                .category(category)
+                .minPrice(minPrice)
+                .maxPrice(maxPrice)
+                .sort(isAscending)
+                .get();
+
         setProducts(0);
     }
 
