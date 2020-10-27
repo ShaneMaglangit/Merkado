@@ -1,5 +1,6 @@
 package com.shanemaglangit.ui.listing;
 
+import com.shanemaglangit.components.FormattedHintTextField;
 import com.shanemaglangit.components.HintTextField;
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.repository.Repository;
@@ -11,10 +12,12 @@ import org.w3c.dom.css.RGBColor;
 
 import javax.swing.*;
 import javax.swing.border.*;
+import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.MouseAdapter;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 
 public class ListingView extends JFrame {
@@ -39,8 +42,8 @@ public class ListingView extends JFrame {
     private JComboBox<String> cbxCategory;
     private JLabel lblPriceRange;
     private JPanel pnlPriceRange;
-    private HintTextField txtPriceMin;
-    private HintTextField txtPriceMax;
+    private FormattedHintTextField txtPriceMin;
+    private FormattedHintTextField txtPriceMax;
     private JLabel lblSort;
     private ButtonGroup bgSort;
     private JRadioButton rbtnLowToHigh;
@@ -86,6 +89,7 @@ public class ListingView extends JFrame {
      */
     public ListingView() throws HeadlessException {
         GridLayout layoutPrice;
+        NumberFormatter numberFormatter;
 
         // Set the frame preferences
         this.setTitle(Config.TITLE);
@@ -217,14 +221,20 @@ public class ListingView extends JFrame {
         pnlPriceRange.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
         pnlFilter.add(pnlPriceRange);
 
-        txtPriceMin = new HintTextField("Min");
+        // Create the text field for price range
+        numberFormatter = new NumberFormatter(NumberFormat.getIntegerInstance());
+        numberFormatter.setAllowsInvalid(false);
+        numberFormatter.setMinimum(1);
+        numberFormatter.setValueClass(Integer.class);
+
+        txtPriceMin = new FormattedHintTextField(numberFormatter,"Min");
         txtPriceMin.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
-        txtPriceMin.setMargin(new Insets(6, 6, 6, 6));
+        txtPriceMin.setMargin(new Insets(2,2,2,2));
         pnlPriceRange.add(txtPriceMin);
 
-        txtPriceMax = new HintTextField("Max");
+        txtPriceMax = new FormattedHintTextField(numberFormatter, "Max");
         txtPriceMax.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
-        txtPriceMax.setMargin(new Insets(6, 6, 6, 6));
+        txtPriceMax.setMargin(new Insets(2,2,2,2));
         pnlPriceRange.add(txtPriceMax);
 
         pnlFilter.add(Box.createRigidArea(new Dimension(0, 16)));
@@ -457,5 +467,9 @@ public class ListingView extends JFrame {
 
     public JComboBox<String> getCbxMarket() {
         return cbxMarket;
+    }
+
+    public HintTextField getTxtSearch() {
+        return txtSearch;
     }
 }

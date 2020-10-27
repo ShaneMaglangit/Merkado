@@ -15,6 +15,8 @@ public class RoundedTextField extends JTextField {
         this.hasBorder = true;
     }
 
+
+
     public RoundedTextField(int columns) {
         super(columns);
         this.hasBorder = true;

@@ -1,22 +1,14 @@
 package com.shanemaglangit.components;
 
-import com.shanemaglangit.res.Resources;
-
 import javax.swing.*;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
-import java.text.NumberFormat;
 
-public class HintTextField extends RoundedTextField {
+public class FormattedHintTextField extends JFormattedTextField {
     private final String hint;
 
-    public HintTextField(String hint) {
-        super();
-        this.hint = hint;
-    }
-
-    public HintTextField(String hint, int columns) {
-        super(columns);
+    public FormattedHintTextField(NumberFormatter numberFormatter, String hint) {
+        super(numberFormatter);
         this.hint = hint;
     }
 
