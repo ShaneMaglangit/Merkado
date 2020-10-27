@@ -41,4 +41,11 @@ public abstract class Util {
     public static void showMessageDialog(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, message, "", JOptionPane.PLAIN_MESSAGE);
     }
+
+    public static String[] stringListToArr(SinglyLinkedList<String> list) {
+        String[] arr = new String[list.getSize() + 1];
+        arr[0] = "";
+        for(int i = 0; i < list.getSize(); i++) arr[i + 1] = list.get(i);
+        return arr;
+    }
 }

@@ -34,9 +34,9 @@ public class ListingView extends JFrame {
     // Filter components
     private JPanel pnlFilter;
     private JLabel lblMarket;
-    private JComboBox<ArrayList<String>> cbxMarket;
+    private JComboBox<String> cbxMarket;
     private JLabel lblCategory;
-    private JComboBox<ArrayList<String>> cbxCategory;
+    private JComboBox<String> cbxCategory;
     private JLabel lblPriceRange;
     private JPanel pnlPriceRange;
     private HintTextField txtPriceMin;
@@ -179,7 +179,7 @@ public class ListingView extends JFrame {
         lblMarket.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
         pnlFilter.add(lblMarket);
 
-        cbxMarket = new JComboBox<ArrayList<String>>();
+        cbxMarket = new JComboBox<String>();
         cbxMarket.setAlignmentX(Component.LEFT_ALIGNMENT);
         cbxMarket.setBackground(Color.WHITE);
         cbxMarket.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
@@ -193,7 +193,7 @@ public class ListingView extends JFrame {
         lblCategory.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
         pnlFilter.add(lblCategory);
 
-        cbxCategory = new JComboBox<ArrayList<String>>();
+        cbxCategory = new JComboBox<String>();
         cbxCategory.setAlignmentX(Component.LEFT_ALIGNMENT);
         cbxCategory.setBackground(Color.WHITE);
         cbxCategory.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 25));
@@ -451,4 +451,11 @@ public class ListingView extends JFrame {
         return lblTotal;
     }
 
+    public JComboBox<String> getCbxCategory() {
+        return cbxCategory;
+    }
+
+    public JComboBox<String> getCbxMarket() {
+        return cbxMarket;
+    }
 }

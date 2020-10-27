@@ -2,22 +2,22 @@ package com.shanemaglangit.ui.listing;
 
 import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
+import com.shanemaglangit.data.PagedLinkedList;
 import com.shanemaglangit.data.Product;
 import com.shanemaglangit.data.SinglyLinkedList;
 import com.shanemaglangit.navigation.Navigation;
 import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.res.Resources;
-import com.shanemaglangit.util.ItemOverflowException;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.logging.Level;
 
 public class ListingController {
     private Repository repository;
+    private PagedLinkedList<Product> productList;
     private ListingView view;
 
     /**
@@ -27,7 +27,10 @@ public class ListingController {
     public ListingController(ListingView view) {
         this.view = view;
         this.repository = Repository.getInstance();
-        setProducts();
+        this.productList = repository.getProductList();
+        loadProducts();
+        loadCategories();
+        loadMarkets();
         attachListeners();
         showView();
     }
@@ -63,8 +66,25 @@ public class ListingController {
     /**
      * Set the product to the product list component
      */
-    private void setProducts() {
-        view.getProductList().setProducts(repository.getProductList(0));
+    private void setProducts(int page) {
+        view.getProductList().setProducts(productList.getPage(page));
+    }
+
+    private void loadProducts() {
+        this.productList = repository.getProductList();
+        setProducts(0);
+    }
+
+    private void loadCategories() {
+        String[] categoryArr = Util.stringListToArr(repository.getCategoryList());
+        ComboBoxModel<String> cbxModel = new DefaultComboBoxModel<>(categoryArr);
+        view.getCbxCategory().setModel(cbxModel);
+    }
+
+    private void loadMarkets() {
+        String[] marketArr = Util.stringListToArr(repository.getMarketList());
+        ComboBoxModel<String> cbxModel = new DefaultComboBoxModel<>(marketArr);
+        view.getCbxMarket().setModel(cbxModel);
     }
 
     /**

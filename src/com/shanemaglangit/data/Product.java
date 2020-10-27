@@ -64,6 +64,6 @@ public class Product extends CSVEntity implements Comparable<Product> {
 
     @Override
     public String toCSV() {
-        return String.format("%s,%s,%.2f,%s,%s,%S", productId.toString(), name, price, market, imagePath, category);
+        return String.format("%s,%s,%.2f,%s,%s,%s", productId.toString(), name, price, market, imagePath, category);
     }
 }

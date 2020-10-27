@@ -20,7 +20,6 @@ public class Repository {
     private Repository() {
         this.productList = new PagedLinkedList<>(Config.PRODUCT_PER_PAGE);
         this.orderList = new SinglyLinkedList<>();
-
         loadFromCSV(orderList, Order.class, Resources.ORDER_FILE);
         loadFromCSV(productList, Product.class, Resources.PRODUCT_FILE);
         writeToCSV(productList, Resources.PRODUCT_FILE);
@@ -29,14 +28,6 @@ public class Repository {
     public static Repository getInstance() {
         if(instance == null) instance = new Repository();
         return instance;
-    }
-
-    public SinglyLinkedList<Product> getProductList(int page) {
-        return productList.getPage(page);
-    }
-
-    public SinglyLinkedList<Order> getOrderList() {
-        return orderList;
     }
 
     public void addOrder(Order order) {
@@ -64,6 +55,32 @@ public class Repository {
     public void clearOrders() {
         orderList.removeAll();
         writeToCSV(orderList, Resources.ORDER_FILE);
+    }
+
+    public PagedLinkedList<Product> getProductList() {
+        return productList;
+    }
+
+    public SinglyLinkedList<Order> getOrderList() {
+        return orderList;
+    }
+
+    public SinglyLinkedList<String> getCategoryList() {
+        SinglyLinkedList<String> categoryList = new SinglyLinkedList<>();
+        for(int i = 0; i < productList.getSize(); i++) {
+            String category = productList.get(i).getCategory();
+            if(!categoryList.contains(category)) categoryList.add(category);
+        }
+        return categoryList;
+    }
+
+    public SinglyLinkedList<String> getMarketList() {
+        SinglyLinkedList<String> marketList = new SinglyLinkedList<>();
+        for(int i = 0; i < productList.getSize(); i++) {
+            String category = productList.get(i).getMarket();
+            if(!marketList.contains(category)) marketList.add(category);
+        }
+        return marketList;
     }
 
     private <T extends CSVEntity & Comparable<T>> void loadFromCSV(SinglyLinkedList<T> list, Class<T> clazz, String filepath) {

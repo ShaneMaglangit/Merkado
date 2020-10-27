@@ -66,6 +66,16 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         return size;
     }
 
+    public boolean contains(T value) {
+        return find(head, value);
+    }
+
+    private boolean find(Node<T> node, T value) {
+        if(node == null) return false;
+        else if (node.getValue().equals(value)) return true;
+        else return find(node.getNext(), value);
+    }
+
     // TODO: Add a sort() which sorts the list in ascending by default.
     // TODO: Add a sort(Boolean isAscending) that sorts the list based on the parameters.
     //  Tip -> `Order` and `Product` should implement `Comparable`. This would allow us to
