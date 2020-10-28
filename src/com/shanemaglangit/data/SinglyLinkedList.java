@@ -82,13 +82,42 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         else return find(node.getNext(), value);
     }
 
-    // TODO: Add a sort() which sorts the list in ascending by default.
-    // TODO: Add a sort(Boolean isAscending) that sorts the list based on the parameters.
-    //  Tip -> `Order` and `Product` should implement `Comparable`. This would allow us to
-    //          perform comparisons between these objects. E.g "order1 >= order2" will be
-    //          possible. This would help with the sorting of these nodes.
     public void sort(boolean isAscending) {
-        QuickSort.sort(this, 0, getSize() - 1, isAscending);
+        quickSort(0, getSize() - 1, isAscending);
+    }
+
+    private void quickSort(int low, int high, boolean isAscending) {
+        if(low < high) {
+            int partitionIndex = partition(low, high, isAscending);
+
+            quickSort(low, partitionIndex - 1, isAscending);
+            quickSort(partitionIndex + 1, high, isAscending);
+        }
+    }
+
+    private int partition(int low, int high, boolean isAscending) {
+        T pivot = get(high);
+        int pointer = low;
+        int comparisonValue;
+
+        if(isAscending) comparisonValue = -1;
+        else comparisonValue = 1;
+
+        for(int i = low; i < high; i++) {
+            if(get(i).compareTo(pivot) == comparisonValue) {
+                swap(pointer++, i);
+            }
+        }
+
+        swap(pointer, high);
+
+        return pointer;
+    }
+
+    private void swap(int x, int y) {
+        T temp = get(x);
+        set(x, get(y));
+        set(y, temp);
     }
 }
 
