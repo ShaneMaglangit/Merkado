@@ -25,11 +25,7 @@ public class Product extends CSVEntity implements Comparable<Product> {
     }
 
     public Product(String name, double price, String market, String imagePath, String category) {
-        this(UUID.randomUUID(), name, price, market, imagePath, category);
-    }
-
-    public Product(UUID productId, String name, double price, String market, String imagePath, String category) {
-        this.productId = productId;
+        this.productId = UUID.randomUUID();
         this.name = name;
         this.price = price;
         this.market = market;

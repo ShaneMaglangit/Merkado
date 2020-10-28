@@ -19,11 +19,7 @@ public class Order extends CSVEntity implements Comparable<Order> {
     }
 
     public Order(Product product, int quantity) {
-        this(UUID.randomUUID(), product, quantity);
-    }
-
-    public Order(UUID orderId, Product product, int quantity) {
-        this.orderId = orderId;
+        this.orderId = UUID.randomUUID();
         this.product = product;
         this.quantity = quantity;
     }
