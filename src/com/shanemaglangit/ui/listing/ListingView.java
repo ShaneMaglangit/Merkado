@@ -83,14 +83,13 @@ public class ListingView extends JFrame {
 
     private JButton btnCheckout;
 
+    private NumberFormatter numberFormatter;
+
     /**
      * Constructor where all of the components of the frame are created
      * @throws HeadlessException
      */
     public ListingView() throws HeadlessException {
-        GridLayout layoutPrice;
-        NumberFormatter numberFormatter;
-
         // Set the frame preferences
         this.setTitle(Config.TITLE);
         this.setExtendedState(JFrame.MAXIMIZED_BOTH);
@@ -104,6 +103,21 @@ public class ListingView extends JFrame {
         // Set the frame logo
         this.setIconImage(Util.createImageIcon(this, "../.." +  Resources.LOGO_PATH).getImage());
 
+        // Create the number formatter
+        numberFormatter = new NumberFormatter(NumberFormat.getIntegerInstance());
+        numberFormatter.setAllowsInvalid(false);
+        numberFormatter.setMinimum(1);
+        numberFormatter.setValueClass(Integer.class);
+
+        initMainComponents();
+        initSearchComponents();
+        initContentComponents();
+        initFilterComponents();
+        initListingComponents();
+        initCartComponents();
+    }
+
+    private void initMainComponents() {
         // Create the layered pane
         paneMain = new JLayeredPane();
         paneMain.addComponentListener(new ComponentListener() {
@@ -124,7 +138,9 @@ public class ListingView extends JFrame {
         pnlDefault = new JPanel();
         pnlDefault.setLayout(new BoxLayout(pnlDefault, BoxLayout.Y_AXIS));
         paneMain.add(pnlDefault, JLayeredPane.DEFAULT_LAYER);
+    }
 
+    private void initSearchComponents() {
         // Create the header panel
         pnlHeader = new JPanel();
         pnlHeader.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -161,12 +177,18 @@ public class ListingView extends JFrame {
         pnlHeader.add(btnCart);
 
         pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
+    }
 
+    private void initContentComponents() {
         // Create the content panel
         pnlContents = new JPanel();
         pnlContents.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlContents.setLayout(new BoxLayout(pnlContents, BoxLayout.LINE_AXIS));
         pnlDefault.add(pnlContents, JLayeredPane.DEFAULT_LAYER);
+    }
+
+    private void initFilterComponents() {
+        GridLayout layoutPrice;
 
         // Create the filter panel
         pnlFilter = new JPanel();
@@ -223,12 +245,6 @@ public class ListingView extends JFrame {
         pnlFilter.add(pnlPriceRange);
 
         // Create the text field for price range
-        numberFormatter = new NumberFormatter(NumberFormat.getIntegerInstance());
-        numberFormatter.setAllowsInvalid(false);
-        numberFormatter.setMinimum(Config.MIN_PRICE);
-        numberFormatter.setMaximum(Config.MAX_PRICE);
-        numberFormatter.setValueClass(Integer.class);
-
         txtPriceMin = new FormattedHintTextField(numberFormatter,"Min");
         txtPriceMin.setText(String.valueOf(Config.MIN_PRICE));
         txtPriceMin.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
@@ -271,7 +287,9 @@ public class ListingView extends JFrame {
         bgSort = new ButtonGroup();
         bgSort.add(rbtnHighToLow);
         bgSort.add(rbtnLowToHigh);
+    }
 
+    private void initListingComponents() {
         // Create the listing panel
         pnlListing = new JPanel();
         pnlListing.setLayout(new BoxLayout(pnlListing, BoxLayout.Y_AXIS));
@@ -289,7 +307,9 @@ public class ListingView extends JFrame {
         productScrollPane.setBorder(new EmptyBorder(6, 6, 6, 6));
         productScrollPane.getVerticalScrollBar().setUnitIncrement(8);
         pnlListing.add(productScrollPane);
+    }
 
+    private void initCartComponents() {
         // Add the overlay panel
         pnlOverlay = new JPanel();
         pnlOverlay.addMouseListener(new MouseAdapter() {});
@@ -411,7 +431,7 @@ public class ListingView extends JFrame {
         lblTotal.setHorizontalAlignment(JLabel.RIGHT);
         lblTotal.setFont(Resources.createPoppinsFont(Resources.FontWeight.BOLD, 12));
         pnlTotal.add(lblTotal);
-        
+
         // Create the checkout button
         btnCheckout = new JButton("CHECKOUT");
         btnCheckout.setBackground(Resources.PRIMARY);
