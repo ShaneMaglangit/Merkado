@@ -6,7 +6,6 @@ import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
 import java.io.*;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
 import java.util.logging.Level;
@@ -55,6 +54,10 @@ public class Repository {
     public void clearOrders() {
         orderList.removeAll();
         writeToCSV(orderList, Resources.ORDER_FILE);
+    }
+
+    public void addTransactionList(SinglyLinkedList<Transaction> transactions) {
+        appendToCSV(transactions, Transaction.class, Resources.getTransactionFile());
     }
 
     public PagedLinkedList<Product> getProductList() {
@@ -109,5 +112,12 @@ public class Repository {
         } catch (IOException e) {
             Util.log(Level.SEVERE, "An error occurred while trying to write to " + filepath);
         }
+    }
+
+    private <T extends CSVEntity & Comparable<T>> void appendToCSV(SinglyLinkedList<T> list, Class<T> clazz, String filepath) {
+        SinglyLinkedList<T> currentList = new SinglyLinkedList<>();
+        loadFromCSV(list, clazz, filepath);
+        currentList.addAll(list);
+        writeToCSV(list, filepath);
     }
 }
