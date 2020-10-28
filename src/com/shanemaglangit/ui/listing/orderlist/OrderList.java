@@ -18,7 +18,6 @@ public class OrderList extends JPanel {
             SpringLayout layout = (SpringLayout) getLayout();
             this.removeAll();
             for(int i = 0; i < orders.getSize(); i++) {
-                System.out.println(i);
                 OrderListItem current = new OrderListItem(orders.get(i));
 
                 add(current);

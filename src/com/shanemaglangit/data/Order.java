@@ -57,4 +57,9 @@ public class Order extends CSVEntity implements Comparable<Order> {
     public String toCSV() {
         return String.format("%s,%s,%d", orderId.toString(), product.toCSV(), quantity);
     }
+
+    @Override
+    public String getCSVHeader() {
+        return "orderId," + product.getCSVHeader() + ",quantity";
+    }
 }

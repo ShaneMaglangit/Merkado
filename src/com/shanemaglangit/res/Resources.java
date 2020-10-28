@@ -29,6 +29,7 @@ public abstract class Resources {
 
     public static final String PRODUCT_FILE = "src/com/shanemaglangit/res/csv/products.csv";
     public static final String ORDER_FILE = "src/com/shanemaglangit/res/csv/orders.csv";
+    public static final String TRANSACTIONS_FILE_FORMAT = "src/com/shanemaglangit/res/csv/transactions/%d-%d-%d.csv";
 
     public static Font createPoppinsFont(FontWeight weight, int size) {
         String fontPath = "";

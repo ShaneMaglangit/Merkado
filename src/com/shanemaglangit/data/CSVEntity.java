@@ -5,4 +5,5 @@ public abstract class CSVEntity {
     public CSVEntity(String CSV) {}
     public CSVEntity(String[] values) {}
     public abstract String toCSV();
+    public abstract String getCSVHeader();
 }

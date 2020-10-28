@@ -123,8 +123,8 @@ public class ListingController {
 
         if(subTotal > 0) {
             double total = subTotal + Config.SERVICE_FEE;
-            view.getLblSubTotal().setText("PHP " + String.valueOf(subTotal));
-            view.getLblTotal().setText("PHP " + String.valueOf(total));
+            view.getLblSubTotal().setText("PHP " + subTotal);
+            view.getLblTotal().setText("PHP " + total);
             view.getLblServiceFee().setText("PHP " + Config.SERVICE_FEE);
             view.getBtnCheckout().setEnabled(true);
             view.getBtnCheckout().setBackground(Resources.PRIMARY);

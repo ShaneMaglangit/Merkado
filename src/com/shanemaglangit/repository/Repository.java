@@ -86,6 +86,8 @@ public class Repository {
     private <T extends CSVEntity & Comparable<T>> void loadFromCSV(SinglyLinkedList<T> list, Class<T> clazz, String filepath) {
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(filepath))) {
             String row;
+            // Skip the header
+            bufferedReader.readLine();
             while((row = bufferedReader.readLine()) != null) {
                 list.add(clazz.getDeclaredConstructor(String.class).newInstance(row));
             }
@@ -99,6 +101,7 @@ public class Repository {
     private <T extends CSVEntity & Comparable<T>> void writeToCSV(SinglyLinkedList<T> list, String filepath) {
         try (FileOutputStream fileOutput = new FileOutputStream(filepath)) {
             StringBuilder stringBuilder = new StringBuilder();
+            if(list.getSize() > 0) stringBuilder.append(list.get(0).getCSVHeader()).append("\n");
             for(int i = 0; i < list.getSize(); i++) {
                 stringBuilder.append(list.get(i).toCSV()).append("\n");
             }
