@@ -1,9 +1,5 @@
 package com.shanemaglangit.data;
 
-import com.shanemaglangit.util.QuickSort;
-
-import java.util.List;
-
 public class SinglyLinkedList<T extends Comparable<T>> {
     private Node<T> head;
 
@@ -19,6 +15,12 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     public void add(T value, int pos) {
         if(pos == 0) insertAtHead(value);
         else insertAtPos(head, value, pos);
+    }
+
+    public void addAll(SinglyLinkedList<T> list) {
+        for(int i = 0; i < list.getSize(); i++) {
+            add(list.get(i));
+        }
     }
 
     public void set(int pos, T value) {
