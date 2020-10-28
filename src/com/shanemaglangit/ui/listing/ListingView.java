@@ -54,6 +54,12 @@ public class ListingView extends JFrame {
     private JScrollPane productScrollPane;
     private ProductList productList;
 
+    // Page components
+    private JPanel pnlPage;
+    private JButton btnPrev;
+    private JFormattedTextField txtPage;
+    private JButton btnNext;
+
     // Cart Components
     private JPanel pnlFiller;
     private JPanel pnlCart;
@@ -307,6 +313,38 @@ public class ListingView extends JFrame {
         productScrollPane.setBorder(new EmptyBorder(6, 6, 6, 6));
         productScrollPane.getVerticalScrollBar().setUnitIncrement(8);
         pnlListing.add(productScrollPane);
+
+        // Add paging panel
+        pnlPage = new JPanel();
+        pnlPage.setBackground(Color.WHITE);
+        pnlPage.setAlignmentY(Component.BOTTOM_ALIGNMENT);
+        pnlPage.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, 70));
+        pnlPage.setBorder(new EmptyBorder(4,4,4,4));
+        pnlListing.add(pnlPage);
+
+        btnPrev = new JButton("BACK");
+        btnPrev.setFocusPainted(false);
+        btnPrev.setBorder(new LineBorder(Resources.PRIMARY, 6));
+        btnPrev.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
+        btnPrev.setForeground(Resources.LIGHT);
+        btnPrev.setBackground(Resources.PRIMARY);
+        pnlPage.add(btnPrev);
+
+        txtPage = new JFormattedTextField(numberFormatter);
+        txtPage.setColumns(3);
+        txtPage.setValue(1);
+        txtPage.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
+        txtPage.setMargin(new Insets(4, 4, 4, 4));
+        txtPage.setHorizontalAlignment(SwingConstants.CENTER);
+        pnlPage.add(txtPage);
+
+        btnNext = new JButton("NEXT");
+        btnNext.setFocusPainted(false);
+        btnNext.setBorder(new LineBorder(Resources.PRIMARY, 6));
+        btnNext.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
+        btnNext.setForeground(Resources.LIGHT);
+        btnNext.setBackground(Resources.PRIMARY);
+        pnlPage.add(btnNext);
     }
 
     private void initCartComponents() {
@@ -515,5 +553,17 @@ public class ListingView extends JFrame {
 
     public ButtonGroup getBgSort() {
         return bgSort;
+    }
+
+    public JButton getBtnPrev() {
+        return btnPrev;
+    }
+
+    public JFormattedTextField getTxtPage() {
+        return txtPage;
+    }
+
+    public JButton getBtnNext() {
+        return btnNext;
     }
 }

@@ -11,6 +11,7 @@ import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -69,6 +70,22 @@ public class ListingController {
         view.getTxtPriceMax().addActionListener(e -> loadProducts());
         view.getRbtnLowToHigh().addActionListener(e -> loadProducts());
         view.getRbtnHighToLow().addActionListener(e -> loadProducts());
+        view.getTxtPage().addActionListener(e -> updatePage(0));
+        view.getBtnPrev().addActionListener(e -> updatePage(-1));
+        view.getBtnNext().addActionListener(e -> updatePage(1));
+    }
+
+    private void updatePage(int incr) {
+        int page = Integer.parseInt(view.getTxtPage().getText().replaceAll(",", ""));
+        page += incr;
+
+        if(page < 1) page = 1;
+        else if(page > productList.getPagesCount()) page = productList.getPagesCount();
+
+        view.getTxtPage().setText(String.valueOf(page));
+
+        pausePagination();
+        setProducts(page - 1);
     }
 
     /**
@@ -144,5 +161,26 @@ public class ListingController {
         JPanel pnlOverlay = view.getPnlOverlay();
         if(!pnlOverlay.isVisible()) setOrders();
         pnlOverlay.setVisible(!pnlOverlay.isVisible());
+    }
+
+    private void pausePagination() {
+        togglePagination(false);
+        SwingUtilities.invokeLater(() -> togglePagination(true));
+    }
+
+    private void togglePagination(boolean isEnabled) {
+        Color color;
+
+        if(isEnabled) color = Resources.PRIMARY;
+        else color = Color.LIGHT_GRAY;
+
+        view.getTxtPage().setEnabled(isEnabled);
+        view.getBtnNext().setEnabled(isEnabled);
+        view.getBtnPrev().setEnabled(isEnabled);
+
+        view.getBtnNext().setBackground(color);
+        view.getBtnPrev().setBackground(color);
+        view.getBtnNext().setBorder(new LineBorder(color, 6));
+        view.getBtnPrev().setBorder(new LineBorder(color, 6));
     }
 }
