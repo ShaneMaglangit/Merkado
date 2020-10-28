@@ -1,5 +1,6 @@
 package com.shanemaglangit.ui.listing.orderlist;
 
+import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.SinglyLinkedList;
 
@@ -9,7 +10,7 @@ import java.awt.*;
 
 public class OrderList extends JPanel {
     public OrderList() {
-        super();
+        // Set the layout
         this.setLayout(new SpringLayout());
     }
 
@@ -25,6 +26,7 @@ public class OrderList extends JPanel {
                 else layout.putConstraint(SpringLayout.NORTH, current, 4, SpringLayout.SOUTH, getComponent(i - 1));
                 layout.putConstraint(SpringLayout.WEST, current, 0, SpringLayout.WEST, this);
                 layout.putConstraint(SpringLayout.EAST, current, 0, SpringLayout.EAST, this);
+                layout.putConstraint(SpringLayout.SOUTH, this, 0, SpringLayout.SOUTH, current);
             }
         });
     }

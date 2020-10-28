@@ -408,7 +408,6 @@ public class ListingView extends JFrame {
 
         orderScrollPane = new JScrollPane(orderList);
         orderScrollPane.setAlignmentX(Component.CENTER_ALIGNMENT);
-        orderScrollPane.setAlignmentY(Component.CENTER_ALIGNMENT);
         orderScrollPane.getVerticalScrollBar().setUnitIncrement(8);
         orderScrollPane.setBorder(null);
         pnlCartInner.add(orderScrollPane);
