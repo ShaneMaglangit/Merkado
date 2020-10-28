@@ -20,4 +20,7 @@ public abstract class Config {
             "(?<amex>3[47][0-9]{13})|" +
             "(?<diners>3(?:0[0-5]|[68][0-9])?[0-9]{11})|" +
             "(?<jcb>(?:2131|1800|35[0-9]{3})[0-9]{11}))$";
+
+    public static final String DATE_TIME_FORMAT = "yyyy-MM-dd'T'HH-mm-ss.SSSZ";
+    public static final String DATE_FORMAT = "yyyy-MM-dd";
 }

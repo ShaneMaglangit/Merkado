@@ -7,6 +7,8 @@ import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public abstract class Resources {
     public enum FontWeight {
@@ -29,7 +31,7 @@ public abstract class Resources {
 
     public static final String PRODUCT_FILE = "src/com/shanemaglangit/res/csv/products.csv";
     public static final String ORDER_FILE = "src/com/shanemaglangit/res/csv/orders.csv";
-    public static final String TRANSACTIONS_FILE_FORMAT = "src/com/shanemaglangit/res/csv/transactions/%d-%d-%d.csv";
+    public static final String TRANSACTIONS_FILE_FORMAT = "src/com/shanemaglangit/res/csv/transactions/%s.csv";
 
     public static Font createPoppinsFont(FontWeight weight, int size) {
         String fontPath = "";
@@ -55,5 +57,13 @@ public abstract class Resources {
         } catch (FontFormatException | IOException e) {
             return new Font("Trebuchet MS", weightCallback, size);
         }
+    }
+
+    public static String getTransactionFile() {
+        return getTransactionFile(LocalDate.now());
+    }
+
+    public static String getTransactionFile(LocalDate date) {
+        return String.format(TRANSACTIONS_FILE_FORMAT, date.format(Util.dateFormatter));
     }
 }
