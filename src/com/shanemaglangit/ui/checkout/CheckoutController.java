@@ -7,7 +7,7 @@ import com.shanemaglangit.data.Transaction;
 import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.util.Util;
 
-public class CheckoutController {
+public class  CheckoutController {
     private Repository repository;
     private CheckoutView view;
 
