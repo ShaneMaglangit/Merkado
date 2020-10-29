@@ -2,13 +2,10 @@ package com.shanemaglangit.res;
 
 import com.shanemaglangit.util.Util;
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URL;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 public abstract class Resources {
     public enum FontWeight {
@@ -36,6 +33,12 @@ public abstract class Resources {
     public static final String ORDER_FILE = "src/com/shanemaglangit/res/csv/orders.csv";
     public static final String TRANSACTIONS_FILE_FORMAT = "src/com/shanemaglangit/res/csv/transactions/%s.csv";
 
+    /**
+     * Used to generate a Font based on the given weight and size
+     * @param weight font weight
+     * @param size font size
+     * @return generated Font object
+     */
     public static Font createPoppinsFont(FontWeight weight, int size) {
         String fontPath = "";
         int weightCallback = Font.PLAIN;
@@ -62,10 +65,19 @@ public abstract class Resources {
         }
     }
 
+    /**
+     * Used to get the path to the transaction file for the current date
+     * @return filepath of the transaction file
+     */
     public static String getTransactionFile() {
         return getTransactionFile(LocalDate.now());
     }
 
+
+    /**
+     * Used to get the path to the transaction file for the a given date
+     * @return filepath of the transaction file
+     */
     public static String getTransactionFile(LocalDate date) {
         return String.format(TRANSACTIONS_FILE_FORMAT, date.format(Util.dateFormatter));
     }

@@ -1,8 +1,6 @@
 package com.shanemaglangit.ui.receipt;
 
 import com.shanemaglangit.data.Transaction;
-import com.shanemaglangit.repository.Repository;
-import com.shanemaglangit.ui.splashscreen.SplashScreenView;
 
 public class ReceiptPresenter {
     private ReceiptView view;
@@ -18,19 +16,9 @@ public class ReceiptPresenter {
         showView();
     }
 
-    private void setContents(Transaction transaction, double totalFee) {
-        String paymentMethod;
-
-        if(transaction.isCOD()) paymentMethod = "Cash on Delivery";
-        else paymentMethod = "Card";
-
-        view.getLblTransactionId().setText("Transaction ID: " + transaction.getTransactionId().toString());
-        view.getLblAddress().setText("Address: " + transaction.getAddress());
-        view.getLblPhoneNumber().setText("Phone Number: " + transaction.getPhoneNumber());
-        view.getLblPaymentMethod().setText("Payment Method: " + paymentMethod);
-        view.getLblTotalFee().setText("Total Fee: " + totalFee);
-    }
-
+    /**
+     * Attach listeners to the view components
+     */
     private void attachListeners() {
         view.getBtnOk().addActionListener(e -> view.dispose());
     }
@@ -42,5 +30,24 @@ public class ReceiptPresenter {
         view.pack();
         view.setLocationRelativeTo(null);
         view.setVisible(true);
+    }
+
+    /**
+     * Used to load the receipt details to the views
+     * @param transaction reference to the transaction
+     * @param totalFee total fee for the transaction
+     */
+    private void setContents(Transaction transaction, double totalFee) {
+        // Identify the payment method
+        String paymentMethod;
+        if(transaction.isCOD()) paymentMethod = "Cash on Delivery";
+        else paymentMethod = "Card";
+
+        // Set the appropriate contents for the view labels
+        view.getLblTransactionId().setText("Transaction ID: " + transaction.getTransactionId().toString());
+        view.getLblAddress().setText("Address: " + transaction.getAddress());
+        view.getLblPhoneNumber().setText("Phone Number: " + transaction.getPhoneNumber());
+        view.getLblPaymentMethod().setText("Payment Method: " + paymentMethod);
+        view.getLblTotalFee().setText("Total Fee: " + totalFee);
     }
 }

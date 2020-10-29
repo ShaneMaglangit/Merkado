@@ -1,9 +1,6 @@
 package com.shanemaglangit.ui.receipt;
 
-import com.shanemaglangit.components.HintTextField;
-import com.shanemaglangit.components.RoundedButton;
 import com.shanemaglangit.config.Config;
-import com.shanemaglangit.data.Transaction;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
@@ -58,6 +55,7 @@ public class ReceiptView extends JDialog {
         pnlDeliver.setBorder(new EmptyBorder(18, 18, 18, 18));
         pnlMain.add(pnlDeliver);
 
+        // Create a separator/line between the two main panels
         pnlSeperator = new JPanel();
         pnlSeperator.setBackground(Color.GRAY);
         pnlSeperator.setMaximumSize(new Dimension(1, Config.WINDOW_HEIGHT));
@@ -68,6 +66,7 @@ public class ReceiptView extends JDialog {
         lblDeliver.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlDeliver.add(lblDeliver);
 
+        // Create the confirmation message
         lblConfirmation = new JLabel("Your order should arrive in a few hours");
         lblConfirmation.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblConfirmation.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM , 14));
@@ -80,43 +79,49 @@ public class ReceiptView extends JDialog {
         pnlDetails.setBorder(new EmptyBorder(18, 18, 18, 18));
         pnlMain.add(pnlDetails);
 
+        // Create the header for the transaction details
         lblHeader = new JLabel("Here's your purchase details");
         lblHeader.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 14));
         pnlDetails.add(lblHeader);
 
         pnlDetails.add(Box.createRigidArea(new Dimension(0, 12)));
 
+        // Create the label for the transactionId
         lblTransactionId = new JLabel();
         lblTransactionId.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlDetails.add(lblTransactionId);
 
         pnlDetails.add(Box.createRigidArea(new Dimension(0, 6)));
 
+        // Create the label for the address
         lblAddress = new JLabel();
         lblAddress.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlDetails.add(lblAddress);
 
         pnlDetails.add(Box.createRigidArea(new Dimension(0, 6)));
 
+        // Create the label for the phone number
         lblPhoneNumber = new JLabel();
         lblPhoneNumber.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlDetails.add(lblPhoneNumber);
 
         pnlDetails.add(Box.createRigidArea(new Dimension(0, 6)));
 
+        // Create the label for the payment method
         lblPaymentMethod = new JLabel();
         lblPaymentMethod.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlDetails.add(lblPaymentMethod);
 
         pnlDetails.add(Box.createRigidArea(new Dimension(0, 6)));
 
+        // Create the label for the total fee
         lblTotalFee = new JLabel();
         lblTotalFee.setFont(Resources.createPoppinsFont(Resources.FontWeight.PLAIN, 12));
         pnlDetails.add(lblTotalFee);
 
         pnlDetails.add(Box.createRigidArea(new Dimension(0, 12)));
 
-        // Create the ok button
+        // Create the confirmation button
         btnOk = new JButton("Ok");
         btnOk.setFocusPainted(false);
         btnOk.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));

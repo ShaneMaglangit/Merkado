@@ -3,22 +3,20 @@ package com.shanemaglangit.ui.listing;
 import com.shanemaglangit.components.FormattedHintTextField;
 import com.shanemaglangit.components.HintTextField;
 import com.shanemaglangit.config.Config;
-import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.ui.listing.orderlist.OrderList;
 import com.shanemaglangit.ui.listing.productlist.ProductList;
 import com.shanemaglangit.util.Util;
-import org.w3c.dom.css.RGBColor;
 
 import javax.swing.*;
-import javax.swing.border.*;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.MouseAdapter;
 import java.text.NumberFormat;
-import java.util.ArrayList;
 
 public class ListingView extends JFrame {
     private JLayeredPane paneMain;
@@ -123,6 +121,9 @@ public class ListingView extends JFrame {
         initCartComponents();
     }
 
+    /**
+     * Creates the main components for the view
+     */
     private void initMainComponents() {
         // Create the layered pane
         paneMain = new JLayeredPane();
@@ -146,6 +147,9 @@ public class ListingView extends JFrame {
         paneMain.add(pnlDefault, JLayeredPane.DEFAULT_LAYER);
     }
 
+    /**
+     * Creates the search components
+     */
     private void initSearchComponents() {
         // Create the header panel
         pnlHeader = new JPanel();
@@ -185,6 +189,9 @@ public class ListingView extends JFrame {
         pnlHeader.add(Box.createRigidArea(new Dimension(16, 0)));
     }
 
+    /**
+     * Creates the content component
+     */
     private void initContentComponents() {
         // Create the content panel
         pnlContents = new JPanel();
@@ -193,6 +200,9 @@ public class ListingView extends JFrame {
         pnlDefault.add(pnlContents, JLayeredPane.DEFAULT_LAYER);
     }
 
+    /**
+     * Creates the filter components
+     */
     private void initFilterComponents() {
         GridLayout layoutPrice;
 
@@ -295,6 +305,9 @@ public class ListingView extends JFrame {
         bgSort.add(rbtnLowToHigh);
     }
 
+    /**
+     * Creates the listing components
+     */
     private void initListingComponents() {
         // Create the listing panel
         pnlListing = new JPanel();
@@ -347,6 +360,9 @@ public class ListingView extends JFrame {
         pnlPage.add(btnNext);
     }
 
+    /**
+     * Creates the cart components
+     */
     private void initCartComponents() {
         // Add the overlay panel
         pnlOverlay = new JPanel();

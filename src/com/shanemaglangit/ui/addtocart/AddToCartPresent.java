@@ -2,13 +2,10 @@ package com.shanemaglangit.ui.addtocart;
 
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.Product;
-import com.shanemaglangit.navigation.Navigation;
 import com.shanemaglangit.repository.Repository;
 
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 public class AddToCartPresent {
     private AddToCartView view;
@@ -29,6 +26,9 @@ public class AddToCartPresent {
         showView();
     }
 
+    /**
+     * Used to update the contents of the view components
+     */
     private void updateContent() {
         view.getLblPrice().setText("PHP " + order.getTotal());
         view.getLblProductName().setText(order.getProduct().getName());

@@ -1,12 +1,9 @@
 package com.shanemaglangit.ui.listing.orderlist;
 
-import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.SinglyLinkedList;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
-import java.awt.*;
 
 public class OrderList extends JPanel {
     public OrderList() {
@@ -14,6 +11,10 @@ public class OrderList extends JPanel {
         this.setLayout(new SpringLayout());
     }
 
+    /**
+     * Used to add order items to the list
+     * @param orders
+     */
     public void setOrders(SinglyLinkedList<Order> orders) {
         SwingUtilities.invokeLater(() -> {
             SpringLayout layout = (SpringLayout) getLayout();

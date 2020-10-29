@@ -16,26 +16,52 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public abstract class Util {
+    // static instance of logger for logging messages
     private static final Logger LOGGER = Logger.getLogger(Util.class.getName());
 
+    // Formatter for DateTime and Date objects
     public static DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern(Config.DATE_TIME_FORMAT);
     public static DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern(Config.DATE_FORMAT);
 
+    /**
+     * Utility method for logging messages
+     * @param level level of the log message
+     * @param message contents of the log
+     */
     public static void log(Level level, String message) {
         LOGGER.log(level, message);
     }
 
+    /**
+     * Used to create an ImageIcon based on the given image path
+     * @param object used to get the base path
+     * @param url path of the image file
+     * @return instance of ImageIcon with the loaded image
+     */
     public static ImageIcon createImageIcon(Object object, String url) {
         URL imgUrl = object.getClass().getResource(url);
         return new ImageIcon(imgUrl);
     }
 
+    /**
+     * Used to create an ImageIcon based on the given image path with set dimensions
+     * @param object used to get the base path
+     * @param url path of the image file
+     * @param width width of the image icon
+     * @param height height of the image icon
+     * @return instance of ImageIcon with the loaded image
+     */
     public static ImageIcon createImageIcon(Object object, String url, int width, int height) {
         ImageIcon imgIcon = createImageIcon(object, url);
         Image scaledImg = imgIcon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(scaledImg);
     }
 
+    /**
+     * Utility method for getting the sum of all order's price.
+     * @param orderList list of all orders
+     * @return sum of order's prices
+     */
     public static double computeOrderSubTotal(SinglyLinkedList<Order> orderList) {
         double subTotal = 0;
         for(int i = 0; i < orderList.getSize(); i++)
@@ -43,14 +69,20 @@ public abstract class Util {
         return  subTotal;
     }
 
+    /**
+     * Utility method for showing an error dialog
+     * @param parent parent component of the dialog
+     * @param message error message
+     */
     public static void showErrorDialog(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, message, "An error has occured", JOptionPane.ERROR_MESSAGE);
     }
 
-    public static void showMessageDialog(Component parent, String message) {
-        JOptionPane.showMessageDialog(parent, message, "", JOptionPane.PLAIN_MESSAGE);
-    }
-
+    /**
+     * Utility method for converting SinglyLinkedList<String> to a primitive String array.
+     * @param list list of string
+     * @return primitive string array
+     */
     public static String[] stringListToArr(SinglyLinkedList<String> list) {
         String[] arr = new String[list.getSize() + 1];
         arr[0] = "";
@@ -58,6 +90,11 @@ public abstract class Util {
         return arr;
     }
 
+    /**
+     * Utility method for encrypting / decrypting a given string
+     * @param raw unprocessed String
+     * @return encrypted/decrypted string
+     */
     public static String cipher(String raw) {
         try {
             byte[] encryptedBytes;

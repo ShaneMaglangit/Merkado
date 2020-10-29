@@ -19,8 +19,7 @@ public class SplashScreenPresenter {
      */
     public SplashScreenPresenter(SplashScreenView view) {
         this.view = view;
-        // Forces repository to start lazy initialization, forcing it to preload the data
-        //  even during the splash screen duration.
+        // Forces repository to start lazy initialization, forcing it to preload the data even during the splash screen duration.
         Repository.getInstance();
         startSplashScreen();
     }

@@ -75,27 +75,40 @@ public class ListingPresenter {
         view.getBtnNext().addActionListener(e -> updatePage(1));
     }
 
+    /**
+     * Used by the listeners to update the page of the products
+     * @param incr value that will be added to the current page
+     */
     private void updatePage(int incr) {
+        // Get the current page and add the increment
         int page = Integer.parseInt(view.getTxtPage().getText().replaceAll(",", ""));
         page += incr;
 
+        // Ensure the page stays within its bounds
         if(page < 1) page = 1;
         else if(page > productList.getPagesCount()) page = productList.getPagesCount();
 
-        view.getTxtPage().setText(String.valueOf(page));
-
+        // Temporarily disable the pagination controls
         pausePagination();
-        setProducts(page - 1);
+
+        // Set the products
+        setProducts(page);
     }
 
     /**
      * Set the product to the product list component
      */
     private void setProducts(int page) {
-        view.getProductList().setProducts(productList.getPage(page));
+        // Update the text field for the page number
+        view.getTxtPage().setText(String.valueOf(page));
+        view.getProductList().setProducts(productList.getPage(page - 1));
     }
 
+    /**
+     * Used to load the products given the filter by the user
+     */
     private void loadProducts() {
+        // Store the filters accordingly
         String search = view.getTxtSearch().getText();
         String market = (String) view.getCbxMarket().getSelectedItem();
         String category = (String) view.getCbxCategory().getSelectedItem();
@@ -105,24 +118,32 @@ public class ListingPresenter {
 
         Util.log(Level.INFO, String.format("Filters:%s,%s,%s,%d,%d,%b", search, market, category, minPrice, maxPrice, isAscending));
 
+        // Use the ProductFilter to filter the products
         this.productList = new ProductFilter(repository.getProductList())
-                .title(search)
-                .market(market)
-                .category(category)
-                .minPrice(minPrice)
-                .maxPrice(maxPrice)
-                .sort(isAscending)
-                .get();
+            .title(search)
+            .market(market)
+            .category(category)
+            .minPrice(minPrice)
+            .maxPrice(maxPrice)
+            .sort(isAscending)
+            .get();
 
+        // Reset the page back to 0
         setProducts(0);
     }
 
+    /**
+     * Sets the categories for the filter
+     */
     private void loadCategories() {
         String[] categoryArr = Util.stringListToArr(repository.getCategoryList());
         ComboBoxModel<String> cbxModel = new DefaultComboBoxModel<>(categoryArr);
         view.getCbxCategory().setModel(cbxModel);
     }
 
+    /**
+     * Sets the markets for the filter
+     */
     private void loadMarkets() {
         String[] marketArr = Util.stringListToArr(repository.getMarketList());
         ComboBoxModel<String> cbxModel = new DefaultComboBoxModel<>(marketArr);
@@ -163,21 +184,30 @@ public class ListingPresenter {
         pnlOverlay.setVisible(!pnlOverlay.isVisible());
     }
 
+    /**
+     * Temporarily disables the pagination
+     */
     private void pausePagination() {
         togglePagination(false);
         SwingUtilities.invokeLater(() -> togglePagination(true));
     }
 
+    /**
+     * Used to toggle the pagination views state
+     * @param isEnabled state of the views
+     */
     private void togglePagination(boolean isEnabled) {
+        // Identify the color to be set as the background for the buttons
         Color color;
-
         if(isEnabled) color = Resources.PRIMARY;
         else color = Color.LIGHT_GRAY;
 
+        // Set the states
         view.getTxtPage().setEnabled(isEnabled);
         view.getBtnNext().setEnabled(isEnabled);
         view.getBtnPrev().setEnabled(isEnabled);
 
+        // Set the background and border colors
         view.getBtnNext().setBackground(color);
         view.getBtnPrev().setBackground(color);
         view.getBtnNext().setBorder(new LineBorder(color, 6));
