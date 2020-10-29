@@ -10,7 +10,7 @@ import com.shanemaglangit.util.Util;
 
 import java.awt.*;
 
-public class  CheckoutController {
+public class CheckoutPresenter {
     private Repository repository;
     private CheckoutView view;
 
@@ -18,7 +18,7 @@ public class  CheckoutController {
      * Constructor
      * @param view view attached to this controller
      */
-    public CheckoutController(CheckoutView view) {
+    public CheckoutPresenter(CheckoutView view) {
         this.view = view;
         this.repository = Repository.getInstance();
         updateContents();

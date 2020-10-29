@@ -10,7 +10,7 @@ import javax.swing.event.DocumentListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-public class AddToCartController {
+public class AddToCartPresent {
     private AddToCartView view;
     private Repository repository;
 
@@ -20,7 +20,7 @@ public class AddToCartController {
      * Constructor
      * @param view view attached to this controller
      */
-    public AddToCartController(AddToCartView view, Product product) {
+    public AddToCartPresent(AddToCartView view, Product product) {
         this.view = view;
         this.repository = Repository.getInstance();
         this.order = new Order(product, 1);

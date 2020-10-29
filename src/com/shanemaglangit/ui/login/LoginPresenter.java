@@ -2,14 +2,14 @@ package com.shanemaglangit.ui.login;
 
 import com.shanemaglangit.navigation.Navigation;
 
-public class LoginController {
+public class LoginPresenter {
     private LoginView view;
 
     /**
      * Constructor
      * @param view view attached to this controller
      */
-    public LoginController(LoginView view) {
+    public LoginPresenter(LoginView view) {
         this.view = view;
 
         // Attach click listener to the view components

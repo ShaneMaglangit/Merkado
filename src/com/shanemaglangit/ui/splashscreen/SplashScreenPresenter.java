@@ -7,7 +7,7 @@ import com.shanemaglangit.util.Util;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-public class SplashScreenController {
+public class SplashScreenPresenter {
     // Duration of the artificial delay for the splash screen
     private final int DELAY_DURATION = 5;
 
@@ -17,7 +17,7 @@ public class SplashScreenController {
      * Constructor
      * @param view view attached to this controller
      */
-    public SplashScreenController(SplashScreenView view) {
+    public SplashScreenPresenter(SplashScreenView view) {
         this.view = view;
         // Forces repository to start lazy initialization, forcing it to preload the data
         //  even during the splash screen duration.

@@ -70,7 +70,7 @@ public class ReceiptView extends JDialog {
 
         lblConfirmation = new JLabel("Your order should arrive in a few hours");
         lblConfirmation.setAlignmentX(Component.CENTER_ALIGNMENT);
-        lblConfirmation.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 14));
+        lblConfirmation.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM , 14));
         pnlDeliver.add(lblConfirmation);
 
         // Create the details panel

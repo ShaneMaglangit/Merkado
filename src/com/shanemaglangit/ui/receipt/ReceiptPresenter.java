@@ -4,14 +4,14 @@ import com.shanemaglangit.data.Transaction;
 import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.ui.splashscreen.SplashScreenView;
 
-public class ReceiptController {
+public class ReceiptPresenter {
     private ReceiptView view;
 
     /**
      * Constructor
      * @param view view attached to this controller
      */
-    public ReceiptController(ReceiptView view, Transaction transaction, double totalFee) {
+    public ReceiptPresenter(ReceiptView view, Transaction transaction, double totalFee) {
         this.view = view;
         setContents(transaction, totalFee);
         attachListeners();

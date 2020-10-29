@@ -17,7 +17,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.logging.Level;
 
-public class ListingController {
+public class ListingPresenter {
     private Repository repository;
     private PagedLinkedList<Product> productList;
     private ListingView view;
@@ -26,7 +26,7 @@ public class ListingController {
      * Constructor
      * @param view view attached to this controller
      */
-    public ListingController(ListingView view) {
+    public ListingPresenter(ListingView view) {
         this.view = view;
         this.repository = Repository.getInstance();
         this.productList = repository.getProductList();
