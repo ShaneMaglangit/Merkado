@@ -53,6 +53,10 @@ public class Product extends CSVEntity implements Comparable<Product> {
         return category;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
     @Override
     public int compareTo(Product obj) {
         return Double.compare(price, obj.getPrice());

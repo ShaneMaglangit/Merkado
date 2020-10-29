@@ -5,6 +5,7 @@ import com.shanemaglangit.data.Product;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
+import javax.print.attribute.standard.Media;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
@@ -17,13 +18,19 @@ public class ProductListItem extends JPanel {
     private JLabel lblPrice;
 
     public ProductListItem(Product product) {
+        ImageIcon imgIcon;
+
         // Set the panel preferences
         this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         this.setBorder(new EmptyBorder(6, 6, 6, 6));
         this.setBackground(Color.WHITE);
 
         // Add the product image
-        lblImage = new JLabel(Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH));
+        imgIcon = Util.createImageIcon(this, "../../.." + Resources.PRODUCT_IMG_PATH + product.getImagePath(), 50, 50);
+        if(imgIcon.getImageLoadStatus() == MediaTracker.ABORTED || imgIcon.getImageLoadStatus() == MediaTracker.ERRORED)
+            imgIcon = Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH);
+
+        lblImage = new JLabel(imgIcon);
         lblImage.setAlignmentX(Component.CENTER_ALIGNMENT);
         lblImage.setHorizontalAlignment(JLabel.CENTER);
         lblImage.setMaximumSize(new Dimension(Config.WINDOW_WIDTH, Config.WINDOW_HEIGHT));

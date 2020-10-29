@@ -1,200 +1,223 @@
 productId,name,price,market,imagePath,category
-4d9def06-9499-44c4-afe4-5ebd683a7104,Fresh Pork 5g,12.00,Sampaloc Market,,Meat
-5fcde32d-9b90-4cfb-aa33-2f44eab8683e,Fresh Pork 5g,12.00,Sampaloc Market,,Meat
-63c853fa-5674-4433-b3df-770392e8c66e,Celery 5kg,14.00,Apalit Market,,Vegetables
-933c764f-af5a-4ac2-9ee6-820313e9785f,Apple 1/2kg,45.00,Apalit Market,,Fruits
-d3b4b49e-0462-47cd-a435-6df6e631a93c,Celery 5kg,14.00,Sampaloc Market,,Vegetables
-d4d8ac2b-ed2b-40c3-b6bb-af9cfe3ef2db,Apple 1/2kg,45.00,Sampaloc Market,,Fruits
-64cf5ea1-2763-4d14-8742-3da5302bf15f,Apple 1/2kg,25.00,Sampaloc Market,,Fruits
-cf736d9f-9dc4-4ef7-9ae4-7fa6a43987a7,Apple 1/2kg,35.00,Sampaloc Market,,Fruits
-c0229535-3202-4ed9-a026-fce96528c7dc,Apple 1/2kg,45.00,Sampaloc Market,,Fruits
-9cd99295-aa64-4bec-9d38-bcb577d9b846,Apple 1/2kg,45.00,Sampaloc Market,,Fruits
-96ca8abf-a457-4808-8822-febccd22ef39,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-035e259b-5a2c-4dfe-bb5a-8173aebff0d3,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-620acd53-5ec0-4a44-8841-0c369dbc5999,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-161e4a59-a093-4664-8a21-3664c904946f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-5d251089-c8fb-42ca-a583-4e46923ff8b3,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-3470cc01-2c45-48a9-974f-d70b08443270,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c7b3939d-8674-463b-80c5-c48cff27ceeb,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-da6e29c7-4e73-4f6c-a863-37669fd4bac4,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d9251424-7afe-43a0-95e8-dad1625ca04e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-69536435-f1c1-4e3a-9edb-7377abd55c6c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-48935408-5f5b-4fba-94d2-2660451d9c5d,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-182630c2-6c3f-4b22-a32a-95e36e2cbda2,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-76a0ce52-23e2-49dd-a301-92c9b3442c08,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-bde03fa3-bb51-473a-8d72-0076ece5982a,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b6fb87de-12cc-4603-9e73-880640b98631,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-aaf92e06-9678-434d-b7b2-5e9f53b9a4b8,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-2a758676-08e5-4f66-956e-b1e2ca0a6d77,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-cc100e44-2289-406f-8c59-13c840b550db,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-af66f44b-aed6-47b3-9fe9-4ad318cd7c66,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-2da3ab1f-6ee8-4e61-811d-df6d88a65cd5,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b57d6831-3d4b-41e6-a467-e11179f8bbc3,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-36d05ed5-16fd-4d06-95a9-87988d3d38be,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b32c8ba1-9f99-4942-80f6-6110407b549f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-667b410a-3bf9-4356-bde2-ad7c833a9273,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-94ae772f-31bb-4b4b-b953-54d6a63e31f3,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-1feb44a1-013c-4236-b373-731f32fb1659,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-3551559b-5972-405b-92f7-381bf7227016,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c984d791-f818-4bc0-9659-6deb3222a4f6,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-281a81de-55a7-45f7-81e1-c1fe4b971d85,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-84ed4f9b-68e8-4e44-baa9-151225084c90,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ae5b624a-47a1-4963-8e61-6257cd13ba01,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c68411e4-0a6f-4b5f-97b6-132fcd38aa31,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f94d3696-b887-4beb-aa38-e0521bdbe2f2,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-bb449ac8-9942-4faa-a246-3e98cf33e308,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f5d31a95-0864-40ce-b92c-b1f8ac5e6d6d,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-fefb89d1-6219-4cac-8414-5ddd9d831d0c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-fdcd2747-23ec-4c82-8b24-cb309b29df56,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-77cb6ebd-2f87-4a72-ab08-f6f012488555,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6657e97c-4dcc-45ea-8e09-304c7d936e1d,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b34ebd1e-60d5-4b85-aac9-6979f8eaa45e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d4879bb1-f869-4a09-8c6c-c5cb3c05d46f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-090589c5-3d75-4156-b45c-8218777b3e35,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-300864de-1338-4816-b7cf-4d8be197ad81,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-67669f99-94a6-479d-b475-54544c32f28f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-e80503f6-0136-4b42-8a6e-c852d368b79a,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-8367995d-7e2e-4c9a-81a7-99b9d36c46ce,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-683ac407-6934-4952-ae49-784c0b5400ad,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-a1f2caf5-5bbc-4cb5-8b58-dbc41ecb9cf6,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-9920ae3a-86f7-4c00-a59f-eddf235c9396,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f7ac05ea-4c1b-4fa1-9b89-e167865f6697,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f15c4eef-7367-4992-8089-e3ff4c990123,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ce9f07a6-84ca-4197-81fc-f4805d669740,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ae93b63f-1795-49f9-8049-5a5cc76ff0d6,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6e424ba1-94d2-4c95-a8c7-1f71a1a2b5a4,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6ef02e79-f52f-491a-ab53-46ac6bf9e4be,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-537ed19f-6331-49c3-ae7c-9976dbdff91e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-2be7bd27-663a-4e83-96a8-2debfdb94440,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c3f580ea-eaec-4c4b-9d4b-536ada2e47c4,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-46fd5cdc-4cd6-4f59-ba0c-f2da97b3a21c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ee384890-0bf6-45bf-9fd8-fef62689c5f9,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6ab82b87-c69d-49ee-9012-49ba6abd2489,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-519daa53-0041-4db8-b81b-b6d73b6e4929,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-43f13c6b-8505-462a-ac0c-bd35a5c77d02,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f722017e-6099-4fa0-a4eb-f6926f198ccd,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6a83a69c-8e62-4bd6-95a9-b52c04fb3e49,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-56d81b51-28f4-4902-bd13-7b11ed4c7c6e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-408d4235-9e7e-4d97-8372-67a8e1351002,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-91845db9-7038-49a0-9fc0-fd060a149262,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-5f8823f5-50c9-45c7-92fc-55fe3b927e2c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-4eb3c665-e20b-416c-ba7f-fd9dbf1bfb44,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-55c1857f-93db-4b20-a81b-894d8fd5c5ae,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-863af6cf-ba89-403a-b545-16251e12764a,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-5cb29ffa-057b-4ac2-9dbd-4f79735a0762,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-77e28f1f-e27b-45d2-a0b8-4b46e8dbe8e5,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-945f5470-0582-4a05-a8ec-8d5a98386dfe,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-df5f4769-c111-463b-803b-c7aa32d5d27d,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-a850f2fc-db07-4175-bd72-c1a1a710206e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-3829f16d-857c-4767-8dd0-8b17ac75ec58,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-0ae1425b-7f02-48f8-a299-5a8edaa743a7,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f259aefb-a777-4f02-9e23-5f9c2ab6cfb0,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-974c6d32-4a14-49fc-96bf-f1e25344103b,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6d98fac3-7b98-4a02-8e2d-f2eb014928d4,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-421382e0-9449-4c88-9ec0-5640e0634123,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-0fdd6735-152a-4833-a276-c11cf986ecf0,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-8f8043a4-b93d-491d-989c-e0a21628efa6,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b1477530-0e9a-4741-8346-362826423374,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-241845da-8228-4ada-a0ea-9ae773acf017,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-42073e09-e135-4a01-834e-adc6aab63468,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-a9d1f729-0681-4aa7-9421-d81cf8cd2287,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f1847f5b-11d6-435b-9a2a-7b1d8b13635e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c12a5f50-2088-4873-9bec-9a8635638b40,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-5bf20ab4-b4b9-4cfc-b3d2-2f3f5bc2ce77,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ac7dc736-9e06-4cd6-ab7e-73c65db7f614,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c409bcef-8299-42d5-8c48-4683c1508a4a,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-bc9feb77-bb47-49f0-ae1d-46115f5179c5,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-0563c2ad-511b-4adc-8408-d7996ffa7739,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f438de91-11a3-4ee8-b549-2537f413ce7f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f1487bf1-0f40-4996-b7d5-0a652fc1564c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-021bfc06-7a54-4f8b-91cf-ed79af5b0872,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-220a1661-80f8-4ecd-bc76-0c74934d2b21,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-32631dca-78b1-4da2-bd5f-e78ef9ef2616,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ef96d028-1a74-4f0f-ab66-7b1640b5e889,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d4f55db3-8995-4089-8a9a-913dd15d088f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-3ee0ca00-e55b-4ebd-911f-fd157b5c3aa1,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-a8e2d121-492a-4bc0-8bc6-9b3b776a3998,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ccc599cc-3028-47d2-9a5c-584a720ca441,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-7357522c-f7e1-4574-b5d6-94c2847ffc9c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c2d80412-105c-4c0a-b701-f81ab458b26c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6b144dad-bc4d-4f77-8407-423bbb4ac9db,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-5e99a633-4121-4cff-b573-f7fb056d3acf,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-8c862574-151d-447c-b48a-bcf261d33567,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-eff7f523-e2ea-44c2-b5ce-f968e21f903d,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-947cf30c-6300-4f7c-aa68-2b5399c3f035,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f2b581b1-2dee-4978-bc3a-a6ef3165643b,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f36f5224-65d8-49de-9c74-b26b0d5e14ab,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-fab90079-a969-496b-8559-901fa00a2784,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f7f88042-ee4e-4f1d-b7c4-b7ed42dc4239,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-e5891815-6813-4421-a0db-4ec1db069a22,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-eb75a1b6-aec5-4150-a63c-78df5c353643,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-2bd6cd03-7825-4544-b979-7bbc9bed0693,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b625735a-1576-48d5-a8f0-8153a4010d63,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-fb9aaacd-4b6b-44a9-9956-1d18392a1771,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-4c485b88-c07d-4a62-aeef-368636d42a41,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-84abb539-3c86-49db-a34d-ed06c0322f5b,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c5faa390-2d97-4af6-a084-66cd276cb343,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-67c97385-287c-41a7-a684-8eda606d10ed,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-7327fda1-cdbd-400c-81d4-9d15aee485ad,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-e2a1300f-ec39-4f5c-955c-e265d4517060,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-609a3c29-da34-4cf7-9a71-a0ebba1b7a53,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-568548cd-0e45-49c4-847d-80102f4b44bc,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-104d974f-f817-4cb2-9420-8d2bd07cb6bb,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-43a296bc-2b03-4c78-bcbf-d2beebd53e24,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-96b2afe4-384a-4cf0-bf59-429096a5ca70,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-06f66157-7759-4c19-a047-6e019a7b0da1,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ac2d754a-dc7e-4e23-b04c-94e44bed7be5,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-a3ca2b5f-1eb2-4e8a-acda-d521366e987f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-60528505-a162-421f-aca2-5f87173bc0c8,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-521aa08e-8120-49bf-bbe0-a4b17c9d1948,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-8d0effc7-133e-4b2a-98fd-f56dba8f358a,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-951a5f6d-5032-4b51-8369-599155342ef0,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-3d325f3a-ca29-4f67-981d-f6ae9a21f86b,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-a6ea8b39-1b70-4d78-ad5d-559a6cd2ffdd,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-aef37be8-146a-44db-ace3-423af7bab4f0,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b8cce37e-f1e8-40d8-bc88-6c216ba7e5c1,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b887bfe4-e38b-4942-bd19-ad34c44380c2,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-2a9eb766-39e4-4aa0-9997-5ca08c60314e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c3024655-a2d4-4e8e-af33-95a5ff254f16,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-10e1cf91-e2df-42ff-ba99-07506c1d3b04,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d4c5b284-17ed-4438-a8ff-f3a41f47b2dd,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ef361e76-6076-4bb0-abb0-91a83cff0c94,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c03abb1d-a757-482a-bf84-60aa815c78fd,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-68bf39d2-57d0-498a-930f-a52dc25e0aef,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-77f562ad-c421-45ca-9f59-d8c0426b3842,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-479d7e9c-1dd3-46bd-920c-69d8b8e3903f,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-5577e120-6035-493f-8150-c6485c8df997,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d8a94ef2-597d-488e-aef3-b94695b73a1e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-f799798d-0941-4696-86c3-8c243a2473aa,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d95026cd-be8e-4069-99f9-5e5b926c6da0,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-70adb313-505c-4c8d-95b8-08208b49bf6b,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-797c8da5-a6ca-4923-9fd1-d2c610dde1d2,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-e880166d-83e4-48c7-9c44-ef6175b797c7,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d4785939-0f2d-4911-afff-af067c165a14,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-25726d5b-072b-45d5-a3af-97e4222b0f90,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-7df22f04-27ed-4d64-a63e-dadc9612b256,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-d053f759-7b44-40fa-b5a5-c6ac93547ddb,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-724cfaae-8589-4d0d-b9a0-9ea8639fcf43,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-a6c8a827-8c09-4a9b-82d5-3cc1806cc98c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b280d1b9-e78a-4fc1-a4b8-ecbba6af7d7e,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-0a02ab41-d4ad-495d-bf44-5f2893b028f5,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-54d29c6e-78dd-4eb2-aecc-2af908d4da92,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-6ba243a1-5589-4e25-b0b2-9e226db82b08,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-561dffde-135c-4ee2-9433-44a5fa476b83,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-8c3a0bee-e91a-4285-9c23-1cb144e52cb8,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-424ed839-cf90-48e4-862e-ed5603c180e2,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-262a7a3f-5406-4b2f-a542-547b4c73efa9,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-c571ed48-97a9-4582-afa9-86f092e1dd0c,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-228add79-4f2e-4f82-9229-2d64924ef8f0,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-806d0194-cd04-4f46-91e7-beb192359862,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b08901f0-fcfd-4fae-be39-fa8f78df6efa,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ea4a03a2-5559-46bd-8a19-ec744b8c49a4,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ee0da146-91d1-4b55-9c4f-cb27f8b7765d,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-ffb159b6-ecb1-4169-9894-56c7a2e41e40,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-cda6927a-0d0a-4772-8127-0968e6a22152,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-bd903358-7878-4e10-b3e9-224d64732bf5,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-08645a38-3ddf-4ba7-9a1b-f2facd77e812,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b41b2ad9-d2b5-4190-9c3c-47798d733334,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-b281406a-cc18-44c6-8293-9206683d8365,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-0204ed1b-c9e0-4b00-b42c-0a0ceab3a8fb,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
-598bfc4a-e8d1-446e-aff2-a12214fc904d,Apple 1/2kg,5.00,Sampaloc Market,,Fruits
+4d9def06-9499-44c4-afe4-5ebd683a7104,Apple 1kg,50.00,Sampaloc Market,apple.png,Fruit
+b9efd8f5-1dd8-4624-9582-c283b5e2523c,Pork 1kg,100.00,Sampaloc Market,meat.png,Meat
+d01d7368-413f-45ed-9788-decf686545b5,Pork Thigh 1kg,150.00,Sampaloc Market,meatclub.png,Meat
+a6fc3337-ee90-4495-bf9c-2114cc22c24e,Carrots 1/2 kg,50.00,Sampaloc Market,carrot.png,Vegetable
+cff8eef9-da17-4289-82e9-bfa0de3e074a,Chicken 1kg,120.00,Sampaloc Market,chicken.png,Meat
+31ff0aa7-d6a7-4196-9cbc-08cb19719b9a,Coconut,10.00,Sampaloc Market,coconut.png,Fruit
+e92414df-61fb-41ac-87cf-22bef0b8bc81,Avocado,12.00,Sampaloc Market,avocado.png,Fruit
+695de3e3-67e7-481d-af06-26e6ce70418a,Banana,12.00,Sampaloc Market,banana.png,Fruit
+05f72f71-9a27-40fd-be1f-0c4e6fb9b239,Bell Pepper,5.00,Sampaloc Market,bellpepper.png,Vegetable
+1eee23de-7c9f-4188-8f71-c09d6228712d,Bread,30.00,Sampaloc Market,bread.png,Processed
+9267aea6-993d-45ef-a4a4-971e031878ff,Brocolli,30.00,Sampaloc Market,brocolli.png,Vegetable
+98f80590-c26a-4e65-8249-fc6bda3127dc,Cabbage,50.00,Sampaloc Market,cabbage.png,Vegetable
+04451fba-7d32-42cb-a1a4-7d2ab7b99712,Cereal,100.00,Sampaloc Market,cereal.png,Processed
+e99ca94e-c623-4d40-b2a6-cb48faf6825c,Cheese,50.00,Sampaloc Market,cheese.png,Dairy
+bb78f303-1d34-4d2a-a698-87d0051296b4,Corn,40.00,Sampaloc Market,corn.png,Fruit
+212dd02a-f50f-4ad3-bee9-381008489f08,Cucumber,40.00,Sampaloc Market,cucumber.png,Vegetable
+7a432ebe-c5c7-4923-9546-712b8bca6538,Dragon Fruit,80.00,Sampaloc Market,dragonfruit.png,Fruit
+0173333c-cd01-45d7-8101-3ff3300dbcd3,Egg,7.00,Sampaloc Market,egg.png,Meat
+0018b7a4-e3a5-469a-b59c-948c3601cbab,Egg Plant,12.00,Sampaloc Market,eggplant.png,Vegetable
+43376723-4550-48f9-af2d-10ba46f461d0,Grape,120.00,Sampaloc Market,grape.png,Fruit
+1028f7b4-bde5-4553-b267-2c296c5ab162,Ginger,15.00,Sampaloc Market,ginger.png,Vegetable
+78ecd7dc-c8f7-4762-80c6-5860229186fe,Honey,150.00,Sampaloc Market,honey.png,Processed
+dd53d3d2-2736-4caf-823b-24d48adc92b9,Kiwi,150.00,Sampaloc Market,kiwi.png,Fruit
+98780c2e-1fc2-46ae-b726-5d2d32ae9bcf,Lemon,80.00,Sampaloc Market,lemon.png,Fruit
+be128c48-570f-46e1-b02e-ffc41e590ded,Garlic,15.00,Sampaloc Market,garlic.png,Vegetable
+aae187e3-4165-4f99-b56f-612b6847bafa,Fish,90.00,Sampaloc Market,fish.png,Meat
+b4df6bbf-00c0-46ea-9315-815176b8253e,Milk,100.00,Sampaloc Market,milk.png,Dairy
+b56c81b7-991c-4abc-a0ae-e02509ea539f,Mushroom,50.00,Sampaloc Market,mushroom.png,Vegetable
+a289dd5c-5cd8-468c-b0d1-926ebbc024c9,Pear,66.00,Sampaloc Market,pear.png,Fruit
+2003242b-0b63-4b80-922e-86946ab0499d,Pineapple,56.00,Sampaloc Market,pineapple.png,Fruit
+9b00a8e0-0f6f-40b0-836b-25e6b0d95488,Plum,23.00,Sampaloc Market,plum.png,Fruit
+8112bbfe-b904-459a-a6c5-909a23af97d0,Pumpkin,37.00,Sampaloc Market,pumpkin.png,Fruit
+be576dd6-d992-4bad-b5f7-999743de7bbe,Rice,46.00,Sampaloc Market,rice.png,Vegetable
+02da122f-908d-4330-b313-b58c49a88a28,Salmon,200.00,Sampaloc Market,salmon.png,Meat
+acca0d1d-6945-401c-ac34-d94ed6be27d0,Tomato,10.00,Sampaloc Market,tomato.png,Fruit
+404419d5-e8cf-43db-aa1c-e9f444a1e5d7,Wheat,40.00,Sampaloc Market,wheat.png,Vegetable
+87b7e0bd-25ef-447a-a79d-b6e28ae9f146,Watermelon,50.00,Sampaloc Market,watermelon.png,Fruit
+161ec4b2-394f-4ae7-9cb7-1967befae3eb,Apple 1kg,50.00,Tondo Market,apple.png,Fruit
+8ea09c57-4f07-4d22-94d2-424061ae1931,Pork 1kg,100.00,Tondo Market,meat.png,Meat
+1bee29bc-b949-4541-a3d0-64edf2aab8d2,Pork Thigh 1kg,150.00,Tondo Market,meatclub.png,Meat
+f93b180d-f540-49e6-805a-60d43d40a65e,Carrots 1/2 kg,50.00,Tondo Market,carrot.png,Vegetable
+f0f3e727-cbcd-4bbf-b0ab-776d59d4f6db,Chicken 1kg,120.00,Tondo Market,chicken.png,Meat
+b62546d9-3238-483e-a269-ad703ad2e924,Coconut,10.00,Tondo Market,coconut.png,Fruit
+64156255-ac09-43fc-adcd-c0362fa93676,Avocado,12.00,Tondo Market,avocado.png,Fruit
+723b8e90-18ba-417b-832d-e6a3edc11536,Banana,12.00,Tondo Market,banana.png,Fruit
+b7746173-995f-44d1-8d08-a1177a0da224,Bell Pepper,5.00,Tondo Market,bellpepper.png,Vegetable
+407e0715-81ff-48ea-95ef-a1202e283812,Bread,30.00,Tondo Market,bread.png,Processed
+87d1a9db-6a84-4e8c-83d6-a0e591943c55,Brocolli,30.00,Tondo Market,brocolli.png,Vegetable
+95211c61-31b9-47e3-9d7b-000fbb396b5c,Cabbage,50.00,Tondo Market,cabbage.png,Vegetable
+c056b4a1-1f18-46b3-84fb-9dea227bb38b,Cereal,100.00,Tondo Market,cereal.png,Processed
+d54ea3f7-dd77-4ce7-8c93-1dcbba2f085f,Cheese,50.00,Tondo Market,cheese.png,Dairy
+edb531ac-12e6-4bcf-9994-6c5debaaad3c,Corn,40.00,Tondo Market,corn.png,Fruit
+85030d97-2201-442b-9765-863baaaf4b3b,Cucumber,40.00,Tondo Market,cucumber.png,Vegetable
+301553de-88d7-4930-9a06-5d0e0b3f8628,Dragon Fruit,80.00,Tondo Market,dragonfruit.png,Fruit
+2129013e-5ae8-48f4-8751-9abb7c70d6bd,Egg,7.00,Tondo Market,egg.png,Meat
+529537a0-23e1-4016-bb50-b396135d0cc8,Egg Plant,12.00,Tondo Market,eggplant.png,Vegetable
+6a89ebed-68fa-4077-b5fa-60b2add75b1d,Grape,120.00,Tondo Market,grape.png,Fruit
+8ecb169d-7474-4350-b1a9-8cbbe0d79ca9,Ginger,15.00,Tondo Market,ginger.png,Vegetable
+ad167085-0d2c-42cc-bef6-f0abf53b43ee,Honey,150.00,Tondo Market,honey.png,Processed
+fcc7ab39-ac10-43ad-ae5b-8a55f3cb1afe,Kiwi,150.00,Tondo Market,kiwi.png,Fruit
+127ab437-a536-4f81-9ca8-7848970921a7,Lemon,80.00,Tondo Market,lemon.png,Fruit
+007fd532-a853-436e-93ea-73cee5c24169,Garlic,15.00,Tondo Market,garlic.png,Vegetable
+da8442ad-728a-493c-bdf6-176649fadd06,Fish,90.00,Tondo Market,fish.png,Meat
+db82a31f-cfb2-4311-949f-a03733719a86,Milk,100.00,Tondo Market,milk.png,Dairy
+0a7770f5-919e-4789-8e78-ecc887bace27,Mushroom,50.00,Tondo Market,mushroom.png,Vegetable
+c92cbeb6-2ea1-4711-9ffe-c61c3a0e8159,Pear,66.00,Tondo Market,pear.png,Fruit
+15ee55d9-d8c4-4472-82fd-7a787acf03b0,Pineapple,56.00,Tondo Market,pineapple.png,Fruit
+2413c77e-c7ad-4510-9b74-e83732146582,Plum,23.00,Tondo Market,plum.png,Fruit
+e150d2e2-e009-40f9-83f8-5da780c26cd1,Pumpkin,37.00,Tondo Market,pumpkin.png,Fruit
+5bf56f1d-c232-4c3f-bb50-d17fe87d95c0,Rice,46.00,Tondo Market,rice.png,Vegetable
+f7a653e7-19ca-488c-bada-54b6be6883c8,Salmon,200.00,Tondo Market,salmon.png,Meat
+3a4c306e-c5b9-4875-8ac0-11d6f7eae707,Tomato,10.00,Tondo Market,tomato.png,Fruit
+bda5ff24-b075-4429-8000-9a56d0a2f449,Wheat,40.00,Tondo Market,wheat.png,Vegetable
+9eec1dc9-6c5b-402d-8629-ef3c91ca1d1e,Watermelon,50.00,Tondo Market,watermelon.png,Fruit
+c90c6545-aaf7-4eb4-ae29-dc5b060a3399,Apple 1kg,50.00,Bulacan Market,apple.png,Fruit
+1fdbd01a-e16e-4b43-9e36-900c72d577bb,Pork 1kg,100.00,Bulacan Market,meat.png,Meat
+b2e43912-ec14-4421-b5c3-8dd4e72202c5,Pork Thigh 1kg,150.00,Bulacan Market,meatclub.png,Meat
+c2a0d6b5-aa91-4c0d-a523-c9223754c72f,Carrots 1/2 kg,50.00,Bulacan Market,carrot.png,Vegetable
+102178bf-00fa-4b99-941a-758459649a77,Chicken 1kg,120.00,Bulacan Market,chicken.png,Meat
+c985d3a9-2653-4521-a5e3-01adf1316742,Coconut,10.00,Bulacan Market,coconut.png,Fruit
+0d3093f0-fd7d-4023-94a3-b727583b4d2c,Avocado,12.00,Bulacan Market,avocado.png,Fruit
+d2dbdcf1-89ff-43c1-8946-d8c4bb898608,Banana,12.00,Bulacan Market,banana.png,Fruit
+a451173b-9d04-4e2f-bd4e-12c78dbe953b,Bell Pepper,5.00,Bulacan Market,bellpepper.png,Vegetable
+407108a2-f548-45c8-a09c-f6434c138d8a,Bread,30.00,Bulacan Market,bread.png,Processed
+b7caa725-3f74-4ab8-912b-bf9a8423498f,Brocolli,30.00,Bulacan Market,brocolli.png,Vegetable
+7b361c44-0d93-4464-999a-380f72bff7d7,Cabbage,50.00,Bulacan Market,cabbage.png,Vegetable
+5864cc5c-dcde-49ab-b931-92f2e405da53,Cereal,100.00,Bulacan Market,cereal.png,Processed
+9dd61e54-a2ef-4998-9c57-9e8e55202f8b,Cheese,50.00,Bulacan Market,cheese.png,Dairy
+8f99aee3-a4ce-4c81-bd90-f8bd68202b49,Corn,40.00,Bulacan Market,corn.png,Fruit
+c4914ef1-ef5f-4b61-900d-d612852f1a75,Cucumber,40.00,Bulacan Market,cucumber.png,Vegetable
+44b642d5-544f-4403-bf38-cee50fee4bb7,Dragon Fruit,80.00,Bulacan Market,dragonfruit.png,Fruit
+f66b1ae5-882a-4361-9367-078d49f08401,Egg,7.00,Bulacan Market,egg.png,Meat
+a8ef45aa-5cae-4bf4-8e7a-a75ad66f570c,Egg Plant,12.00,Bulacan Market,eggplant.png,Vegetable
+48f8acc4-7d0d-4298-b28d-4a7f9db073ef,Grape,120.00,Bulacan Market,grape.png,Fruit
+ec7fc1ce-8ed1-49f0-9262-e798bd8e9a46,Ginger,15.00,Bulacan Market,ginger.png,Vegetable
+fc8c710d-bafa-4306-a3cd-49976198599c,Honey,150.00,Bulacan Market,honey.png,Processed
+f73c4df8-e504-420e-af03-2ccadad2481f,Kiwi,150.00,Bulacan Market,kiwi.png,Fruit
+b589b101-94e8-40de-8773-9002039403c2,Lemon,80.00,Bulacan Market,lemon.png,Fruit
+5039da7d-8f63-4285-a3d0-b4eea15c4bd6,Garlic,15.00,Bulacan Market,garlic.png,Vegetable
+da86cb92-4692-4660-8ac5-56571ede3a37,Fish,90.00,Bulacan Market,fish.png,Meat
+786fb765-fb45-4f86-a409-d39a5b709301,Milk,100.00,Bulacan Market,milk.png,Dairy
+1bddac91-65fc-45d0-921a-0e20b1a610eb,Mushroom,50.00,Bulacan Market,mushroom.png,Vegetable
+7cbfba39-b913-4af9-bf1a-6c0117e79811,Pear,66.00,Bulacan Market,pear.png,Fruit
+835b2927-a32a-47b5-a74c-86e121871ff7,Pineapple,56.00,Bulacan Market,pineapple.png,Fruit
+a6c4c4a2-10cb-4668-961b-3dd0e0a25fb3,Plum,23.00,Bulacan Market,plum.png,Fruit
+5e9507de-a098-4e50-9f33-c8ff06e20aec,Pumpkin,37.00,Bulacan Market,pumpkin.png,Fruit
+51822e78-682b-4da9-a71e-3424c8daa887,Rice,46.00,Bulacan Market,rice.png,Vegetable
+258da6d1-c41f-4cd1-b009-154b14cedbb2,Salmon,200.00,Bulacan Market,salmon.png,Meat
+0bd992cb-5ad0-424c-a437-ddef1d851969,Tomato,10.00,Bulacan Market,tomato.png,Fruit
+61134af7-b2ef-4a66-ad88-06f9807ec5ac,Wheat,40.00,Bulacan Market,wheat.png,Vegetable
+e6d328f1-29da-40bc-b80c-a5c0b3ff03f9,Watermelon,50.00,Bulacan Market,watermelon.png,Fruit
+9b5404c1-ffb3-4805-95cd-dcf187230ded,Apple 1kg,50.00,Cebu Market,apple.png,Fruit
+88c0a023-31cd-4d96-9352-e8b990261999,Pork 1kg,100.00,Cebu Market,meat.png,Meat
+54a1a320-9651-423b-bcfc-afef0ebf65fd,Pork Thigh 1kg,150.00,Cebu Market,meatclub.png,Meat
+c42ce74d-44f4-48e4-a9f6-f2224283a7a7,Carrots 1/2 kg,50.00,Cebu Market,carrot.png,Vegetable
+50aa0abd-b473-4e52-b238-f715f10c611f,Chicken 1kg,120.00,Cebu Market,chicken.png,Meat
+43741685-b4de-4e73-99e9-2f40dd6bd607,Coconut,10.00,Cebu Market,coconut.png,Fruit
+94c2ba85-03b5-4f33-85f9-612317dabbc5,Avocado,12.00,Cebu Market,avocado.png,Fruit
+06eccf15-e016-40ee-9251-2bfcbdf223bf,Banana,12.00,Cebu Market,banana.png,Fruit
+6bebf633-7f5f-46e6-b69b-11aeb1ca840f,Bell Pepper,5.00,Cebu Market,bellpepper.png,Vegetable
+d7f61108-078d-471f-8c18-16856d7fb1fc,Bread,30.00,Cebu Market,bread.png,Processed
+1959e01d-c009-4dbc-9403-655ff2b4c8fb,Brocolli,30.00,Cebu Market,brocolli.png,Vegetable
+58e50fab-3249-4b2c-93c3-783440661e23,Cabbage,50.00,Cebu Market,cabbage.png,Vegetable
+c20f6db0-ab8f-408e-bb8f-5811bfef4ba8,Cereal,100.00,Cebu Market,cereal.png,Processed
+ca73aa20-eedf-4dc7-a14c-eeb25ce9f3da,Cheese,50.00,Cebu Market,cheese.png,Dairy
+dda6fc18-6069-4468-a1f3-0d5421106060,Corn,40.00,Cebu Market,corn.png,Fruit
+a863749e-d685-45d8-9954-e14d38862d64,Cucumber,40.00,Cebu Market,cucumber.png,Vegetable
+d9ad70ad-b32a-4a2d-a1e6-8038a33fd2d1,Dragon Fruit,80.00,Cebu Market,dragonfruit.png,Fruit
+eef9ea56-96d3-45de-bc58-ef1d0f18965d,Egg,7.00,Cebu Market,egg.png,Meat
+1d73c436-3a98-4830-83b1-765720a998c4,Egg Plant,12.00,Cebu Market,eggplant.png,Vegetable
+bf46fd04-8f1e-4cc9-aa39-62819ac70ae2,Grape,120.00,Cebu Market,grape.png,Fruit
+e3f80d14-258c-4dfe-93ac-3c40e9d67904,Ginger,15.00,Cebu Market,ginger.png,Vegetable
+bc671458-e9a1-49d6-9dbb-e913daa97e6c,Honey,150.00,Cebu Market,honey.png,Processed
+de7937f8-0568-45c2-9e5a-b38358b8e34c,Kiwi,150.00,Cebu Market,kiwi.png,Fruit
+f23d47b9-e101-4d45-b56b-40f8572dff71,Lemon,80.00,Cebu Market,lemon.png,Fruit
+40fc9c59-50ae-44b4-b134-bd373a37acc0,Garlic,15.00,Cebu Market,garlic.png,Vegetable
+e79f689f-121a-4a46-9907-7b99b0b8cb48,Fish,90.00,Cebu Market,fish.png,Meat
+09d61159-3f8b-4bdc-a963-85a32ad591ee,Milk,100.00,Cebu Market,milk.png,Dairy
+b2a52894-ec9b-43bb-b941-6abb8f9deef6,Mushroom,50.00,Cebu Market,mushroom.png,Vegetable
+a6ce03fa-2b36-4a57-a061-b98144489720,Pear,66.00,Cebu Market,pear.png,Fruit
+f3a0a54e-93e5-40cd-8c72-c5e12a6365ba,Pineapple,56.00,Cebu Market,pineapple.png,Fruit
+4d22c17b-7d94-46ef-8581-b8b1c545a589,Plum,23.00,Cebu Market,plum.png,Fruit
+e28a33b8-e070-47a8-91e0-1bbf8c52b46f,Pumpkin,37.00,Cebu Market,pumpkin.png,Fruit
+67603ade-2cd2-45ed-adef-18ebc06d6571,Rice,46.00,Cebu Market,rice.png,Vegetable
+d010bffc-02ee-4c77-b329-9b937135b2f3,Salmon,200.00,Cebu Market,salmon.png,Meat
+3b138da3-6d28-4f45-8e0e-cbbae0a83d27,Tomato,10.00,Cebu Market,tomato.png,Fruit
+23540f20-660d-4229-9c56-c2672f05f794,Wheat,40.00,Cebu Market,wheat.png,Vegetable
+85f747c7-9e22-4140-bac2-5f37f301e320,Watermelon,50.00,Cebu Market,watermelon.png,Fruit
+30edafea-47ea-405b-ac34-445367249732,Apple 1kg,50.00,Pampanga Market,apple.png,Fruit
+2791a238-38bd-4390-a4a7-96a0ddd226eb,Pork 1kg,100.00,Pampanga Market,meat.png,Meat
+edb12de1-601f-45b8-8fb0-00cb860dad7b,Pork Thigh 1kg,150.00,Pampanga Market,meatclub.png,Meat
+4f98fd1d-c5a9-4e78-bc78-0e95786c4ab4,Carrots 1/2 kg,50.00,Pampanga Market,carrot.png,Vegetable
+4e22a012-2f55-4344-b6bf-592d694a83b0,Chicken 1kg,120.00,Pampanga Market,chicken.png,Meat
+3ce40cd5-525c-473d-9815-5624af464446,Coconut,10.00,Pampanga Market,coconut.png,Fruit
+2912c175-21ae-45f0-a01a-2055f806ebc9,Avocado,12.00,Pampanga Market,avocado.png,Fruit
+d6761480-f762-4e88-b827-01adcf8b6635,Banana,12.00,Pampanga Market,banana.png,Fruit
+e9702a9e-01b8-489c-bd77-1829e62f14c8,Bell Pepper,5.00,Pampanga Market,bellpepper.png,Vegetable
+a51d8991-a12c-4c4c-9801-e85f7ff8b576,Bread,30.00,Pampanga Market,bread.png,Processed
+a1722699-5be4-45b6-af43-52aff327cdd4,Brocolli,30.00,Pampanga Market,brocolli.png,Vegetable
+3dec442f-2ce5-46b3-90f4-359c38c467c1,Cabbage,50.00,Pampanga Market,cabbage.png,Vegetable
+14ae1f85-7697-47ab-8bce-4e2a596db3c8,Cereal,100.00,Pampanga Market,cereal.png,Processed
+dd7e316b-c5e3-4be1-81df-af69e823a1f4,Cheese,50.00,Pampanga Market,cheese.png,Dairy
+16eea27c-f12b-42dd-b194-ba07b2017f98,Corn,40.00,Pampanga Market,corn.png,Fruit
+3eb82386-fc76-4e44-b648-48a53cf1dba0,Cucumber,40.00,Pampanga Market,cucumber.png,Vegetable
+fc87b5b5-7b52-4cd3-b3fd-b4b9c2f06f51,Dragon Fruit,80.00,Pampanga Market,dragonfruit.png,Fruit
+d2ec98c0-6832-41c9-97e2-aec900de7191,Egg,7.00,Pampanga Market,egg.png,Meat
+74a001c8-5e02-4629-bf2c-d938c597a3eb,Egg Plant,12.00,Pampanga Market,eggplant.png,Vegetable
+e306a6ca-e3a8-4db5-8689-4beefac2d068,Grape,120.00,Pampanga Market,grape.png,Fruit
+d42eafb3-e988-4c23-8322-40cb9db06c7e,Ginger,15.00,Pampanga Market,ginger.png,Vegetable
+4962c6ca-e164-4ddc-83cf-cf144147858d,Honey,150.00,Pampanga Market,honey.png,Processed
+a6013479-f0ba-436d-b386-13293d95c4dc,Kiwi,150.00,Pampanga Market,kiwi.png,Fruit
+6534b332-2488-4d35-b00a-577af52094ab,Lemon,80.00,Pampanga Market,lemon.png,Fruit
+9adf0097-207e-465f-8af5-f9e7133f35f9,Garlic,15.00,Pampanga Market,garlic.png,Vegetable
+00969ede-e3f2-4bbb-900e-3fef51566e78,Fish,90.00,Pampanga Market,fish.png,Meat
+03c2b048-dfe5-4822-ae2d-069cc296486e,Milk,100.00,Pampanga Market,milk.png,Dairy
+0765ec09-0fe5-4022-bccf-fd6d83ac5544,Mushroom,50.00,Pampanga Market,mushroom.png,Vegetable
+db78ef3e-7d4b-499c-93a0-52490d0564dd,Pear,66.00,Pampanga Market,pear.png,Fruit
+d3e40783-d4d1-4af6-9907-8e93ac49ff5c,Pineapple,56.00,Pampanga Market,pineapple.png,Fruit
+81d8dda7-f683-4406-8eb0-82fd15fed1b1,Plum,23.00,Pampanga Market,plum.png,Fruit
+22e2917c-0ed9-457b-8629-2efd861cc902,Pumpkin,37.00,Pampanga Market,pumpkin.png,Fruit
+cc7a240c-9b6e-4d10-b8c6-c2a2c41eb1a6,Rice,46.00,Pampanga Market,rice.png,Vegetable
+1491793b-6bb6-4a20-a621-7553d34301e2,Salmon,200.00,Pampanga Market,salmon.png,Meat
+dca71339-a5b1-4189-ac27-12a8b996e21c,Tomato,10.00,Pampanga Market,tomato.png,Fruit
+0f71fd63-2fcd-4cc5-87ea-8552ff76f7ff,Wheat,40.00,Pampanga Market,wheat.png,Vegetable
+cc704f01-4978-400b-8287-6c80415ac7be,Watermelon,50.00,Pampanga Market,watermelon.png,Fruit
+72b0db21-0fe5-452a-8caa-749cc14e0307,Apple 1kg,50.00,Market Market,apple.png,Fruit
+a5c03ab5-e666-4dd9-ab01-38186301a60c,Pork 1kg,100.00,Market Market,meat.png,Meat
+60aa4f50-f332-4c13-b0ff-38606427e576,Pork Thigh 1kg,150.00,Market Market,meatclub.png,Meat
+985e0978-2858-4e3f-a754-2b66d6d4ef8c,Carrots 1/2 kg,50.00,Market Market,carrot.png,Vegetable
+3f3a95f3-64cb-4b39-8966-7b2fa25d3615,Chicken 1kg,120.00,Market Market,chicken.png,Meat
+c1baf850-3d7f-4bee-8e98-12a24be36dbd,Coconut,10.00,Market Market,coconut.png,Fruit
+387600a8-60e9-4e95-a175-df60ba3051aa,Avocado,12.00,Market Market,avocado.png,Fruit
+1c16a9ee-53b2-457c-a1fc-0fe2454dea2d,Banana,12.00,Market Market,banana.png,Fruit
+17a7cb32-db20-4a06-9c58-6b0d8b506873,Bell Pepper,5.00,Market Market,bellpepper.png,Vegetable
+41e61127-d8e9-4aca-88c0-f8a461dc5453,Bread,30.00,Market Market,bread.png,Processed
+3298dbd0-bb3a-4660-8f1f-9fca88c1ab8a,Brocolli,30.00,Market Market,brocolli.png,Vegetable
+5f9fac9e-6e65-4ed6-aca8-969465028fac,Cabbage,50.00,Market Market,cabbage.png,Vegetable
+21adcd47-2d4e-456b-9fef-d88801657d84,Cereal,100.00,Market Market,cereal.png,Processed
+d638825c-edfb-4668-9e16-75f3c7a322e4,Cheese,50.00,Market Market,cheese.png,Dairy
+41f9f11a-d7c6-4c40-b7bb-ced1d20f7f0b,Corn,40.00,Market Market,corn.png,Fruit
+251a6679-2f4f-4719-8e11-5360986f35b0,Cucumber,40.00,Market Market,cucumber.png,Vegetable
+f69b4376-7aec-4ea6-9606-f7d383b7cdfc,Dragon Fruit,80.00,Market Market,dragonfruit.png,Fruit
+b632742b-aee6-4514-8a36-bf840d4f519f,Egg,7.00,Market Market,egg.png,Meat
+fd247e56-084e-4831-ad12-86ce1fa44273,Egg Plant,12.00,Market Market,eggplant.png,Vegetable
+4a5f9c83-6616-4b2f-a6d8-5c1a2e201248,Grape,120.00,Market Market,grape.png,Fruit
+f3ab44db-0a75-44db-900e-911936212c9a,Ginger,15.00,Market Market,ginger.png,Vegetable
+2f8a0e40-b209-477b-b51a-f0c75fd688eb,Honey,150.00,Market Market,honey.png,Processed
+a225bd2d-320b-49b7-adad-833ab60f3523,Kiwi,150.00,Market Market,kiwi.png,Fruit
+5e2a684a-7995-4325-955f-10f67b79c036,Lemon,80.00,Market Market,lemon.png,Fruit
+34aa96f9-63d1-46d1-9227-2be065b61166,Garlic,15.00,Market Market,garlic.png,Vegetable
+3e6543bc-610c-452d-99c1-2d3c124ef588,Fish,90.00,Market Market,fish.png,Meat
+b6a85abe-de7a-416e-bb90-20b66ca6be12,Milk,100.00,Market Market,milk.png,Dairy
+d5fd6527-0504-41eb-b55a-2248d8e77844,Mushroom,50.00,Market Market,mushroom.png,Vegetable
+690a54e0-0be8-4f92-8cb6-84cacf9d42f2,Pear,66.00,Market Market,pear.png,Fruit
+deac1897-3974-45d1-8eb7-0734532bea25,Pineapple,56.00,Market Market,pineapple.png,Fruit
+a86c96c3-9c8f-46ce-bf05-3a88b718e1f3,Plum,23.00,Market Market,plum.png,Fruit
+2dfe3973-3e33-44fc-9fec-3aaee7beeb2e,Pumpkin,37.00,Market Market,pumpkin.png,Fruit
+b4ba6249-9dfa-45f5-bd4b-82f168e3e1d3,Rice,46.00,Market Market,rice.png,Vegetable
+f4df7e41-7c66-4245-87ae-dee544a3694c,Salmon,200.00,Market Market,salmon.png,Meat
+d48a4105-5e5e-49c2-84c9-c4319b65a1a7,Tomato,10.00,Market Market,tomato.png,Fruit
+a79901c2-c990-407e-ba47-c55157288c1b,Wheat,40.00,Market Market,wheat.png,Vegetable
+80b282a3-aff8-4807-945f-8dd2b8680210,Watermelon,50.00,Market Market,watermelon.png,Fruit

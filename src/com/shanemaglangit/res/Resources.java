@@ -29,6 +29,8 @@ public abstract class Resources {
     public static final String RADIO_SELECTED = "/res/images/radio-selected.png";
     public static final String IC_RIGHT_ARROW = "/res/images/ic_right_arrow.png";
 
+    public static final String PRODUCT_IMG_PATH = "/res/images/products/";
+
     public static final String PRODUCT_FILE = "src/com/shanemaglangit/res/csv/products.csv";
     public static final String ORDER_FILE = "src/com/shanemaglangit/res/csv/orders.csv";
     public static final String TRANSACTIONS_FILE_FORMAT = "src/com/shanemaglangit/res/csv/transactions/%s.csv";

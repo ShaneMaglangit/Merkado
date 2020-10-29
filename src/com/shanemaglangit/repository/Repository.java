@@ -34,6 +34,7 @@ public class Repository {
             Order currentOrder = orderList.get(i);
             if(currentOrder.getProduct().getProductId() == order.getProduct().getProductId()) {
                 currentOrder.setQuantity(currentOrder.getQuantity() + order.getQuantity());
+                writeToCSV(orderList, Resources.ORDER_FILE);
                 return;
             }
         }

@@ -20,12 +20,18 @@ public class OrderListItem extends JPanel {
     private JLabel lblOrderPrice;
 
     public OrderListItem(Order order) {
+        ImageIcon imgIcon;
+
         this.order = order;
         this.setLayout(new BoxLayout(this, BoxLayout.X_AXIS));
         this.setBackground(Color.WHITE);
 
         // Create the image
-        lblImage = new JLabel(Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH));
+        imgIcon = Util.createImageIcon(this, "../../.." + Resources.PRODUCT_IMG_PATH + order.getProduct().getImagePath(), 50, 50);
+        if(imgIcon.getImageLoadStatus() == MediaTracker.ABORTED || imgIcon.getImageLoadStatus() == MediaTracker.ERRORED)
+            imgIcon = Util.createImageIcon(this, "../../.." + Resources.LOGO_PATH);
+
+        lblImage = new JLabel(imgIcon);
         lblImage.setBackground(Color.WHITE);
         lblImage.setBorder(new EmptyBorder(8, 8, 8, 16));
         this.add(lblImage);
