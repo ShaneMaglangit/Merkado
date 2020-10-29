@@ -4,6 +4,6 @@ import com.shanemaglangit.navigation.Navigation;
 
 public class Main {
     public static void main(String[] args) {
-        Navigation.listing();
+        Navigation.splashScreen();
     }
 }
