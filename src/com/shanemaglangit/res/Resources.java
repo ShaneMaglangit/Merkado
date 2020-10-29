@@ -28,6 +28,7 @@ public abstract class Resources {
     public static final String RADIO_DEFAULT = "/res/images/radio-default.png";
     public static final String RADIO_SELECTED = "/res/images/radio-selected.png";
     public static final String IC_RIGHT_ARROW = "/res/images/ic_right_arrow.png";
+    public static final String DELIVER = "/res/images/deliver.gif";
 
     public static final String PRODUCT_IMG_PATH = "/res/images/products/";
 

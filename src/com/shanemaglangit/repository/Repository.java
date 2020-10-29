@@ -5,6 +5,7 @@ import com.shanemaglangit.data.*;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
+import javax.swing.*;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.UUID;
@@ -58,7 +59,8 @@ public class Repository {
     }
 
     public void addTransactionList(SinglyLinkedList<Transaction> transactions) {
-        appendToCSV(transactions, Transaction.class, Resources.getTransactionFile());
+        SwingUtilities.invokeLater(() -> appendToCSV(transactions, Transaction.class, Resources.getTransactionFile()));
+        clearOrders();
     }
 
     public PagedLinkedList<Product> getProductList() {

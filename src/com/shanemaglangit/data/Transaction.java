@@ -21,7 +21,6 @@ public class Transaction extends CSVEntity implements Comparable<Transaction> {
     private String expiration;
     private String CVV;
     private Order order;
-    private double total;
 
     public Transaction(String CSV) {
         this(CSV.split(","));
@@ -37,11 +36,14 @@ public class Transaction extends CSVEntity implements Comparable<Transaction> {
         this.expiration = Util.cipher(values[6]);
         this.CVV = Util.cipher(values[7]);
         this.order = new Order(Arrays.copyOfRange(values, 8, values.length - 1));
-        this.total = Double.parseDouble(values[values.length - 1]);
     }
 
     public Transaction(String address, String phoneNumber, boolean isCOD, String cardNumber, String expiration, String CVV, Order order) {
-        this.transactionId = UUID.randomUUID();
+        this(UUID.randomUUID(), address, phoneNumber, isCOD, cardNumber, expiration, CVV, order);
+    }
+
+    public Transaction(UUID transactionId, String address, String phoneNumber, boolean isCOD, String cardNumber, String expiration, String CVV, Order order) {
+        this.transactionId = transactionId;
         this.dateTime = ZonedDateTime.now();
         this.address = address;
         this.phoneNumber = phoneNumber;
@@ -50,7 +52,46 @@ public class Transaction extends CSVEntity implements Comparable<Transaction> {
         this.expiration = expiration;
         this.CVV = CVV;
         this.order = order;
-        this.total = order.getTotal();
+    }
+
+    public Transaction copyWithNewOrder(Order order) {
+        return new Transaction(transactionId, address, phoneNumber, isCOD, cardNumber, expiration, CVV, order);
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
+    }
+
+    public UUID getTransactionId() {
+        return transactionId;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public boolean isCOD() {
+        return isCOD;
+    }
+
+    public String getCardNumber() {
+        return cardNumber;
+    }
+
+    public String getExpiration() {
+        return expiration;
+    }
+
+    public String getCVV() {
+        return CVV;
+    }
+
+    public Order getOrder() {
+        return order;
     }
 
     @Override

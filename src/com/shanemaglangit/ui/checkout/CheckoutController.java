@@ -4,8 +4,11 @@ import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.data.SinglyLinkedList;
 import com.shanemaglangit.data.Transaction;
+import com.shanemaglangit.navigation.Navigation;
 import com.shanemaglangit.repository.Repository;
 import com.shanemaglangit.util.Util;
+
+import java.awt.*;
 
 public class  CheckoutController {
     private Repository repository;
@@ -57,9 +60,6 @@ public class  CheckoutController {
                 if(CVV.length() != 3) throw new Exception("CVV must be 3 digits");
             }
             saveOrders(address, phoneNumber, isCOD, cardNumber, expiration, CVV);
-            repository.clearOrders();
-            view.dispose();
-            Util.showMessageDialog(view, "Your order should arrive in a few hours.");
         } catch (Exception e) {
             Util.showErrorDialog(view, e.getMessage());
         }
@@ -68,10 +68,16 @@ public class  CheckoutController {
     private void saveOrders(String address, String phoneNumber, boolean isCOD, String cardNumber, String expiration, String CVV) {
         SinglyLinkedList<Order> orders = repository.getOrderList();
         SinglyLinkedList<Transaction> transactions = new SinglyLinkedList<>();
+        Transaction transaction = new Transaction(address, phoneNumber, isCOD, cardNumber, expiration, CVV, null);
+        double totalFee = Config.SERVICE_FEE;
+
         for(int i = 0; i < orders.getSize(); i++) {
-            transactions.add(new Transaction(address, phoneNumber, isCOD, cardNumber, expiration, CVV, orders.get(i)));
+            transactions.add(transaction.copyWithNewOrder(orders.get(i)));
+            totalFee += orders.get(i).getTotal();
         }
         repository.addTransactionList(transactions);
+        view.dispose();
+        Navigation.receipt((Frame) view.getOwner(), transaction, totalFee);
     }
 
     private boolean validateCardNumber(String cardNumber) {
