@@ -128,8 +128,8 @@ public class ListingPresenter {
             .sort(isAscending)
             .get();
 
-        // Reset the page back to 0
-        setProducts(0);
+        // Reset the page back to 1
+        setProducts(1);
     }
 
     /**
