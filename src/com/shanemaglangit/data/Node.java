@@ -4,19 +4,9 @@ public class Node<E extends Comparable<E>> {
     private E value;
     private Node<E> next;
 
-    public Node() {
-        this.value = null;
-        this.next = null;
-    }
-
     public Node(E value) {
         this.value = value;
         this.next = null;
-    }
-
-    public Node(E value, Node<E> next) {
-        this.value = value;
-        this.next = next;
     }
 
     public E getValue() {

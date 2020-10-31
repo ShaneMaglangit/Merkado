@@ -7,6 +7,10 @@ public class SinglyLinkedList<E extends Comparable<E>> {
         this.head = null;
     }
 
+    public E get(int pos) {
+        return getNode(head, pos).getValue();
+    }
+
     public void add(E value) {
         if(head == null) insertAtHead(value);
         else insertAtTail(head, value);
@@ -25,10 +29,6 @@ public class SinglyLinkedList<E extends Comparable<E>> {
 
     public void set(int pos, E value) {
         getNode(head, pos).setValue(value);
-    }
-
-    public E get(int pos) {
-        return getNode(head, pos).getValue();
     }
     
     public void remove(int pos) {
