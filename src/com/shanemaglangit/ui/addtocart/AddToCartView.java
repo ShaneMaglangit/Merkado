@@ -1,18 +1,11 @@
 package com.shanemaglangit.ui.addtocart;
 
-import com.shanemaglangit.components.HintTextField;
-import com.shanemaglangit.components.RoundedButton;
-import com.shanemaglangit.components.RoundedTextField;
 import com.shanemaglangit.config.Config;
-import com.shanemaglangit.data.Order;
-import com.shanemaglangit.data.Product;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.text.NumberFormat;

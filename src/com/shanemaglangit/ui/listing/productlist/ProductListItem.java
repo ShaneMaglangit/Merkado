@@ -5,10 +5,8 @@ import com.shanemaglangit.data.Product;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
-import javax.print.attribute.standard.Media;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class ProductListItem extends JPanel {

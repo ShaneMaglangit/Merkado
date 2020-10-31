@@ -7,9 +7,7 @@ import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class LoginView extends JFrame {
@@ -36,7 +34,7 @@ public class LoginView extends JFrame {
         // Create the main panel
         pnlMain = new JPanel();
         pnlMain.setLayout(new BoxLayout(pnlMain, BoxLayout.Y_AXIS));
-        pnlMain.setBackground(Color.WHITE);;
+        pnlMain.setBackground(Color.WHITE);
         pnlMain.setBorder(new EmptyBorder(48, 48, 48, 48));
         this.getContentPane().add(pnlMain);
 

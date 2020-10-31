@@ -1,11 +1,6 @@
 package com.shanemaglangit.components;
 
-import com.shanemaglangit.res.Resources;
-
-import javax.swing.*;
-import javax.swing.text.NumberFormatter;
 import java.awt.*;
-import java.text.NumberFormat;
 
 public class HintTextField extends RoundedTextField {
     private final String hint;

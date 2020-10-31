@@ -1,13 +1,11 @@
 package com.shanemaglangit.ui.listing.orderlist;
 
-import com.shanemaglangit.config.Config;
 import com.shanemaglangit.data.Order;
 import com.shanemaglangit.res.Resources;
 import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class OrderListItem extends JPanel {

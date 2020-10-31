@@ -1,13 +1,10 @@
 package com.shanemaglangit.ui.listing.productlist;
 
 import com.shanemaglangit.config.Config;
-import com.shanemaglangit.data.PagedLinkedList;
 import com.shanemaglangit.data.Product;
 import com.shanemaglangit.data.SinglyLinkedList;
-import com.shanemaglangit.util.ItemOverflowException;
 
 import javax.swing.*;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
