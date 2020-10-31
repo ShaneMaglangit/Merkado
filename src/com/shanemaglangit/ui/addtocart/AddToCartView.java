@@ -6,6 +6,7 @@ import com.shanemaglangit.util.Util;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.text.NumberFormatter;
 import java.awt.*;
 import java.text.NumberFormat;
@@ -94,7 +95,7 @@ public class AddToCartView extends JDialog {
         btnConfirm.setFont(Resources.createPoppinsFont(Resources.FontWeight.MEDIUM, 12));
         btnConfirm.setForeground(Resources.LIGHT);
         btnConfirm.setBackground(Resources.PRIMARY);
-        btnConfirm.setBorder(null);
+        btnConfirm.setBorder(new LineBorder(Resources.PRIMARY, 4));
         pnlInput.add(btnConfirm);
     }
 
