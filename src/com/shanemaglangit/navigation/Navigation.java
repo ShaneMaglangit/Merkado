@@ -2,7 +2,7 @@ package com.shanemaglangit.navigation;
 
 import com.shanemaglangit.data.Product;
 import com.shanemaglangit.data.Transaction;
-import com.shanemaglangit.ui.addtocart.AddToCartPresent;
+import com.shanemaglangit.ui.addtocart.AddToCartPresenter;
 import com.shanemaglangit.ui.addtocart.AddToCartView;
 import com.shanemaglangit.ui.checkout.CheckoutPresenter;
 import com.shanemaglangit.ui.checkout.CheckoutView;
@@ -36,7 +36,7 @@ public abstract class Navigation {
 
     public static void addToCart(Frame owner, Product product) {
         AddToCartView addToCartView = new AddToCartView(owner);
-        AddToCartPresent addToCartPresent = new AddToCartPresent(addToCartView, product);
+        AddToCartPresenter addToCartPresenter = new AddToCartPresenter(addToCartView, product);
     }
 
     public static void checkout(Frame owner) {
