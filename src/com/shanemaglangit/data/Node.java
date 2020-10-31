@@ -1,37 +1,37 @@
 package com.shanemaglangit.data;
 
-public class Node<T extends Comparable<T>> {
-    private T value;
-    private Node<T> next;
+public class Node<E extends Comparable<E>> {
+    private E value;
+    private Node<E> next;
 
     public Node() {
         this.value = null;
         this.next = null;
     }
 
-    public Node(T value) {
+    public Node(E value) {
         this.value = value;
         this.next = null;
     }
 
-    public Node(T value, Node<T> next) {
+    public Node(E value, Node<E> next) {
         this.value = value;
         this.next = next;
     }
 
-    public T getValue() {
+    public E getValue() {
         return value;
     }
 
-    public void setValue(T value) {
+    public void setValue(E value) {
         this.value = value;
     }
 
-    public Node<T> getNext() {
+    public Node<E> getNext() {
         return next;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(Node<E> next) {
         this.next = next;
     }
 }

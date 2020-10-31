@@ -1,33 +1,33 @@
 package com.shanemaglangit.data;
 
-public class SinglyLinkedList<T extends Comparable<T>> {
-    private Node<T> head;
+public class SinglyLinkedList<E extends Comparable<E>> {
+    private Node<E> head;
 
     public SinglyLinkedList() {
         this.head = null;
     }
 
-    public void add(T value) {
+    public void add(E value) {
         if(head == null) insertAtHead(value);
         else insertAtTail(head, value);
     }
 
-    public void add(T value, int pos) {
+    public void add(E value, int pos) {
         if(pos == 0) insertAtHead(value);
         else insertAtPos(head, value, pos);
     }
 
-    public void addAll(SinglyLinkedList<T> list) {
+    public void addAll(SinglyLinkedList<E> list) {
         for(int i = 0; i < list.getSize(); i++) {
             add(list.get(i));
         }
     }
 
-    public void set(int pos, T value) {
+    public void set(int pos, E value) {
         getNode(head, pos).setValue(value);
     }
 
-    public T get(int pos) {
+    public E get(int pos) {
         return getNode(head, pos).getValue();
     }
     
@@ -36,11 +36,11 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         else remove(head, pos);
     }
 
-    public void remove(T value) { remove(head, value); }
+    public void remove(E value) { remove(head, value); }
 
     public void removeAll() { head = null; }
 
-    public boolean contains(T value) {
+    public boolean contains(E value) {
         return find(head, value);
     }
 
@@ -49,7 +49,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     }
 
     public int getSize() {
-        Node<T> currentNode = head;
+        Node<E> currentNode = head;
         int size = 0;
 
         while(currentNode != null) {
@@ -64,25 +64,25 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         if(head != null) head = head.getNext();
     }
 
-    private void remove(Node<T> node, int pos) {
+    private void remove(Node<E> node, int pos) {
         if(node == null || node.getNext() == null) throw new IndexOutOfBoundsException();
         else if(pos == 1) node.setNext(node.getNext().getNext());
         else remove(node.getNext(), pos - 1);
     }
 
-    private void remove(Node<T> node, T value) {
+    private void remove(Node<E> node, E value) {
         if(node == null || node.getNext() == null) throw new IndexOutOfBoundsException();
         else if(node.getNext().getValue().equals(value)) node.setNext(node.getNext().getNext());
         else remove(node.getNext(), value);
     }
 
-    private Node<T> getNode(Node<T> node, int pos) {
+    private Node<E> getNode(Node<E> node, int pos) {
         if(node == null) throw new IndexOutOfBoundsException();
         else if(pos == 0) return node;
         else return getNode(node.getNext(), pos - 1);
     }
 
-    private void insertAtPos(Node<T> node, T value, int pos) {
+    private void insertAtPos(Node<E> node, E value, int pos) {
         if(node.getNext() != null) insertAtPos(node.getNext(), value, pos - 1);
         else {
             if(pos == 1) node.setNext(new Node<>(value));
@@ -90,18 +90,18 @@ public class SinglyLinkedList<T extends Comparable<T>> {
         }
     }
 
-    private void insertAtTail(Node<T> node, T value) {
+    private void insertAtTail(Node<E> node, E value) {
         if(node.getNext() == null) node.setNext(new Node<>(value));
         else insertAtTail(node.getNext(), value);
     }
 
-    private void insertAtHead(T value) {
-        Node<T> node = new Node<>(value);
+    private void insertAtHead(E value) {
+        Node<E> node = new Node<>(value);
         if(head != null) node.setNext(head);
         head = node;
     }
 
-    private boolean find(Node<T> node, T value) {
+    private boolean find(Node<E> node, E value) {
         if(node == null) return false;
         else if (node.getValue().equals(value)) return true;
         else return find(node.getNext(), value);
@@ -117,7 +117,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     }
 
     private int partition(int low, int high, boolean isAscending) {
-        T pivot = get(high);
+        E pivot = get(high);
         int pointer = low;
         int comparisonValue;
 
@@ -136,7 +136,7 @@ public class SinglyLinkedList<T extends Comparable<T>> {
     }
 
     private void swap(int x, int y) {
-        T temp = get(x);
+        E temp = get(x);
         set(x, get(y));
         set(y, temp);
     }

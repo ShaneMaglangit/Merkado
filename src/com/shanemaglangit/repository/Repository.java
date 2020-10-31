@@ -147,7 +147,7 @@ public class Repository {
      * @param clazz class where the data will be converted
      * @param filepath csv file
      */
-    private <T extends CSVEntity & Comparable<T>> void loadFromCSV(SinglyLinkedList<T> list, Class<T> clazz, String filepath) {
+    private <E extends CSVEntity & Comparable<E>> void loadFromCSV(SinglyLinkedList<E> list, Class<E> clazz, String filepath) {
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(filepath))) {
             String row;
             // Skip the header
@@ -167,7 +167,7 @@ public class Repository {
      * @param list list of csv entity
      * @param filepath csv file
      */
-    private <T extends CSVEntity & Comparable<T>> void writeToCSV(SinglyLinkedList<T> list, String filepath) {
+    private <E extends CSVEntity & Comparable<E>> void writeToCSV(SinglyLinkedList<E> list, String filepath) {
         try (FileOutputStream fileOutput = new FileOutputStream(filepath)) {
             StringBuilder stringBuilder = new StringBuilder();
             if(list.getSize() > 0) stringBuilder.append(list.get(0).getCSVHeader()).append("\n");
@@ -186,8 +186,8 @@ public class Repository {
      * @param clazz class where the data will be converted
      * @param filepath csv file
      */
-    private <T extends CSVEntity & Comparable<T>> void appendToCSV(SinglyLinkedList<T> list, Class<T> clazz, String filepath) {
-        SinglyLinkedList<T> currentList = new SinglyLinkedList<>();
+    private <E extends CSVEntity & Comparable<E>> void appendToCSV(SinglyLinkedList<E> list, Class<E> clazz, String filepath) {
+        SinglyLinkedList<E> currentList = new SinglyLinkedList<>();
         loadFromCSV(list, clazz, filepath);
         currentList.addAll(list);
         writeToCSV(list, filepath);

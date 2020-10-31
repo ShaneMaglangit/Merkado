@@ -1,6 +1,6 @@
 package com.shanemaglangit.data;
 
-public class PagedLinkedList<T extends Comparable<T>> extends SinglyLinkedList<T> {
+public class PagedLinkedList<E extends Comparable<E>> extends SinglyLinkedList<E> {
     private int pageSize;
 
     public PagedLinkedList(int pageSize) {
@@ -8,11 +8,11 @@ public class PagedLinkedList<T extends Comparable<T>> extends SinglyLinkedList<T
         this.pageSize = pageSize;
     }
 
-    public SinglyLinkedList<T> getPage(int page) {
-        if(getSize() == 0) return new SinglyLinkedList<T>();
+    public SinglyLinkedList<E> getPage(int page) {
+        if(getSize() == 0) return new SinglyLinkedList<E>();
         if(page >= getPagesCount()) throw new IndexOutOfBoundsException();
 
-        SinglyLinkedList<T> subList = new SinglyLinkedList<>();
+        SinglyLinkedList<E> subList = new SinglyLinkedList<>();
         int startIndex = page * pageSize;
         int endIndex = startIndex + pageSize;
 
@@ -33,3 +33,4 @@ public class PagedLinkedList<T extends Comparable<T>> extends SinglyLinkedList<T
         return (int) Math.ceil((double) getSize() / (double) pageSize);
     }
 }
+
