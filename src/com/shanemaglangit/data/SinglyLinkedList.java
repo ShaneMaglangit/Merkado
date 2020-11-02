@@ -36,9 +36,15 @@ public class SinglyLinkedList<E extends Comparable<E>> {
         else remove(head, pos);
     }
 
-    public void remove(E value) { remove(head, value); }
+    public void remove(E value) {
+        if(head == null) throw new IndexOutOfBoundsException();
+        else if(head.getValue().equals(value)) removeHead();
+        else remove(head, value);
+    }
 
-    public void removeAll() { head = null; }
+    public void removeAll() {
+        head = null;
+    }
 
     public boolean contains(E value) {
         return find(head, value);
@@ -83,9 +89,13 @@ public class SinglyLinkedList<E extends Comparable<E>> {
     }
 
     private void insertAtPos(Node<E> node, E value, int pos) {
-        if(node.getNext() != null) insertAtPos(node.getNext(), value, pos - 1);
+        if(node.getNext() != null && pos > 1) insertAtPos(node.getNext(), value, pos - 1);
         else {
-            if(pos == 1) node.setNext(new Node<>(value));
+            if(pos == 1) {
+                Node<E> newNode = new Node(value);
+                newNode.setNext(node.getNext());
+                node.setNext(newNode);
+            }
             else throw new IndexOutOfBoundsException();
         }
     }
